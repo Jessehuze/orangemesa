@@ -3,7 +3,8 @@
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="login.css">
-  <style href="login.js">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="login.js"></script>
 </head>
 
 <body>
@@ -100,6 +101,7 @@
     </div>
   </div>
 </div>
+
 
 </body>
 <html>
