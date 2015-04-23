@@ -142,7 +142,7 @@ input, button {
   height: 4rem;
   margin: 5rem 0 2.2rem;
   color: rgba(255, 255, 255, 0.8);
-  background: #FF3366;
+  background: #CC6600;
   font-size: 1.5rem;
   border-radius: 3rem;
   cursor: pointer;
@@ -435,7 +435,7 @@ input, button {
   height: 4.6rem;
   margin-right: -2.3rem;
   margin-bottom: -2.3rem;
-  background: #FC3768;
+  background: #CC6600;
   color: #fff;
   font-size: 2rem;
   border-radius: 50%;
