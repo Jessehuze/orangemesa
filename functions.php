@@ -33,19 +33,41 @@ function SendFriendRequest($UserId, $FirendID){}
 
 function ReplytoFriendRequest(){}
 
+function UploadPhoto(){}
+
+function ChooseProfilePic(){}
+
 function MakePost($sender, $reciever, $Message){}
 
 function JoinGroup(){}
 
+function LeaveGroup(){}
+
 function FollowPage(){}
 
-function MakeEvent)(){}
+function UnfollowPage(){}
+
+function MakeEvent(){}
 
 function SendEventInvite(){}
 
 function ReplyToInvite(){}
 
+function Login(){}
+
+//Stuff needed for Profile Page
 function CreatePage($Pagename, $Description, $Owner){}
+
+function GetFriends($username){}
+
+function GetProfilePic($username){}
+
+function GetPageFollowers($PageID){}
+
+function GetPhotos($username){}
+
+function GetGroups($username){}
+
 
 
 ?>
