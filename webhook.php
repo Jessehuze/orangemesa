@@ -1,2 +1,5 @@
-<?php exec ("sudo git -c /var/www/ pull");
+<?php 
+
+exec ("sudo git -c /var/www/ pull");
+
 ?>

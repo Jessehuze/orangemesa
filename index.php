@@ -1,9 +1,6 @@
 <?php
-echo "Fuck Off Jesse";
-echo "But also Nick should fuck off";
-echo "Ignore that last command";
+/* Redirect browser */
+header("Location: http://inceptisol.us.to:6670/login/login.php");
 
-
-echo "IF your name is Hughes just Fuck off", " or pat.";
-
+exit;
 ?>
