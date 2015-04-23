@@ -1,0 +1,20 @@
+Login - People/Page
+Upload Photo - People, Photo
+Create an Event - People Event
+Create a Page
+Create a group
+Make a post
+Send, accept, decline Friend Request
+Un/Follow a Page
+Accept/Decline Invitation to Event
+Joining/Leaving Groups
+Set Profile Photo
+Delete Current Post
+Edit Event
+Edit Group
+Edit Page
+Edit/Delete Photo
+Create a profile
+Edit/Delete a profile -delete EVERYTHING
+Search friends
+General Search
