@@ -12,7 +12,7 @@
 <div class="cont">
   <div class="demo">
     <div class="login">
-      <div class="login__check"></div>
+      <object type="image/svg+xml" data="../images/logo.svg" width="300" height="300"></object>
       <div class="login__form">
         <div class="login__row">
           <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
@@ -101,7 +101,6 @@
     </div>
   </div>
 </div>
-
 
 </body>
 <html>
