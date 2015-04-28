@@ -55,43 +55,43 @@
           <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
             <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
           </svg>
-          <input type="text" class="signup__input username" placeholder="Username" required/>
+          <input name="username" type="text" class="signup__input username" placeholder="Username" required/>
         </div>
         <div class="signup__row">
           <svg class="signup__icon fname svg-icon" viewBox="0 0 20 20">
             <path d="M5,20 L5,0 L15,0 M5,9 L13,9" />
           </svg>
-          <input type="text" class="signup__input fname" placeholder="First Name" required/>
+          <input name="fname" type="text" class="signup__input fname" placeholder="First Name" required/>
         </div>
         <div class="signup__row">
           <svg class="signup__icon mname svg-icon" viewBox="0 0 20 20">
             <path d="M3,20 L3,0 L10,18 L17,0 L17,20" />
           </svg>
-          <input type="text" class="signup__input mname" placeholder="Middle Name (Optional)"/>
+          <input name="mname" type="text" class="signup__input mname" placeholder="Middle Name (Optional)"/>
         </div>
         <div class="signup__row">
           <svg class="signup__icon lname svg-icon" viewBox="0 0 20 20">
             <path d="M5,0 L5,20 L15,20" />
           </svg>
-          <input type="text" class="signup__input lname" placeholder="Last Name" required/>
+          <input name="lname" type="text" class="signup__input lname" placeholder="Last Name" required/>
         </div>
         <div class="signup__row">
           <svg class="signup__icon dob svg-icon" viewBox="0 0 20 20">
             <path d="M3,20 L 17,20 M10,20 L10,0 M7,13 L13,13 M6,6 L14,6 M3,11 L6,6 L7,3" />
           </svg>
-          <input type="text" class="signup__input dob" name="dob" placeholder="mm/dd/yyyy" required pattern="((((0[13578]|1[02])(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[01]))|((0[469]|11)(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[0]))|((02)((\/|-|.)(0[1-9]|1[0-9]|2[0-8]))))(\/|-|.)(19([6-9][0-9])|20(0[0-9]|1[0-4])))|((02)(\/|-|.)(29)(\/|-|.)(19(6[048]|7[26]|8[048]|9[26])|20(0[048]|1[26])))"/>
+          <input name="dob" type="text" class="signup__input dob" name="dob" placeholder="mm/dd/yyyy" required pattern="((((0[13578]|1[02])(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[01]))|((0[469]|11)(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[0]))|((02)((\/|-|.)(0[1-9]|1[0-9]|2[0-8]))))(\/|-|.)(19([6-9][0-9])|20(0[0-9]|1[0-4])))|((02)(\/|-|.)(29)(\/|-|.)(19(6[048]|7[26]|8[048]|9[26])|20(0[048]|1[26])))"/>
         </div>
         <div class="signup__row">
           <svg class="signup__icon pass svg-icon" viewBox="0 0 20 20">
             <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M12,8 a6,8 0 0,1 12,0" />
           </svg>
-          <input type="password" class="signup__input pass0" placeholder="Password" required/>
+          <input name="pass0" type="password" class="signup__input pass0" placeholder="Password" required/>
         </div>
         <div class="signup__row">
           <svg class="signup__icon pass svg-icon" viewBox="0 0 20 20">
             <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
           </svg>
-          <input type="password" class="signup__input pass1" placeholder="Re-Enter Password" required/>
+          <input name="pass1" type="password" class="signup__input pass1" placeholder="Re-Enter Password" required/>
         </div>
         <button name="signup" type="submit" class="signup__submit">Sign up</button>
         <a id="back2login" style="cursor: pointer;"><i style="font-size: 6em;" class="fa fa-angle-double-left fa-5x"></i></a>
