@@ -1,6 +1,5 @@
 <?php
   require("/var/www/config.php");
-  session_start();
   if($_POST["username"] != "" && $_POST["pass"] != "" && isset($_POST["login"])) {
     $result = mysqli_query($con, "SELECT username, usr_pass FROM PEOPLE WHERE username = '" .$_POST["username"]. "'");
     if (!$result) {

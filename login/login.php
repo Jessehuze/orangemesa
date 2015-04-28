@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
+<?php
+  session_start();
+  $_SESSION["loginerror"];
+?>
+
 <body>
 <div class="cont">
   <div class="demo">
