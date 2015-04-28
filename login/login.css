@@ -36,6 +36,14 @@ input, button {
   border: none;
 }
 
+input{
+  transition: background-color ease .5s;
+}
+
+input:hover{
+  background-color: rgba(255,255,255,.2);
+}
+
 .cont {
   position: relative;
   height: 100%;
@@ -43,6 +51,7 @@ input, button {
   background-size: cover;
   overflow: auto;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #fff;
 }
 
 .demo {
@@ -118,7 +127,7 @@ input, button {
   height: 4rem;
   margin: 5rem 0 2.2rem;
   color: rgba(255, 255, 255, 0.8);
-  background: #CC6600;
+  background: #FA7B01;
   font-size: 1.5rem;
   border-radius: 3rem;
   cursor: pointer;
@@ -172,6 +181,38 @@ input, button {
 .login__signup a {
   color: #fff;
   cursor: pointer;
+  cursor: pointer;
+}
+.login__signup a:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -1.5rem;
+  margin-top: -1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border: 2px dotted #fff;
+  border-radius: 50%;
+  border-left: none;
+  border-bottom: none;
+  opacity: 0;
+}
+.login__signup a.processing {
+  width: 4rem;
+  font-size: 0;
+}
+.login__signup a.processing:after {
+  opacity: 1;
+}
+.login__signup a.success {
+    -webkit-transform: scale(30);
+      -ms-transform: scale(30);
+          transform: scale(30);
+  opacity: 0.9;
+}
+.login__signup a.success:after {
+  opacity: 0;
 }
 
 .app {
@@ -403,6 +444,110 @@ input, button {
   color: #949498;
   font-size: 1.1rem;
 }
+
+.signup {
+  position: relative;
+  height: 100%;
+  background: -webkit-linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+.signup.inactive {
+  opacity: 0;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.signup__form {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  padding: 1.5rem 2.5rem;
+  text-align: center;
+}
+.signup__row {
+  height: 5rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.signup__icon {
+  margin-bottom: -0.4rem;
+  margin-right: 0.5rem;
+}
+.signup__input {
+  display: inline-block;
+  width: 22rem;
+  height: 100%;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+  background: transparent;
+  color: #FDFCFD;
+}
+.signup_input:invalid {
+  background-color: rgba(200,100,100,.4);
+}
+.signup__submit {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  margin: 5rem 0 2.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: #FA7B01;
+  font-size: 1.5rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+          transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+}
+.signup__submit:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -1.5rem;
+  margin-top: -1.5rem;
+  width: 3rem;
+  height: 3rem;
+  border: 2px dotted #fff;
+  border-radius: 50%;
+  border-left: none;
+  border-bottom: none;
+  -webkit-animation: rotate 0.5s infinite linear;
+          animation: rotate 0.5s infinite linear;
+  -webkit-transition: opacity 0.1s 0.4s;
+          transition: opacity 0.1s 0.4s;
+  opacity: 0;
+}
+.signup__submit.processing {
+  width: 4rem;
+  font-size: 0;
+}
+.signup__submit.processing:after {
+  opacity: 1;
+}
+.signup__submit.success {
+  -webkit-transition: -webkit-transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s, background-color 0.1s 0.3s;
+          transition: transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s, background-color 0.1s 0.3s;
+  -webkit-transform: scale(30);
+      -ms-transform: scale(30);
+          transform: scale(30);
+  opacity: 0.9;
+}
+.signup__submit.success:after {
+  opacity: 0;
+}
+.signup__signup {
+  font-size: 1.2rem;
+  color: #ABA8AE;
+}
+.signup__signup a {
+  color: #fff;
+  cursor: pointer;
+  cursor: pointer;;
+}
+
 .app__logout {
   position: absolute;
   bottom: 3.3rem;
@@ -411,7 +556,7 @@ input, button {
   height: 4.6rem;
   margin-right: -2.3rem;
   margin-bottom: -2.3rem;
-  background: #CC6600;
+  background: #FA7B01;
   color: #fff;
   font-size: 2rem;
   border-radius: 50%;

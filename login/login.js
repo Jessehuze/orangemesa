@@ -5,7 +5,8 @@ $(document).ready(function() {
       submitPhase2 = 400,
       logoutPhase1 = 800,
       $login = $(".login"),
-      $app = $(".app");
+      $app = $(".app")
+      $signup = $(".signup");
   
   function ripple(elem, e) {
     $(".ripple").remove();
@@ -17,6 +18,8 @@ $(document).ready(function() {
     $ripple.css({top: y, left: x});
     elem.append($ripple);
   };
+  
+
   
   $(document).on("click", ".login__submit", function(e) {
     if (animating) return;
@@ -38,6 +41,34 @@ $(document).ready(function() {
         $(that).removeClass("success processing");
       }, submitPhase2);
     }, submitPhase1);
+  });
+  
+  /*$(document).on("click", ".login__signup a", function(e) {
+    //if (animating) return;
+    //animating = true;
+    var that = this;
+    $(that).addClass("processing");
+    setTimeout(function() {
+      $(that).addClass("success");
+      setTimeout(function() {
+        $signup.show();
+        $signup.css("top");
+        $signup.addClass("active");
+      }, 0);
+      setTimeout(function() {
+        $login.hide();
+        $login.addClass("inactive");
+        animating = false;
+        $(that).removeClass("success processing");
+      }, 0);
+    }, 0);
+  });*/
+  
+  $("#signup").on("click", function() {
+    $(".login").css("display", "none");
+  });
+  $("#back2login").on("click", function() {
+    $(".login").css("display", "block");
   });
   
   $(document).on("click", ".app__logout", function(e) {

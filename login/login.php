@@ -5,29 +5,31 @@
   <link rel="stylesheet" type="text/css" href="login.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="login.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <body>
-
 <div class="cont">
   <div class="demo">
     <div class="login">
       <object type="image/svg+xml" data="../images/logo.svg" width="300" height="300"></object>
       <div class="login__form">
+       <form action="processlogin.php" method="POST">
         <div class="login__row">
           <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
             <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
           </svg>
-          <input type="text" class="login__input name" placeholder="Username"/>
+          <input name="username" type="text" class="login__input name" placeholder="Username"/>
         </div>
         <div class="login__row">
           <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
             <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
           </svg>
-          <input type="password" class="login__input pass" placeholder="Password"/>
+          <input name="pass" type="password" class="login__input pass" placeholder="Password"/>
         </div>
-        <button type="button" class="login__submit">Sign in</button>
-        <p class="login__signup">Don't have an account? &nbsp;<a>Sign up</a></p>
+        <button name="login" type="submit" class="login__submit">Sign in</button>
+        </form>
+        <p class="login__signup">Don't have an account? &nbsp;<a id="signup">Sign up</a></p>
       </div>
     </div>
     <div class="app">
@@ -98,9 +100,84 @@
           <path d="M6,3 a8,8 0 1,0 8,0 M10,0 10,12"/>
         </svg>
       </div>
+      
+      
+      <div class="app__logout">
+        <svg class="app__logout-icon svg-icon" viewBox="0 0 20 20">
+          <path d="M6,3 a8,8 0 1,0 8,0 M10,0 10,12"/>
+        </svg>
+      </div>
+    </div>
+    <div class="signup">
+      <div class="signup__form">
+        <form action="processsignup.php" method="POST">
+        <div class="signup__row">
+          <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+            <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+          </svg>
+          <input type="text" class="signup__input username" placeholder="Username" required/>
+        </div>
+        <div class="signup__row">
+          <svg class="signup__icon fname svg-icon" viewBox="0 0 20 20">
+            <path d="M5,20 L5,0 L15,0 M5,9 L13,9" />
+          </svg>
+          <input type="text" class="signup__input fname" placeholder="First Name" required/>
+        </div>
+        <div class="signup__row">
+          <svg class="signup__icon mname svg-icon" viewBox="0 0 20 20">
+            <path d="M3,20 L3,0 L10,18 L17,0 L17,20" />
+          </svg>
+          <input type="text" class="signup__input mname" placeholder="Middle Name (Optional)"/>
+        </div>
+        <div class="signup__row">
+          <svg class="signup__icon lname svg-icon" viewBox="0 0 20 20">
+            <path d="M5,0 L5,20 L15,20" />
+          </svg>
+          <input type="text" class="signup__input lname" placeholder="Last Name" required/>
+        </div>
+        <div class="signup__row">
+          <svg class="signup__icon dob svg-icon" viewBox="0 0 20 20">
+            <path d="M3,20 L 17,20 M10,20 L10,0 M7,13 L13,13 M6,6 L14,6 M3,11 L6,6 L7,3" />
+          </svg>
+          <input type="text" class="signup__input dob" name="dob" placeholder="mm/dd/yyyy" required pattern="^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$"/>
+        </div>
+        <div class="signup__row">
+          <svg class="signup__icon pass svg-icon" viewBox="0 0 20 20">
+            <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,4 a6,8 0 0,1 12,0 M4,4 l0,4" />
+          </svg>
+          <input type="password" class="signup__input pass0" placeholder="Password" required/>
+        </div>
+        <div class="signup__row">
+          <svg class="signup__icon pass svg-icon" viewBox="0 0 20 20">
+            <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+          </svg>
+          <input type="password" class="signup__input pass1" placeholder="Re-Enter Password" required/>
+        </div>
+        <button name="signup" type="submit" class="signup__submit">Sign up</button>
+        <a id="back2login" style="cursor: pointer;"><i style="font-size: 6em;" class="fa fa-angle-double-left fa-5x"></i></a>
+      </form>
     </div>
   </div>
 </div>
+
+<script>
+jQuery('input[name="dob"]').bind('keydown',function(e){
+
+    var strokes = $(this).val().length;
+    if(strokes === 2 || strokes === 5){
+      if (e.keyCode != 8) {
+        var thisVal = $(this).val();
+        thisVal += '/';
+        $(this).val(thisVal);
+      }
+    } 
+    if(strokes >= 10) {
+       var thisVal = $(this).val();
+       thisVal = thisVal.substr(0,9);
+       $(this).val(thisVal);
+    }
+});
+</script>
 
 </body>
 <html>
