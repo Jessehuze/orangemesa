@@ -67,7 +67,7 @@
           <svg class="signup__icon mname svg-icon" viewBox="0 0 20 20">
             <path d="M3,20 L3,0 L10,18 L17,0 L17,20" />
           </svg>
-          <input name="mname" type="text" class="signup__input mname" placeholder="Middle Name (Optional)"/>
+          <input name="minit" type="text" class="signup__input minit" placeholder="Middle Name (Optional)"/>
         </div>
         <div class="signup__row">
           <svg class="signup__icon lname svg-icon" viewBox="0 0 20 20">
@@ -85,13 +85,13 @@
           <svg class="signup__icon pass svg-icon" viewBox="0 0 20 20">
             <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M12,8 a6,8 0 0,1 12,0" />
           </svg>
-          <input name="pass0" type="password" class="signup__input pass0" placeholder="Password" required/>
+          <input name="usr_pass" type="password" class="signup__input usr_pass" placeholder="Password" required/>
         </div>
         <div class="signup__row">
           <svg class="signup__icon pass svg-icon" viewBox="0 0 20 20">
             <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
           </svg>
-          <input name="pass1" type="password" class="signup__input pass1" placeholder="Re-Enter Password" required/>
+          <input name="usr_pass_check" type="password" class="signup__input usr_pass_check" placeholder="Re-Enter Password" required/>
         </div>
         <button name="signup" type="submit" class="signup__submit">Sign up</button>
         <a id="back2login" style="cursor: pointer;"><i style="font-size: 6em;" class="fa fa-angle-double-left fa-5x"></i></a>
