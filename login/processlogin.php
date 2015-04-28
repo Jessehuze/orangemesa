@@ -5,7 +5,7 @@
     if (!$result) {
       $_SESSION["loginerror"] = 1;
       header("Location: http://inceptisol.us.to:6670/login/login.php");
-      exit;
+      exit();
     }
     
     $row = mysqli_fetch_array($result);
