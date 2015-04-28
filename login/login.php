@@ -27,6 +27,13 @@
           </svg>
           <input name="pass" type="password" class="login__input pass" placeholder="Password" required/>
         </div>
+        <p class="loginerror">
+          <?php
+            if (/*$_SESSION['loginerror']*/ 1 > 0) {
+              echo 'Incorrect Username/Password. Have you signed up?';
+            }
+          ?>
+        </p>
         <button name="login" type="submit" class="login__submit">Sign in</button>
         </form>
         <p class="login__signup">Don't have an account? &nbsp;<a id="signup">Sign up</a></p>

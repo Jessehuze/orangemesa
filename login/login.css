@@ -121,6 +121,10 @@ input:hover{
   background: transparent;
   color: #FDFCFD;
 }
+.loginerror {
+  font-size: 1.2rem;
+  color: #FF3300;
+}
 .login__submit {
   position: relative;
   width: 100%;
