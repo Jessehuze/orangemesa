@@ -7,9 +7,8 @@
       header("Location: http://inceptisol.us.to:6670/login/login.php");
       exit();
     }
-    
     $row = mysqli_fetch_array($result);
-    echo $row["Name"]; 
+    echo $row["username"]; 
     $_SESSION["User"] = $row["username"];
   }
 ?>
