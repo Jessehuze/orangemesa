@@ -9,8 +9,11 @@
 </head>
 
 <?php
-  session_start();
-  $_SESSION["loginerror"];
+  if (session_status() == PHP_SESSION_NONE) 
+  {
+    session_start();
+    $_SESSION["loginerror"] = 0;
+  }
 ?>
 
 <body>
@@ -34,7 +37,7 @@
         </div>
         <p class="loginerror">
           <?php
-            if ($_SESSION['loginerror'] > 0) {
+            if ($_SESSION["loginerror"] > 0) {
               echo 'Incorrect Username/Password. Have you signed up?';
             }
           ?>
