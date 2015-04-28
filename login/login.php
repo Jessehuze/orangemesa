@@ -29,7 +29,7 @@
         </div>
         <p class="loginerror">
           <?php
-            if (/*$_SESSION['loginerror']*/ 1 > 0) {
+            if ($_SESSION['loginerror'] > 0) {
               echo 'Incorrect Username/Password. Have you signed up?';
             }
           ?>
