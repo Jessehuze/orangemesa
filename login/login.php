@@ -5,16 +5,7 @@
   <link rel="stylesheet" type="text/css" href="login.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="login.js"></script>
-  <script type="text/javascript">
-    function checkError() {
-      var status = $_GET('error');
-      if (status == "usernametaken")
-      {
-        $(".login").css("display", "none");
-      }
-    }
-    window.onload = checkError;
-   </script>
+  <script type="text/javascript"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link rel="icon" href="../images/logo.png">
   <title>OrangeMesa</title>
@@ -134,6 +125,11 @@ jQuery('input[name="dob"]').bind('keyup',function(e){
        $(this).val(thisVal);
     }
 });
+
+<?php
+  if (isset($_GET["signin"]))
+    echo '$("#signup").click();';
+?>
 </script>
 
 </body>

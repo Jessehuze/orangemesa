@@ -70,9 +70,17 @@
       </div>
     </nav>
 
+    <style>
+      .userinfo{
+        background-color:rgba(250,123,1,.25);
+        height:100px;
+      }
+    </style>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12 main">
+        <div class="col-md-3 userinfo">
+        </div>
+        <div class="col-md-9 main">
           <h1 class="page-header">Dashboard</h1>
 
           <div class="row placeholders">

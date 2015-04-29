@@ -20,7 +20,7 @@
   }
   else //Redirect otherwise
   {
-    header("Location: http://inceptisol.us.to:6670/login/login.php?error=usernametaken");
+    header("Location: http://inceptisol.us.to:6670/login/login.php?error=Username Taken&signin=true");
     exit();
   }
   if ($insert)
