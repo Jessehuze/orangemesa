@@ -58,9 +58,9 @@ input:hover{
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -50rem;
+  margin-left: -40rem;
   margin-top: -26.5rem;
-  width: 100rem;
+  width: 80rem;
   height: 53rem;
   overflow: hidden;
 }
@@ -267,7 +267,7 @@ input:hover{
 .signup_input:invalid {
   background-color: rgba(200,100,100,.4);
 }
-.edit__submit_fname {
+.edit__submit {
   position: relative;
   width: 20%;
   float: right;
@@ -282,25 +282,9 @@ input:hover{
   -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
           transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
 }
-.edit__submit_minit {
+.edit__submit_secondary {
   position: relative;
   width: 20%;
-  float: right;
-  height: 3rem;
-  margin: 2rem 0rem 0rem;
-  color: rgba(255, 255, 255, 0.8);
-  background: #FA7B01;
-  font-size: 1.5rem;
-  border-radius: 3rem;
-  cursor: pointer;
-  overflow: hidden;
-  -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
-          transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
-}
-.edit__submit_lname {
-  position: relative;
-  width: 20%;
-  float: right;
   height: 3rem;
   margin: 2rem 0rem 0rem;
   color: rgba(255, 255, 255, 0.8);
