@@ -2,6 +2,7 @@
 	require("/var/www/config.php");
 	session_start();
 	$result = mysqli_query($con, "SELECT name FROM GROUPS WHERE name = '" .$POST["groupName"]. "'");
+	echo($result);
 	if(mysqli_num_rows($result) == 0)
 	{
 		$insert = mysqli_query($con, "INSERT INTO GROUPS (name, description, owner)
