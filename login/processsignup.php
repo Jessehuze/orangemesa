@@ -1,7 +1,7 @@
 <?php
   require("/var/www/config.php");
   $result = mysqli_query($con, "SELECT username FROM PEOPLE WHERE username = '" .$_POST["username"]. "'");
-  echo mysqli_error($con);
+  echo $result;
   if (mysql_num_rows($result) == 0 && $_POST["minit"] == "") { //NO MIDDLE NAME GIVEN
     
     $insert = mysqli_query($con, "INSERT INTO PEOPLE (username, usr_pass, fname, lname, dob)
