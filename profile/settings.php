@@ -72,6 +72,7 @@
    	<div class = "demo">
      <div class="editProfile">
       <div class="editProfile_form">
+
        <div class="editProfile_row">
         <form action="processEdit_fname.php" method="POST">
         <input name="fname" type="text" class="edit__input fname" placeholder="First Name" required/>
@@ -89,6 +90,13 @@
         <input name="lname" type="text" class="edit__input lname" placeholder="Last Name" required/>
         <button name="update_lname" type="submit" class="edit__submit_secondary">Update Last Name</button>
        </div>
+
+       <div class="editProfile_row">
+        <form action="processEdit_description.php" method="POST">
+        <input name="description" type="text" class="edit__input description" placeholder="Description" required/>
+        <button name="update_description" type="submit" class="edit__submit_secondary">Update Description</button>
+       </div>
+
       </div>
      </div>
     </div>
