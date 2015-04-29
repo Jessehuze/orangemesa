@@ -24,11 +24,6 @@
     <![endif]-->
   </head>
 
-  <style>
-  .navbar-brand:hover #logoO{opacity:0;}
-  .navbar-brand:hover #logoW{opacity:1 !important;}
-  </style>
-
   <body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
