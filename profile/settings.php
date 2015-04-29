@@ -72,12 +72,12 @@
        <form action="processEdit_fname.php" method="POST">
         <input name="fname" type="text" class="edit__input fname" placeholder="First Name" required/>
         <button name="update_fname" type="submit" class="edit__submit_fname">Update First Name</button>
-       </div>
+       
 
        <form action="processEdit_minit.php" method="POST">
         <input name="minit" type="text" class="edit__input minit" placeholder="Middle Initial" required/>
         <button name="update_minit" type="submit" class="edit__submit_minit">Update Middle Initial</button>
-       </div>
+       
 
        <form action="processEdit_lname.php" method="POST">
         <input name="lname" type="text" class="edit__input lname" placeholder="Last Name" required/>
