@@ -112,7 +112,7 @@ input:hover{
   -webkit-animation: animatePath 2s 0.5s forwards;
           animation: animatePath 2s 0.5s forwards;
 }
-.login__input {
+.createGroup__input {
   display: inline-block;
   width: 22rem;
   height: 100%;
