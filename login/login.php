@@ -6,6 +6,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="login.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="icon" href="../images/logo.png">
+  <title>OrangeMesa</title>
 </head>
 
 <?php
@@ -79,7 +81,7 @@
           <svg class="signup__icon dob svg-icon" viewBox="0 0 20 20">
             <path d="M3,20 L 17,20 M10,20 L10,0 M7,13 L13,13 M6,6 L14,6 M3,11 L6,6 L7,3" />
           </svg>
-          <input name="dob" type="text" class="signup__input dob" name="dob" placeholder="mm/dd/yyyy" required pattern="((((0[13578]|1[02])(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[01]))|((0[469]|11)(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[0]))|((02)((\/|-|.)(0[1-9]|1[0-9]|2[0-8]))))(\/|-|.)(19([6-9][0-9])|20(0[0-9]|1[0-4])))|((02)(\/|-|.)(29)(\/|-|.)(19(6[048]|7[26]|8[048]|9[26])|20(0[048]|1[26])))"/>
+          <input name="dob" type="text" class="signup__input dob" name="dob" placeholder="mm-dd-yyyy" required pattern="((((0[13578]|1[02])(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[01]))|((0[469]|11)(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[0]))|((02)((\/|-|.)(0[1-9]|1[0-9]|2[0-8]))))(\/|-|.)(19([6-9][0-9])|20(0[0-9]|1[0-4])))|((02)(\/|-|.)(29)(\/|-|.)(19(6[048]|7[26]|8[048]|9[26])|20(0[048]|1[26])))"/>
         </div>
         <div class="signup__row">
           <svg class="signup__icon pass svg-icon" viewBox="0 0 20 20">
@@ -104,7 +106,7 @@
 jQuery('input[name="dob"]').bind('keyup',function(e){
 
     var strokes = $(this).val().length;
-    if (!(e.keyCode >= 48 && e.keyCode <= 57) && e.keyCode != 8 && e.keyCode != 37 && e.keyCode != 39)
+    if (!((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) && e.keyCode != 8 && e.keyCode != 37 && e.keyCode != 39)
     {
       var thisVal = $(this).val();
       thisVal = thisVal.substr(0, strokes - 1);
@@ -112,7 +114,7 @@ jQuery('input[name="dob"]').bind('keyup',function(e){
     } else if(strokes === 2 || strokes === 5) {
       if (e.keyCode != 8) {
         var thisVal = $(this).val();
-        thisVal += '/';
+        thisVal += '-';
         $(this).val(thisVal);
       }
     } else if(strokes >= 11) {
