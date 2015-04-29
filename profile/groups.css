@@ -65,37 +65,18 @@ input:hover{
   overflow: hidden;
 }
 
-.editProfile {
-  position: relative;
-  height: 100%;
-  background: -webkit-linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
-  background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
-  -webkit-transition: opacity 0.1s, -webkit-transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
-          transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-}
-.login.inactive {
-  opacity: 0;
-  -webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-          transform: scale(1.1);
-}
-.editProfile__form {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  padding: 1.5rem 2.5rem;
-  text-align: center;
-}
-.editProfile__row {
+.createGroup__row {
   height: 5rem;
   padding-top: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+
+.createGroupDesc__row {
+  height: 10rem;
+  padding-top: 1 rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
 .login__icon {
   margin-bottom: -0.4rem;
   margin-right: 0.5rem;
@@ -130,6 +111,11 @@ input:hover{
   height: 0px;
 }
 
+.listGroups {
+	position: relative;
+	font-size: 2.5rem;
+}
+
 .creategroup__submit {
   position: relative;
   width: 100%;
@@ -144,7 +130,7 @@ input:hover{
   -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
           transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
 }
-.login__submit:after {
+.creategroup__submit:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -163,14 +149,14 @@ input:hover{
           transition: opacity 0.1s 0.4s;
   opacity: 0;
 }
-.login__submit.processing {
+.creategroup__submit.processing {
   width: 4rem;
   font-size: 0;
 }
-.login__submit.processing:after {
+.creategroup__submit.processing:after {
   opacity: 1;
 }
-.login__submit.success {
+.creategroup__submit.success {
   -webkit-transition: -webkit-transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s, background-color 0.1s 0.3s;
           transition: transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s, background-color 0.1s 0.3s;
   -webkit-transform: scale(30);
@@ -178,7 +164,7 @@ input:hover{
           transform: scale(30);
   opacity: 0.9;
 }
-.login__submit.success:after {
+.creategroup__submit.success:after {
   -webkit-transition: opacity 0.1s 0s;
           transition: opacity 0.1s 0s;
   opacity: 0;
