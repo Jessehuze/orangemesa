@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+	<link rel="stylesheet" type="text/css" href="groups.css">
+  
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -62,6 +64,28 @@
         </div>
       </div>
     </nav>
+	
+	<div class="cont">
+   	<div class = "demo">
+     <div class="createGroup">
+      <div class="createGroup__form">
+       <form action="createGroup.php" method="POST">
+       <div class="createGroup__row">
+        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+        </svg>
+        <input name="groupName" type="text" class="createGroup__input groupName" placeholder="Group Name" required/>
+       </div>
+	   <div class="createGroup__row">
+        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+        </svg>
+        <input name="groupDesc" type="text" class="createGroup__input groupDesc" placeholder="Description" required/>
+       </div>
+	   <button name="CreateGroup" type="submit" class="creategroup__submit">Create Group</button>
+	  </form> 
+      </div>
+     </div>
+    </div>
+   </div>
   
     <!-- Bootstrap core JavaScript
     ================================================== -->
