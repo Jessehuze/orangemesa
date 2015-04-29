@@ -11,7 +11,7 @@
     $row = mysqli_fetch_array($result);
     echo $row["username"]; 
     $_SESSION["User"] = $row["username"];
-    header("Location: http://inceptisol.us.to:6670/template/template.php");
+    header("Location: http://inceptisol.us.to:6670/profile/profile.php");
     exit();
   }
 ?>
