@@ -22,6 +22,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -48,7 +49,7 @@
             <li><a href="#">Groups</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="#">Log Out</a></li>
+            <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
