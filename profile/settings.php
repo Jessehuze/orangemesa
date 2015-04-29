@@ -42,7 +42,6 @@
       <form action="processEditProfile.php" method="POST">
       <div class="editProfile_row">
        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
-        <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
        </svg>
        <input name="username" type="text" class="signup__input username" placeholder="Username" required/>
       </div>
