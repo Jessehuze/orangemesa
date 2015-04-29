@@ -20,7 +20,7 @@
         <li><a href="groups.php">Groups</a></li>
         <li><a href="profile.php">Profile</a></li>
         <li class="dropdown">
-          <a href="#" >Profile<span class="dropdown-toggle caret" data-toggle="dropdown" role="button" aria-expanded="false"></span></a>
+          <a href="#" >Profile<a class="dropdown-toggle caret" data-toggle="dropdown" role="button" aria-expanded="false"></a></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Profile</a></li>
             <li><a href="#">Settings</a></li>
