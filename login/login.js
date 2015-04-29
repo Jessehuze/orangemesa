@@ -30,5 +30,4 @@ $(document).ready(function() {
   $("#back2login").on("click", function() {
     $(".login").css("display", "block");
   });
-  
 });
