@@ -24,7 +24,6 @@ body {
 .navbar-fixed-top {
   border: 0;
 }
-
 /*
  * Sidebar
  */
@@ -102,3 +101,6 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+.navbar-brand:hover #logoO{opacity:0;}
+.navbar-brand:hover #logoW{opacity:1 !important;}
