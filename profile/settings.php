@@ -50,7 +50,10 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="profile.php"><i class="fa fa-user"></i>Profile</a></li>
+            <li><a href="profile.php"><i class="fa fa-user"></i>
+              <?php
+                echo mysqli_query($con, "SELECT fname FROM PEOPLE WHERE username = '" .$_SESSION["User"]. "'");
+              ?></a></li>
             <li><a href="friends.php">Friends</a></li>
             <li><a href="events.php">Events</a></li>
             <li><a href="groups.php">Groups</a></li>
