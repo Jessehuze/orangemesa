@@ -8,10 +8,10 @@
         <span class="icon-bar"></span>
       </button>
       <img href="../images/logo.png"></img>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="profile.php">
         <object id="logoO" type="image/svg+xml" data="../images/logo.svg" width="25" height="25"></object>
         <object id="logoW" type="image/svg+xml" data="../images/logow.svg" width="25" height="25" style="position: relative; left: -30.25px; opacity: 0;"></object>
-        <span href="profile.php" style="position: relative; top: -5.5px; left: -37.25px;">rangeMesa</span></a>
+        <span style="position: relative; top: -5.5px; left: -37.25px;">rangeMesa</span></a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">

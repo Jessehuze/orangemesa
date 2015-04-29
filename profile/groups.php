@@ -26,7 +26,7 @@
   </head>
  </html>
  
- <?php
+  <?php
     require("../logincheck.php");
   ?>
   
