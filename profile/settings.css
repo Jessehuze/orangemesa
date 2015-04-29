@@ -268,11 +268,10 @@ input:hover{
   background-color: rgba(200,100,100,.4);
 }
 .edit__submit {
-  position: relative;
   width: 20%;
   float: right;
   height: 3rem;
-  margin: 2rem 1rem 2.2rem;
+  margin: 1.5rem 1rem 2.2rem;
   color: rgba(255, 255, 255, 0.8);
   background: #FA7B01;
   font-size: 1.5rem;
@@ -283,10 +282,10 @@ input:hover{
           transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
 }
 .edit__submit_secondary {
-  position: relative;
   width: 20%;
+  float: right;
   height: 3rem;
-  margin: 2rem 0rem 0rem;
+  margin: -2.5rem 1rem 0rem;
   color: rgba(255, 255, 255, 0.8);
   background: #FA7B01;
   font-size: 1.5rem;
