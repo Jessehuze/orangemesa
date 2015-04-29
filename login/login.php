@@ -36,7 +36,7 @@
         <p class="loginerror">
           <?php
             if (isset($_GET["error"])) {
-              echo 'Incorrect Username/Password.';
+              echo $_GET("error");
             }
           ?>
         </p>

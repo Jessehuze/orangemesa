@@ -24,7 +24,11 @@
     <![endif]-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
-
+  
+  <?php
+    require("../logincheck.php");
+  ?>
+  
   <body>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
