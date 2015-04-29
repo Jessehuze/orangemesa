@@ -37,13 +37,15 @@
       require("navbar.php");
     ?>
    <div class="cont">
-    <div class="editProfile">
-     <div class="editProfile_form">
-      <form action="processEditProfile.php" method="POST">
-      <div class="editProfile_row">
-       <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
-       </svg>
-       <input name="username" type="text" class="signup__input username" placeholder="Username" required/>
+   	<div class = "demo">
+     <div class="editProfile">
+      <div class="editProfile_form">
+       <form action="processEditProfile.php" method="POST">
+       <div class="editProfile_row">
+        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+        </svg>
+        <input name="username" type="text" class="signup__input username" placeholder="Username" required/>
+       </div>
       </div>
      </div>
     </div>
