@@ -75,7 +75,7 @@
         </svg>
         <input name="groupName" type="text" class="createGroup__input groupName" placeholder="Group Name" required/>
        </div>
-	   <div class="createGroup__row">
+	   <div class="createGroupDesc__row">
         <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
         </svg>
         <input name="groupDesc" type="text" class="createGroup__input groupDesc" placeholder="Description" required/>
@@ -84,6 +84,12 @@
 	  </form> 
       </div>
      </div>
+	 
+	 <div class="listGroups">
+		Groups you belong to:
+		
+	 
+	 </div>
     </div>
    </div>
   
