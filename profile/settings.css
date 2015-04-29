@@ -267,42 +267,12 @@ input:hover{
 .signup_input:invalid {
   background-color: rgba(200,100,100,.4);
 }
-.edit__submit_fname {
+.edit__submit {
   position: relative;
   width: 20%;
   float: right;
   height: 3rem;
   margin: 2rem 1rem 2.2rem;
-  color: rgba(255, 255, 255, 0.8);
-  background: #FA7B01;
-  font-size: 1.5rem;
-  border-radius: 3rem;
-  cursor: pointer;
-  overflow: hidden;
-  -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
-          transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
-}
-.edit__submit_minit {
-  position: relative;
-  width: 20%;
-  float: right;
-  height: 3rem;
-  margin: 0rem 1rem 0rem;
-  color: rgba(255, 255, 255, 0.8);
-  background: #FA7B01;
-  font-size: 1.5rem;
-  border-radius: 2rem;
-  cursor: pointer;
-  overflow: hidden;
-  -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
-          transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
-}
-.edit__submit_lname {
-  position: relative;
-  width: 20%;
-  float: right;
-  height: 3rem;
-  margin: 0rem 1rem 0rem;
   color: rgba(255, 255, 255, 0.8);
   background: #FA7B01;
   font-size: 1.5rem;
