@@ -125,6 +125,9 @@ input:hover{
 .loginerror {
   font-size: 1.2rem;
   color: #FF3300;
+  position: relative;
+  top: 10px;
+  height: 0px;
 }
 
 .login__submit {
