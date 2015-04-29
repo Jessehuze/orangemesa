@@ -1,3 +1,3 @@
 <?php
-  session_destroyz();
+  session_destroy();
 ?>
