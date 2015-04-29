@@ -18,7 +18,7 @@
         <li><a href="events.php">Events</a></li>
         <li><a href="friends.php">Friends</a></li>
         <li><a href="groups.php">Groups</a></li>
-        <li><a href="profile.php">Profile</a></li>
+        <li class="active"><a href="profile.php">Profile</a></li>
         <li><a href="settings.php">Settings</a></li>
         <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
       </ul>
