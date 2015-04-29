@@ -97,6 +97,13 @@
           </svg>
           <input name="usr_pass_check" type="password" class="signup__input usr_pass_check" placeholder="Re-Enter Password" required/>
         </div>
+        <p class="loginerror">
+          <?php
+            if (isset($_GET["error"])) {
+              echo $_GET["error"];
+            }
+          ?>
+        </p>
         <button name="signup" type="submit" class="signup__submit">Sign up</button>
         <a id="back2login" style="cursor: pointer;"><i style="font-size: 6em;" class="fa fa-angle-double-left fa-5x"></i></a>
       </form>
