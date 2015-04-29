@@ -285,7 +285,6 @@ input:hover{
 .edit__submit_secondary {
   position: relative;
   width: 20%;
-  float: right;
   height: 3rem;
   margin: 2rem 0rem 0rem;
   color: rgba(255, 255, 255, 0.8);
