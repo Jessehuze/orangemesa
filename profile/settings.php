@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   	<link rel="stylesheet" type="text/css" href="login.css">
-  	
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,19 +36,19 @@
     <?php 
       require("navbar.php");
     ?>
-
+   <div class="cont"
     <div class="editProfile">
-      <div class="editProfile_form">
-        <form action="processEditProfile.php" method="POST">
-    	<div class="editProfile_row">
-    	  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
-            <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
-          </svg>
-          <input name="username" type="text" class="signup__input username" placeholder="Username" required/>
-        </div>
+     <div class="editProfile_form">
+      <form action="processEditProfile.php" method="POST">
+      <div class="editProfile_row">
+       <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+        <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+       </svg>
+       <input name="username" type="text" class="signup__input username" placeholder="Username" required/>
       </div>
+     </div>
     </div>
-
+   </div>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
