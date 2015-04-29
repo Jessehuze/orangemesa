@@ -58,9 +58,9 @@ input:hover{
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -15rem;
+  margin-left: -50rem;
   margin-top: -26.5rem;
-  width: 30rem;
+  width: 100rem;
   height: 53rem;
   overflow: hidden;
 }
@@ -254,7 +254,7 @@ input:hover{
   margin-bottom: -0.4rem;
   margin-right: 0.5rem;
 }
-.signup__input {
+.edit__input {
   display: inline-block;
   width: 22rem;
   height: 100%;
@@ -266,9 +266,10 @@ input:hover{
 .signup_input:invalid {
   background-color: rgba(200,100,100,.4);
 }
-.signup__submit {
+.edit__submit_fname {
   position: relative;
-  width: 100%;
+  width: 25%;
+  float: right;
   height: 4rem;
   margin: 5rem 0 2.2rem;
   color: rgba(255, 255, 255, 0.8);

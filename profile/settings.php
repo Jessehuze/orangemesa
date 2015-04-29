@@ -72,8 +72,9 @@
        <div class="editProfile_row">
         <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
         </svg>
-        <input name="username" type="text" class="signup__input username" placeholder="Username" required/>
+        <input name="fname" type="text" class="edit__input username" placeholder="First Name" required/>
        </div>
+       <button name="update_fname" type="submit" class="edit__submit_fname">Update First Name</button>
       </div>
      </div>
     </div>
