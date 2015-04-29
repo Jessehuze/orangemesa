@@ -37,7 +37,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-9 col-sm-offset-0 col-md-10 col-md-offset-2 main">
+        <div class="col-md-12 main">
           <h1 class="page-header">Dashboard</h1>
 
           <div class="row placeholders">
