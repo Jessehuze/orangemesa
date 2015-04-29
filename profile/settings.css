@@ -268,7 +268,8 @@ input:hover{
 }
 .edit__submit_fname {
   position: relative;
-  width: 100%;
+  width: 25%;
+  float: right;
   height: 4rem;
   margin: 5rem 0 2.2rem;
   color: rgba(255, 255, 255, 0.8);
