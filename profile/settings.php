@@ -75,6 +75,20 @@
         <input name="fname" type="text" class="edit__input fname" placeholder="First Name" required/>
         <button name="update_fname" type="submit" class="edit__submit_fname">Update First Name</button>
        </div>
+
+       <form action="processEdit_minit.php" method="POST">
+        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+        </svg>
+        <input name="minit" type="text" class="edit__input minit" placeholder="Middle Initial" required/>
+        <button name="update_fname" type="submit" class="edit__submit_fname">Update Middle Initial</button>
+       </div>
+
+       <form action="processEdit_lname.php" method="POST">
+        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+        </svg>
+        <input name="lname" type="text" class="edit__input lname" placeholder="Last Name" required/>
+        <button name="update_fname" type="submit" class="edit__submit_fname">Update Last Name</button>
+       </div>
       </div>
      </div>
     </div>
