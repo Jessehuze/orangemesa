@@ -65,7 +65,7 @@ input:hover{
   overflow: hidden;
 }
 
-.login {
+.editProfile {
   position: relative;
   height: 100%;
   background: -webkit-linear-gradient(top, rgba(146, 135, 187, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
@@ -82,7 +82,7 @@ input:hover{
       -ms-transform: scale(1.1);
           transform: scale(1.1);
 }
-.login__form {
+.editProfile__form {
   position: absolute;
   top: 50%;
   left: 0;
@@ -91,7 +91,7 @@ input:hover{
   padding: 1.5rem 2.5rem;
   text-align: center;
 }
-.login__row {
+.editProfile__row {
   height: 5rem;
   padding-top: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
