@@ -67,14 +67,21 @@
 	
 	<div class="cont">
    	<div class = "demo">
-     <div class="editProfile">
-      <div class="editProfile_form">
-       <form action="processEditProfile.php" method="POST">
-       <div class="editProfile_row">
+     <div class="createGroup">
+      <div class="createGroup__form">
+       <form action="createGroup.php" method="POST">
+       <div class="createGroup__row">
         <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
         </svg>
-        <input name="username" type="text" class="signup__input username" placeholder="Username" required/>
+        <input name="groupName" type="text" class="signup__input groupName" placeholder="Group Name" required/>
        </div>
+	   <div class="createGroup__row">
+        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+        </svg>
+        <input name="groupDesc" type="text" class="signup__input groupDesc" placeholder="Description" required/>
+       </div>
+	   <button name="CreateGroup" type="submit" class="creatgroup__submit>Create Group</button>
+	  </form> 
       </div>
      </div>
     </div>
