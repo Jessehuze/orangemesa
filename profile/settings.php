@@ -68,13 +68,13 @@
    	<div class = "demo">
      <div class="editProfile">
       <div class="editProfile_form">
-       <form action="processEditProfile.php" method="POST">
        <div class="editProfile_row">
+       <form action="processEdit_fname.php" method="POST">
         <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
         </svg>
         <input name="fname" type="text" class="edit__input fname" placeholder="First Name" required/>
+        <button name="update_fname" type="submit" class="edit__submit_fname">Update First Name</button>
        </div>
-       <button name="update_fname" type="submit" class="edit__submit_fname">Update First Name</button>
       </div>
      </div>
     </div>
