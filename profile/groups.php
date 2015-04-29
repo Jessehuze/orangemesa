@@ -49,18 +49,26 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="events.php">Events</a></li>
-            <li><a href="friends.php">Friends</a></li>
-            <li class="active"><a href="groups.php">Groups</a></li>
             <li><a href="profile.php">Profile</a></li>
+            <li><a href="friends.php">Friends</a></li>
+            <li><a href="events.php">Events</a></li>
+            <li class="active"><a href="groups.php">Groups</a></li>
             <li><a href="settings.php">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
+          <form class="navbar-form navbar-left">
             <input type="text" class="form-control" placeholder="Search...">
           </form>
         </div>
       </div>
     </nav>
   
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
+</html>
