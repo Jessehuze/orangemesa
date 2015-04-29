@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<link rel="stylesheet" type="text/css" href="settings.css">
+	<link rel="stylesheet" type="text/css" href="groups.css">
   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,6 +64,21 @@
         </div>
       </div>
     </nav>
+	
+	<div class="cont">
+   	<div class = "demo">
+     <div class="editProfile">
+      <div class="editProfile_form">
+       <form action="processEditProfile.php" method="POST">
+       <div class="editProfile_row">
+        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+        </svg>
+        <input name="username" type="text" class="signup__input username" placeholder="Username" required/>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
   
     <!-- Bootstrap core JavaScript
     ================================================== -->
