@@ -36,7 +36,7 @@
     <?php 
       require("navbar.php");
     ?>
-   <div class="cont"
+   <div class="cont">
     <div class="editProfile">
      <div class="editProfile_form">
       <form action="processEditProfile.php" method="POST">
