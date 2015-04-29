@@ -1,5 +1,6 @@
 <?php
   require("/var/www/config.php");
+  session_start();
   $result = mysqli_query($con, "SELECT username FROM PEOPLE WHERE username = '" .$_POST["username"]. "'");
   if (mysqli_num_rows($result) == 0 && $_POST["minit"] == "") { //NO MIDDLE NAME GIVEN
     

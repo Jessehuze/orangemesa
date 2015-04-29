@@ -11,11 +11,7 @@
 </head>
 
 <?php
-  if (session_status() == PHP_SESSION_NONE) 
-  {
-    session_start();
-    $_SESSION["loginerror"] = 0;
-  }
+  session_start();
 ?>
 
 <body>
@@ -39,7 +35,7 @@
         </div>
         <p class="loginerror">
           <?php
-            if ($_SESSION["loginerror"] == 1) {
+            if (isset($_GET["error"])) {
               echo 'Incorrect Username/Password.';
             }
           ?>
