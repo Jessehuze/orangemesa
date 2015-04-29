@@ -6,7 +6,7 @@
     									VALUES ('".$_POST["username"]."', '".$_POST["usr_pass"]."', 
                                     			'".$_POST["fname"]."', '".$_POST["lname"]."', ".$_POST["dob"]."");
   }
-  else if (empty(!$result)) { //MIDDLE NAME GIVEN
+  else if (empty($result)) { //MIDDLE NAME GIVEN
     $insert = mysqli_query($con, "INSERT INTO PEOPLE (username, usr_pass, fname, minit, lname, dob)
     									VALUES ('".$_POST["username"]."', '".$_POST["usr_pass"]."', '".$_POST["minit"]."',
                                     			'".$_POST["fname"]."', '".$_POST["lname"]."' , ".$_POST["dob"]."");
