@@ -5,7 +5,7 @@
                                 SET fname = '".$_POST["fname"]."' 
                                 WHERE username = '".$_SESSION["username"]."'"); 
   echo $_POST["refer"];
-  header("Location: \"".$_POST["refer"]."\"");
+  header("Location: ".$_POST["refer"]);
   exit();
   
 ?>
