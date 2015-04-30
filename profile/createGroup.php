@@ -9,7 +9,7 @@
 		$insert = mysqli_query($con, $query);
 		
 		//Insert in owner as member of group
-		$query = "INSERT INTO GROUP_MEMBERS (GID, memberid) VALUES(SELECT groupid FROM GROUPS WHERE name = '".$_POST["groupname"]."', SELECT owner FROM GROUPS WHERE name = '".$_POST["groupname"]."')";
+		$query = "INSERT INTO GROUP_MEMBERS (GID, memberid) VALUES(SELECT groupid FROM GROUPS WHERE name = '".$_POST["groupName"]."', SELECT owner FROM GROUPS WHERE name = '".$_POST["groupname"]."')";
 		$insert = mysqli_query($con, $query);
 		echo $query;
 	}
