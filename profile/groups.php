@@ -86,7 +86,7 @@
 	   <div class="createGroupDesc__row">
         <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
         </svg>
-        <input name="groupDesc" type="textarea" class="createGroup__input groupDesc" placeholder="Description" required/>
+        <input name="groupDesc" type="text" class="createGroup__input groupDesc" placeholder="Description" required/>
        </div>
 	   <button name="createGroup" type="submit" class="createGroup__submit">Create Group</button>
 	  </form> 
