@@ -50,7 +50,14 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="profile.php">Profile</a></li>
+            <li><a href="profile.php"><i class="fa fa-user"></i>
+              <?php
+                require("/var/www/config.php");
+                $result = mysqli_query($con, "SELECT fname FROM PEOPLE WHERE username = '" .$_SESSION["User"]. "'");
+                $name = mysqli_fetch_array($result);
+                echo $name["fname"];
+              ?>
+            </a></li>
             <li><a href="friends.php">Friends</a></li>
             <li><a href="events.php">Events</a></li>
             <li><a href="groups.php">Groups</a></li>
@@ -59,6 +66,7 @@
           </ul>
           <form class="navbar-form navbar-left">
             <input type="text" class="form-control" placeholder="Search...">
+            <span class="glyphicon glyphicon-search" style="color:#FA7B01" aria-hidden="true"></span>
           </form>
         </div>
       </div>
@@ -68,27 +76,31 @@
    	<div class = "demo">
      <div class="editProfile">
       <div class="editProfile_form">
+
        <div class="editProfile_row">
-       <form action="processEdit_fname.php" method="POST">
-        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
-        </svg>
+        <form action="processEdit_fname.php" method="POST">
         <input name="fname" type="text" class="edit__input fname" placeholder="First Name" required/>
-        <button name="update_fname" type="submit" class="edit__submit_fname">Update First Name</button>
+        <button name="update_fname" type="submit" class="edit__submit">Update First Name</button>
        </div>
 
-       <form action="processEdit_minit.php" method="POST">
-        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
-        </svg>
+       <div class="editProfile_row">
+        <form action="processEdit_minit.php" method="POST">
         <input name="minit" type="text" class="edit__input minit" placeholder="Middle Initial" required/>
-        <button name="update_fname" type="submit" class="edit__submit_fname">Update Middle Initial</button>
+        <button name="update_minit" type="submit" class="edit__submit_secondary">Update Middle Initial</button>
        </div>
 
-       <form action="processEdit_lname.php" method="POST">
-        <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
-        </svg>
+       <div class="editProfile_row">
+        <form action="processEdit_lname.php" method="POST">
         <input name="lname" type="text" class="edit__input lname" placeholder="Last Name" required/>
-        <button name="update_fname" type="submit" class="edit__submit_fname">Update Last Name</button>
+        <button name="update_lname" type="submit" class="edit__submit_secondary">Update Last Name</button>
        </div>
+
+       <div class="editProfile_row">
+        <form action="processEdit_description.php" method="POST">
+        <input name="description" type="text" class="edit__input description" placeholder="Description" required/>
+        <button name="update_description" type="submit" class="edit__submit_secondary">Update Description</button>
+       </div>
+
       </div>
      </div>
     </div>

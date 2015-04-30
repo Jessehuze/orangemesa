@@ -51,7 +51,14 @@
         </div>
          <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="profile.php">Profile</a></li>
+            <li><a href="profile.php"><i class="fa fa-user"></i>
+            <?php
+                require("/var/www/config.php");
+                $result = mysqli_query($con, "SELECT fname FROM PEOPLE WHERE username = '" .$_SESSION["User"]. "'");
+                $name = mysqli_fetch_array($result);
+                echo $name["fname"];
+            ?>
+            </a></li>
             <li><a href="friends.php">Friends</a></li>
             <li><a href="events.php">Events</a></li>
             <li class="active"><a href="groups.php">Groups</a></li>
@@ -60,6 +67,7 @@
           </ul>
           <form class="navbar-form navbar-left">
             <input type="text" class="form-control" placeholder="Search...">
+            <span class="glyphicon glyphicon-search" style="color:#FA7B01" aria-hidden="true"></span>
           </form>
         </div>
       </div>
