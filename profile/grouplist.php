@@ -13,6 +13,4 @@
 		echo "Group Owner: '".$row["owner"]."'<br>";
 		echo "<br>";
 	}
-
-
 ?>
