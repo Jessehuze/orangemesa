@@ -92,7 +92,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
-          <h1>Friends</h1>
+          <h1>People</h1>
           <hr>
           <?php
             $friends_result = mysqli_query($con, "SELECT fname, lname, description FROM PEOPLE WHERE fname LIKE '%".$_GET["query"]."%' OR lname LIKE '%".$_GET["query"]."%' ORDER BY fname, lname"); 

@@ -123,7 +123,7 @@
           </ul>
           <form class="navbar-form navbar-left" action="search.php" method="GET">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search...">
+              <input name="query" type="text" class="form-control" placeholder="Search...">
                 <span class="input-group-btn">
                  <button class="btn btn-default" type="submit">
                   <span class="glyphicon glyphicon-search" style="color:#FA7B01" aria-hidden="true"></span>
