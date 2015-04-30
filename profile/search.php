@@ -64,7 +64,7 @@
           </ul>
           <form class="navbar-form navbar-left" action="search.php" method="GET">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search...">
+              <input name="query" type="text" class="form-control" placeholder="Search...">
                 <span class="input-group-btn">
                  <button class="btn btn-default" type="submit">
                   <span class="glyphicon glyphicon-search" style="color:#FA7B01" aria-hidden="true"></span>
@@ -76,162 +76,50 @@
       </div>
     </nav>
     
+    <style>
+      .usrimg{
+        margin-left: 13%;
+        width: 70%;
+        margin-top: 15%;
+        border-radius: 512px;
+        box-shadow: 0 0 10px rgba(0,0,0, .3)
+      }
+      .addbtn {
+        margin:5% calc(50% - 27px);
+      }
+    </style>
+    
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12 main">
-          <h1 class="page-header">Dashboard</h1>
-
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
-
-          <h2 class="sub-header">Section title</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                  <th>Header</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1,001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
-                </tr>
-                <tr>
-                  <td>1,002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                  <td>elit</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>Integer</td>
-                  <td>nec</td>
-                  <td>odio</td>
-                  <td>Praesent</td>
-                </tr>
-                <tr>
-                  <td>1,003</td>
-                  <td>libero</td>
-                  <td>Sed</td>
-                  <td>cursus</td>
-                  <td>ante</td>
-                </tr>
-                <tr>
-                  <td>1,004</td>
-                  <td>dapibus</td>
-                  <td>diam</td>
-                  <td>Sed</td>
-                  <td>nisi</td>
-                </tr>
-                <tr>
-                  <td>1,005</td>
-                  <td>Nulla</td>
-                  <td>quis</td>
-                  <td>sem</td>
-                  <td>at</td>
-                </tr>
-                <tr>
-                  <td>1,006</td>
-                  <td>nibh</td>
-                  <td>elementum</td>
-                  <td>imperdiet</td>
-                  <td>Duis</td>
-                </tr>
-                <tr>
-                  <td>1,007</td>
-                  <td>sagittis</td>
-                  <td>ipsum</td>
-                  <td>Praesent</td>
-                  <td>mauris</td>
-                </tr>
-                <tr>
-                  <td>1,008</td>
-                  <td>Fusce</td>
-                  <td>nec</td>
-                  <td>tellus</td>
-                  <td>sed</td>
-                </tr>
-                <tr>
-                  <td>1,009</td>
-                  <td>augue</td>
-                  <td>semper</td>
-                  <td>porta</td>
-                  <td>Mauris</td>
-                </tr>
-                <tr>
-                  <td>1,010</td>
-                  <td>massa</td>
-                  <td>Vestibulum</td>
-                  <td>lacinia</td>
-                  <td>arcu</td>
-                </tr>
-                <tr>
-                  <td>1,011</td>
-                  <td>eget</td>
-                  <td>nulla</td>
-                  <td>Class</td>
-                  <td>aptent</td>
-                </tr>
-                <tr>
-                  <td>1,012</td>
-                  <td>taciti</td>
-                  <td>sociosqu</td>
-                  <td>ad</td>
-                  <td>litora</td>
-                </tr>
-                <tr>
-                  <td>1,013</td>
-                  <td>torquent</td>
-                  <td>per</td>
-                  <td>conubia</td>
-                  <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="col-md-4">
+          <h1>Friends</h1>
+          <hr>
+          <?php
+            $friends_result = mysqli_query($con, "SELECT fname, lname, description FROM PEOPLE WHERE fname LIKE '%".$_GET["query"]."%' OR lname LIKE '%".$_GET["query"]."%' ORDER BY fname, lname"); 
+            if ($friends_result)
+            {
+              while ($friend = mysqli_fetch_array($friends_result)) 
+              {
+                echo "<div class=\"row\">
+                  <div class=\"col-xs-4\">
+                    <img class=\"usrimg\" src=\"../images/user.png\"/>
+                    <button class=\"btn addbtn btn-default\" type=\"button\">Add</button>
+                  </div>
+                  <div class=\"col-xs-8\">
+                    <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
+                    <p>". $friend["description"] . "</p>
+                    
+                  </div>
+                </div>";
+              }
+            }
+          ?> 
+        </div>
+        <div class="col-md-4">
+        
+        </div>
+        <div class="col-md-4">
+        
         </div>
       </div>
     </div>
