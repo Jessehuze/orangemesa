@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <link rel="stylesheet" type="text/css" href="settings.css">
 	<link rel="stylesheet" type="text/css" href="groups.css">
   
     <meta charset="utf-8">
@@ -120,7 +121,7 @@
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
-          <form class="navbar-form navbar-left">
+          <form class="navbar-form navbar-left" action="search.php" method="GET">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search...">
                 <span class="input-group-btn">
