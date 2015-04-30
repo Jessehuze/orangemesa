@@ -9,7 +9,7 @@
       exit();
     }
     $row = mysqli_fetch_array($result);
-    $_SESSION["User"] = $row["username"];
+    $_SESSION["username"] = $row["username"];
     $_SESSION["fname"] = $row["fname"];
     header("Location: http://inceptisol.us.to:6670/profile/profile.php");
     exit();
