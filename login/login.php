@@ -41,7 +41,7 @@
         </div>
         <p class="loginerror">
           <?php
-            if (isset($_GET["error"])) {
+            if (isset($_GET["error"]) && !isset($_GET["signin"])) {
               echo $_GET["error"];
             }
           ?>
@@ -109,6 +109,7 @@
       </form>
     </div>
   </div>
+</div>
 </div>
 
 <script>

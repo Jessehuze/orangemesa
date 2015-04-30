@@ -78,7 +78,7 @@
       <div class="editProfile_form">
 
        <div class="editProfile_row">
-        <form action="processEdit_fname.php" method="POST">
+        <form action="updateProfile/processEdit_fname.php" method="POST">
         <input name="fname" type="text" class="edit__input fname" placeholder="First Name" required/>
         <button name="update_fname" type="submit" class="edit__submit">Update First Name</button>
        </div>

@@ -3,7 +3,7 @@
   session_start();
     $insert = mysqli_query($con, "UPDATE PEOPLE
                                   SET fname = '".$_POST["fname"]."'
-                                  WHERE username = '" .$_SESSION["username"]. "' "); 
+                                  WHERE username = '".$_SESSION["username"]."' "); 
   if ($insert)
   {
     $_SESSION["User"] = $_POST["username"];
