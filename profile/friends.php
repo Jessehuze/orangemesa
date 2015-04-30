@@ -31,6 +31,62 @@
   
   <body>
 
+   
+    <!-- Settings Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Settings</h4>
+          </div>
+          <div class="modal-body">
+            
+            <div class="editProfile">
+              <div class="editProfile_form">
+
+               <div class="editProfile_row">
+                <form action="updateProfile/processEdit_fname.php" method="POST">
+                <input name="fname" type="text" class="edit__input fname" placeholder="First Name" />
+                <button name="update_fname" type="submit" class="edit__submit">Update First Name</button>
+                </form>
+               </div>
+
+               <div class="editProfile_row">
+                <form action="updateProfile/processEdit_minit.php" method="POST">
+                <input name="minit" type="text" class="edit__input minit" placeholder="Middle Initial" />
+                <button name="update_minit" type="submit" class="edit__submit_secondary">Update Middle Initial</button>
+                </form>
+               </div>
+
+               <div class="editProfile_row">
+                <form action="updateProfile/processEdit_lname.php" method="POST">
+                <input name="lname" type="text" class="edit__input lname" placeholder="Last Name" />
+                <button name="update_lname" type="submit" class="edit__submit_secondary">Update Last Name</button>
+                </form>
+               </div>
+
+               <div class="editProfile_row">
+                <form action="updateProfile/processEdit_description.php" method="POST">
+                <input name="description" type="text" class="edit__input description" placeholder="Description" />
+                <button name="update_description" type="submit" class="edit__submit_secondary">Update Description</button>
+                </form>
+               </div>
+
+              </div>
+             </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
