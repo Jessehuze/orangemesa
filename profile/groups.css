@@ -119,6 +119,7 @@ input:hover{
 .listgroups2 {
 	position relative;
 	font-size: 1.5rem;
+	overflow: auto;
 
 }
 
