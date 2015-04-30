@@ -54,7 +54,7 @@
             <li><a href="profile.php"><i class="fa fa-user"></i>
             <?php
                 require("/var/www/config.php");
-                $result = mysqli_query($con, "SELECT fname FROM PEOPLE WHERE username = '" .$_SESSION["User"]. "'");
+                $result = mysqli_query($con, "SELECT fname FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
                 $name = mysqli_fetch_array($result);
                 echo $name["fname"];
             ?>
