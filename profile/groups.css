@@ -116,7 +116,7 @@ input:hover{
 	font-size: 2.5rem;
 }
 
-.creategroup__submit {
+.createGroup__submit {
   position: relative;
   width: 100%;
   height: 4rem;
@@ -130,7 +130,7 @@ input:hover{
   -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
           transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
 }
-.creategroup__submit:after {
+.createGroup__submit:after {
   content: "";
   position: absolute;
   top: 50%;
@@ -149,14 +149,14 @@ input:hover{
           transition: opacity 0.1s 0.4s;
   opacity: 0;
 }
-.creategroup__submit.processing {
+.createGroup__submit.processing {
   width: 4rem;
   font-size: 0;
 }
-.creategroup__submit.processing:after {
+.createGroup__submit.processing:after {
   opacity: 1;
 }
-.creategroup__submit.success {
+.createGroup__submit.success {
   -webkit-transition: -webkit-transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s, background-color 0.1s 0.3s;
           transition: transform 0.3s 0.1s ease-out, opacity 0.1s 0.3s, background-color 0.1s 0.3s;
   -webkit-transform: scale(30);
@@ -164,7 +164,7 @@ input:hover{
           transform: scale(30);
   opacity: 0.9;
 }
-.creategroup__submit.success:after {
+.createGroup__submit.success:after {
   -webkit-transition: opacity 0.1s 0s;
           transition: opacity 0.1s 0s;
   opacity: 0;
