@@ -8,7 +8,7 @@
 	
 	$numrows = mysqli_num_rows($result);
 	
-	echo $query;
+	//echo $query;
 	echo $numrows;
 	
 	
