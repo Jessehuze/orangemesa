@@ -14,14 +14,13 @@
 		//Insert in owner as member of group
 		$query = "INSERT INTO GROUP_MEMBERS (GID, memberid) VALUES('".$row1["groupid"]."','".$row1["owner"]."')";
 		$insert = mysqli_query($con, $query);
-		echo $query;
 	}
 	else
 	{
-		//header("Location: http://inceptisol.us.to:6670/profile/groups.php?error=groupnametaken");
+		header("Location: http://inceptisol.us.to:6670/profile/groups.php?error=groupnametaken");
 		exit();
 	}
-	//header("Location: http://inceptisol.us.to:6670/profile/groups.php");
+	header("Location: http://inceptisol.us.to:6670/profile/groups.php");
 	exit();
 
 ?>
