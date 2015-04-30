@@ -5,14 +5,14 @@
 	$result = mysqli_query($con, $query);
 	if(mysqli_num_rows($result) == 0)
 	{
-		$insert = mysqli_query($con, "INSERT INTO GROUPS (name, description, owner) VALUES ('".$_POST["groupName"]."', '".$_POST["groupDesc"]."', '".$_SESSION["User"]."')");
+		$insert = mysqli_query($con, "INSERT INTO GROUPS (name, description, owner) VALUES ('".$_POST["groupName"]."', '".$_POST["groupDesc"]."', '".$_SESSION["username"]."')");
 	}
 	else
 	{
-		header("Location: http://inceptisol.us.to:6670/profile/groups.php?error=groupnametaken");
+		//header("Location: http://inceptisol.us.to:6670/profile/groups.php?error=groupnametaken");
 		exit();
 	}
-	header("Location: http://inceptisol.us.to:6670/profile/groups.php");
+	//header("Location: http://inceptisol.us.to:6670/profile/groups.php");
 	exit();
 
 ?>
