@@ -1,12 +1,13 @@
 <?php
 	require("/var/www/config.php");
 	session_start();
-	$result = mysqli_query($con, "SELECT name FROM GROUPS WHERE name = '" .$_POST["groupName"]. "'");
-	
+	$query = "SELECT name FROM GROUPS WHERE name = '" .$_POST["groupName"]. "'";
+	$result = mysqli_query($con, $query);
+	echo $query;
 	if(mysqli_num_rows($result) == 0)
 	{
 		$insert = mysqli_query($con, "INSERT INTO GROUPS (name, description, owner)
-									VALUES ('".$_POST["groupName"]."', '".$_POST["groupDesc"]."', '".$SESSION["User"]."')");
+									VALUES ('".$_POST["groupName"]."', '".$_POST["groupDesc"]."', '".$_SESSION["User"]."')");
 	}
 	else
 	{
