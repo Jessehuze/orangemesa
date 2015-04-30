@@ -72,15 +72,26 @@
 
     <style>
       .userinfo{
-        background-color:rgba(250,123,1,.25);
-        height:100px;
+        background-color:rgba(250,123,1,.80);
+      }
+      .usrimg{
+        margin-left: 13%;
+        width: 70%;
+        border-radius: 512px;
+        box-shadow: 0 0 10px rgba(0,0,0, .3)
       }
     </style>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3 userinfo">
+        <div class="col-sm-3 col-md-2 sidebar userinfo">
+          <div>
+            <img class="usrimg" src="../images/user.png">
+          </div>
+          <hr>
+          <h2>User Name</h2>
+          <h3>City</h3>
         </div>
-        <div class="col-md-9 main">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
 
           <div class="row placeholders">
