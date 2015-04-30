@@ -6,7 +6,7 @@
                                 WHERE username = '".$_SESSION["username"]."'"); 
   if (1)
   {
-  	header("Location: http://inceptisol.us.to:6670/profile/settings.php");
+  	//header("Location: http://inceptisol.us.to:6670/profile/settings.php");
     exit();
   }
 ?>
