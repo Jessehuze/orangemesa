@@ -93,7 +93,7 @@
               require("/var/www/config.php");
               $result = mysqli_query($con, "SELECT fname, lname FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
               $name = mysqli_fetch_array($result);
-              echo ($name["fname"]." ".$name["fname"]);
+              echo ($name["fname"]." ".$name["lname"]);
             ?>
           </h2>
           <h3>City</h3>
