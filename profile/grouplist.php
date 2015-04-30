@@ -18,7 +18,7 @@
 	{
 		echo "FUck this shit";
 		echo $row["memberid"];
-		echo "\n";
+		echo "<br>";
 	}
 	/*
 	while($row = mysqli_fetch_assoc($result))
