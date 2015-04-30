@@ -9,11 +9,7 @@ html, body {
   height: 100%;
   overflow: hidden;
 }
-@media (max-width: 768px) {
-  html, body {
-    font-size: 40%;
-  }
-}
+
 
 svg {
   display: inline-block;
