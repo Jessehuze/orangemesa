@@ -41,7 +41,8 @@
             <h4 class="modal-title" id="myModalLabel">Settings</h4>
           </div>
           <div class="modal-body">
-            
+           <div class="cont">
+           <div class = "demo">
             <div class="editProfile">
               <div class="editProfile_form">
 
@@ -75,7 +76,8 @@
 
               </div>
              </div>
-
+           </div>
+           </div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
