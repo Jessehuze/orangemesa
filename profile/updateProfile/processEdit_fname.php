@@ -1,6 +1,6 @@
 <?php
   require("/var/www/config.php");
-  require("../logincheck.php");
+  require("../../logincheck.php");
   session_start();
   $update = mysqli_query($con, "UPDATE PEOPLE
                                 SET fname = '".$_POST["fname"]."'
