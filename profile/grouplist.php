@@ -16,6 +16,7 @@
 	$result = mysqli_query($con, $query);
 	while($row = mysqli_fetch_assoc($result))
 	{
+		echo "FUck this shit";
 		echo $row["name"];
 		echo "\n";
 	}
