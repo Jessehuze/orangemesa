@@ -9,8 +9,8 @@
 	while($row = mysqli_fetch_assoc($result))
 	{
 		echo "Group Name: '".$row["name"]."'<br>";
-		echo "Description: '".$row["description"]"'.<br>";
-		echo "Group Owner: '".$row["owner"]"'.<br>";
+		echo "Description: '".$row["description"]."'<br>";
+		echo "Group Owner: '".$row["owner"]."'<br>";
 		echo "<br>";
 	}
 
