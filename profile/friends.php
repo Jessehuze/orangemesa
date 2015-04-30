@@ -49,6 +49,7 @@
 
                <div class="editProfile_row">
                 <form action="updateProfile/processEdit_fname.php" method="POST">
+                <input name="refer" type="hidden" value="/profile/friends.php"/>
                 <input name="fname" type="text" class="edit__input fname" placeholder="First Name" />
                 <button name="update_fname" type="submit" class="edit__submit">Update First Name</button>
                 </form>
@@ -56,22 +57,25 @@
 
                <div class="editProfile_row">
                 <form action="updateProfile/processEdit_minit.php" method="POST">
+                <input name="refer" type="hidden" value="/profile/friends.php"/>
                 <input name="minit" type="text" class="edit__input minit" placeholder="Middle Initial" />
-                <button name="update_minit" type="submit" class="edit__submit_secondary">Update Middle Initial</button>
+                <button name="update_minit" type="submit" class="edit__submit">Update Middle Initial</button>
                 </form>
                </div>
 
                <div class="editProfile_row">
                 <form action="updateProfile/processEdit_lname.php" method="POST">
+                <input name="refer" type="hidden" value="/profile/friends.php"/>
                 <input name="lname" type="text" class="edit__input lname" placeholder="Last Name" />
-                <button name="update_lname" type="submit" class="edit__submit_secondary">Update Last Name</button>
+                <button name="update_lname" type="submit" class="edit__submit">Update Last Name</button>
                 </form>
                </div>
 
                <div class="editProfile_row">
                 <form action="updateProfile/processEdit_description.php" method="POST">
-                <input name="description" type="text" class="edit__input description" placeholder="Description" />
-                <button name="update_description" type="submit" class="edit__submit_secondary">Update Description</button>
+                <input name="refer" type="hidden" value="/profile/friends.php"/>
+                <textarea name="description" class="edit__input description" placeholder="Description" rows="6"></textarea>
+                <button name="update_description" type="submit" class="edit__submit">Update Description</button>
                 </form>
                </div>
 
@@ -79,10 +83,6 @@
              </div>
            </div>
            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
@@ -118,7 +118,7 @@
             <li class="active"><a href="friends.php">Friends</a></li>
             <li><a href="events.php">Events</a></li>
             <li><a href="groups.php">Groups</a></li>
-            <li><a data-toggle="modal" data-target="#myModal">Settings</a></li>
+            <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
           <form class="navbar-form navbar-left">
