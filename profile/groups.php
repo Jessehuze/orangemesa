@@ -96,6 +96,9 @@
 	 <div class="listGroups">
 		Groups you belong to:
 		
+		<?php
+			require("grouplist.php");
+		?>
 		
 	 
 	 </div>
