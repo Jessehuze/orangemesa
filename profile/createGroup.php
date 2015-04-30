@@ -6,6 +6,7 @@
 	echo mysqli_num_rows($result);
 	if(mysqli_num_rows($result) == 0)
 	{
+		echo "in if statement";
 		$insert = mysqli_query($con, "INSERT INTO GROUPS (name, description, owner) VALUES ('".$_POST["groupName"]."', '".$_POST["groupDesc"]."', '".$_SESSION["username"]."')");
 		echo $insert;
 	}
