@@ -10,7 +10,7 @@
 	}
 	else
 	{
-		//header("Location: http://inceptisol.us.to:6670/profile/groups.php?error=groupnametaken");
+		header("Location: http://inceptisol.us.to:6670/profile/groups.php?error=groupnametaken");
 		exit();
 	}
 	//header("Location: http://inceptisol.us.to:6670/profile/groups.php");
