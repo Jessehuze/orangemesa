@@ -7,6 +7,10 @@
 	{
 		$query = "INSERT INTO GROUPS (name, description, owner) VALUES ('".$_POST["groupName"]."', '".$_POST["groupDesc"]."', '".$_SESSION["username"]."')";
 		$insert = mysqli_query($con, $query);
+		
+		//Insert in owner as member of group
+		$query = "INSERT INTO GROUP_MEMBERS VALUES(SELECT groupid FROM GROUPS WHERE name = '".$_POST["groupname"]."', SELECT owner FROM GROUPS WHERE name = '".$_POST["groupname"]."')";
+		$insert = mysqli_query($con, $query);
 	}
 	else
 	{
