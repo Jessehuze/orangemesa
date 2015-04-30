@@ -72,7 +72,7 @@
 
                <div class="editProfile_row">
                 <form action="updateProfile/processEdit_description.php" method="POST">
-                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/friends.php"/>
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                 <textarea name="description" class="edit__input description" placeholder="Description" rows="6"></textarea>
                 <button name="update_description" type="submit" class="edit__submit">Update Description</button>
                 </form>
