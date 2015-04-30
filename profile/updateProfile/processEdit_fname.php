@@ -4,6 +4,7 @@
   $update = mysqli_query($con, "UPDATE PEOPLE 
                                 SET fname = '".$_POST["fname"]."' 
                                 WHERE username = '".$_SESSION["username"]."'"); 
+  echo $_POST["refer"];
   header("\"".$_POST["refer"]."\"");
   exit();
   
