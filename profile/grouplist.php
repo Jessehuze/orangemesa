@@ -9,24 +9,19 @@
 	$numrows = mysqli_num_rows($result);
 	
 	//echo $query;
-	//echo $numrows;
+	echo $numrows;
 	
 	//Debugging looking at table
-	$query = "SELECT * FROM GROUP_MEMBERS";
-	$result = mysqli_query($con, $query);
-	while($row = mysqli_fetch_assoc($result))
-	{
-		echo "FUck this shit";
-		echo $row["memberid"];
-		echo "<br>";
-	}
-	/*
+	//$query = "SELECT * FROM GROUP_MEMBERS";
+	//$result = mysqli_query($con, $query);
+	
 	while($row = mysqli_fetch_assoc($result))
 	{
 		echo "Got to this point";
 		echo $row["name"];
 		echo $row["description"];
 		echo $row["owner"];
+		echo <br>;
 	}
 */
 
