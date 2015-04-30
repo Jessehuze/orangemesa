@@ -118,7 +118,7 @@
             <li class="active"><a href="friends.php">Friends</a></li>
             <li><a href="events.php">Events</a></li>
             <li><a href="groups.php">Groups</a></li>
-            <li><button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">Settings</button></li>
+            <li><a data-toggle="modal" data-target="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
           <form class="navbar-form navbar-left">
