@@ -88,7 +88,14 @@
             <img class="usrimg" src="../images/user.png">
           </div>
           <hr>
-          <h2>User Name</h2>
+          <h2>
+            <?php
+              require("/var/www/config.php");
+              $result = mysqli_query($con, "SELECT fname, lname FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
+              $name = mysqli_fetch_array($result);
+              echo ($name["fname"]." ".$name["fname"]);
+            ?>
+          </h2>
           <h3>City</h3>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
