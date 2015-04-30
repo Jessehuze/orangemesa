@@ -6,6 +6,8 @@
 	$query = "SELECT G.name, G.description, G.owner FROM GROUP_MEMBERS M, GROUPS G WHERE memberid = '" .$_SESSION["username"]. "' AND M.GID = G.groupid"; 
 	$result = mysqli_query($con, $query);
 	
+	echo $query;
+	
 	while($row = mysqli_fetch_assoc($result))
 	{
 		echo "Got to this point";
