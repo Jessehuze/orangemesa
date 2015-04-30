@@ -96,7 +96,7 @@
               echo ($name["fname"]." ".$name["lname"]);
             ?>
           </h2>
-          <h3>Description:</h3>
+          <h3>Description</h3>
           <p>
             <?php
               require("/var/www/config.php");
