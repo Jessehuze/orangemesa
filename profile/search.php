@@ -108,7 +108,6 @@
                   <div class=\"col-xs-8\">
                     <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
                     <p>". $friend["description"] . "</p>
-                    
                   </div>
                 </div>";
               }
@@ -127,12 +126,11 @@
                 echo "<div class=\"row\">
                   <div class=\"col-xs-4\">
                     <img class=\"usrimg\" src=\"../images/user.png\"/>
-                    <button class=\"btn addbtn btn-default\" type=\"button\">Add</button>
+                    <button class=\"btn addbtn btn-default\" type=\"button\">Join</button>
                   </div>
                   <div class=\"col-xs-8\">
                     <h3>" . $group["name"] . " </h3>
                     <p>". $group["description"] . "</p>
-                    
                   </div>
                 </div>";
               }
@@ -140,7 +138,27 @@
           ?> 
         </div>
         <div class="col-md-4">
-        
+          <h1>Events</h1>
+          <hr>
+          <?php
+            $event_result = mysqli_query($con, "SELECT eventname, eventdate, description FROM GROUPS WHERE eventname LIKE '%".$_GET["query"]."%' ORDER BY eventname"); 
+            if ($event_result)
+            {
+              while ($event = mysqli_fetch_array($event_result)) 
+              {
+                echo "<div class=\"row\">
+                  <div class=\"col-xs-4\">
+                    <img class=\"usrimg\" src=\"../images/user.png\"/>
+                    <button class=\"btn addbtn btn-default\" type=\"button\">Going</button>
+                  </div>
+                  <div class=\"col-xs-8\">
+                    <h3>" . $event["eventname"] . " " . $friend["eventdate"] . "</h3>
+                    <p>". $event["description"] . "</p>
+                  </div>
+                </div>";
+              }
+            }
+          ?> 
         </div>
       </div>
     </div>
