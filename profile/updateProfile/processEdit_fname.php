@@ -4,9 +4,7 @@
   $update = mysqli_query($con, "UPDATE PEOPLE 
                                 SET fname = '".$_POST["fname"]."' 
                                 WHERE username = '".$_SESSION["username"]."'"); 
-  if (1)
-  {
-  	//header("Location: http://inceptisol.us.to:6670/profile/settings.php");
-    exit();
-  }
+  header("Location: http://inceptisol.us.to:6670/profile/settings.php");
+  exit();
+  
 ?>
