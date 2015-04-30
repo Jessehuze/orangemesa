@@ -85,21 +85,21 @@
        </div>
 
        <div class="editProfile_row">
-        <form action="processEdit_minit.php" method="POST">
+        <form action="updateProfile/processEdit_minit.php" method="POST">
         <input name="minit" type="text" class="edit__input minit" placeholder="Middle Initial" />
         <button name="update_minit" type="submit" class="edit__submit_secondary">Update Middle Initial</button>
         </form>
        </div>
 
        <div class="editProfile_row">
-        <form action="processEdit_lname.php" method="POST">
+        <form action="updateProfile/processEdit_lname.php" method="POST">
         <input name="lname" type="text" class="edit__input lname" placeholder="Last Name" />
         <button name="update_lname" type="submit" class="edit__submit_secondary">Update Last Name</button>
         </form>
        </div>
 
        <div class="editProfile_row">
-        <form action="processEdit_description.php" method="POST">
+        <form action="updateProfile/processEdit_description.php" method="POST">
         <input name="description" type="text" class="edit__input description" placeholder="Description" />
         <button name="update_description" type="submit" class="edit__submit_secondary">Update Description</button>
         </form>
