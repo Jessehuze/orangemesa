@@ -168,7 +168,7 @@
             ?>
           </p>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
 
           <div class="row placeholders">
@@ -321,6 +321,24 @@
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+        <div class:"col-md-2">
+          <div role="tabpanel">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#friends" aria-controls="friends" role="tab" data-toggle="tab">Friends</a></li>
+              <li role="presentation"><a href="#events" aria-controls="events" role="tab" data-toggle="tab">Events</a></li>
+              <li role="presentation"><a href="#groups" aria-controls="groups" role="tab" data-toggle="tab">Groups</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane fade in active" id="friends">...</div>
+              <div role="tabpanel" class="tab-pane fade" id="events">...</div>
+              <div role="tabpanel" class="tab-pane fade" id="groups">...</div>
+            </div>
+
           </div>
         </div>
       </div>
