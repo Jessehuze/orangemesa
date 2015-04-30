@@ -88,7 +88,7 @@
         </svg>
         <input name="groupDesc" type="text" class="createGroup__input groupDesc" placeholder="Description" required/>
        </div>
-	   <button name="CreateGroup" type="submit" class="createGroup__submit">Create Group</button>
+	   <button name="createGroup" type="submit" class="createGroup__submit">Create Group</button>
 	  </form> 
       </div>
      </div>
