@@ -36,18 +36,22 @@ input, button {
   border: none;
 }
 
-input{
+.edit__input{
   transition: background-color ease .5s;
+  border: none;
+}
+.edit__input:focus{
+  border: none;
+  background-color: rgba(255,255,255,.2);
 }
 
-input:hover{
+.edit__input:hover{
   background-color: rgba(255,255,255,.2);
 }
 
 .cont {
   position: relative;
   height: 100%;
-  background-image: url("../images/background.jpg");
   background-size: cover;
   overflow: auto;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -55,12 +59,6 @@ input:hover{
 }
 
 .demo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -40rem;
-  margin-top: -26.5rem;
-  width: 80rem;
   height: 53rem;
   overflow: hidden;
 }
@@ -256,22 +254,34 @@ input:hover{
 }
 .edit__input {
   display: inline-block;
-  width: 55rem;
+  width: 65%;
   height: 100%;
-  margin: 2rem 0 0;
-  padding-left: 1.5rem;
+  margin: 1rem 0 0;
+  padding: 1.5rem;
   font-size: 1.5rem;
   background: transparent;
-  color: #FDFCFD;
+  color: #FFF;
+}
+.edit__input::-webkit-input-placeholder {
+  color: #FFF;
+}
+.modal-body{
+  padding: 0% !important;
+  background: transparent !important;
+}
+.modal-header{
+  background-color: #222 !important;
+  color: #FA7B01;
+  border: none !important;
 }
 .signup_input:invalid {
   background-color: rgba(200,100,100,.4);
 }
 .edit__submit {
-  width: 20%;
+  width: 25%;
   float: right;
   height: 3rem;
-  margin: 1.5rem 1rem 2.2rem;
+  margin: 2.1rem 1rem 0rem;
   color: rgba(255, 255, 255, 0.8);
   background: #FA7B01;
   font-size: 1.5rem;
@@ -282,7 +292,7 @@ input:hover{
           transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
 }
 .edit__submit_secondary {
-  width: 20%;
+  width: 25%;
   float: right;
   height: 3rem;
   margin: -2.5rem 1rem 0rem;
