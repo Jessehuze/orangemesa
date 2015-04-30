@@ -14,7 +14,7 @@
 	//Debugging looking at table
 	$query = "SELECT * FROM GROUP_MEMBERS";
 	$result = mysqli_result($con, $query);
-	while($row = mysqli_fetch _assoc($result))
+	while($row = mysqli_fetch_assoc($result))
 	{
 		echo $row["name"];
 		echo "\n";
