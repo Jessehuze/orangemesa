@@ -136,7 +136,7 @@ jQuery('input[name="dob"]').bind('keyup',function(e){
 
 <?php
   if (isset($_GET["signin"]))
-    echo 'setTimeout(function() {$("#signup").click();}, 150);';
+    echo 'setTimeout(function() {$("#signup").click();}, 50);';
 ?>
 </script>
 
