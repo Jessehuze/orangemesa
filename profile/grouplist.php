@@ -23,6 +23,6 @@
 		echo $row["owner"];
 		echo "<br>";
 	}
-*/
+
 
 ?>
