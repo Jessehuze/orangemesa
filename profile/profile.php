@@ -96,7 +96,15 @@
               echo ($name["fname"]." ".$name["lname"]);
             ?>
           </h2>
-          <h3>City</h3>
+          <h3>Description:</h3>
+          <p>
+            <?php
+              require("/var/www/config.php");
+              $result = mysqli_query($con, "SELECT description FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
+              $desc = mysqli_fetch_array($result);
+              echo $desc["description"];
+            ?>
+          </p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header">Dashboard</h1>
