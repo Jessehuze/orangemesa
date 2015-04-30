@@ -11,7 +11,7 @@
 		echo $row["name"];
 		echo $row["description"];
 		echo $row["owner"];
-		echo;
+		echo
 	}
 
 
