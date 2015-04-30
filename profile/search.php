@@ -116,7 +116,28 @@
           ?> 
         </div>
         <div class="col-md-4">
-        
+          <h1>Groups</h1>
+          <hr>
+          <?php
+            $group_result = mysqli_query($con, "SELECT name, description FROM GROUPS WHERE name LIKE '%".$_GET["query"]."%' ORDER BY name"); 
+            if ($group_result)
+            {
+              while ($group = mysqli_fetch_array($group_result)) 
+              {
+                echo "<div class=\"row\">
+                  <div class=\"col-xs-4\">
+                    <img class=\"usrimg\" src=\"../images/user.png\"/>
+                    <button class=\"btn addbtn btn-default\" type=\"button\">Add</button>
+                  </div>
+                  <div class=\"col-xs-8\">
+                    <h3>" . $group["name"] . " </h3>
+                    <p>". $group["description"] . "</p>
+                    
+                  </div>
+                </div>";
+              }
+            }
+          ?> 
         </div>
         <div class="col-md-4">
         
