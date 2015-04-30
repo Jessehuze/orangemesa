@@ -1,8 +1,18 @@
 <?php
 	require("/var/www/config.php");
+	
 	session_start();
 	
-	$result = mysqli_query($con, "SELECT name, description FROM GROUPS WHERE 
-//We don't have any way of storing what user belongs to what group
+	$query = "SELECT G.name, G.description, G.owner FROM GROUP_MEMBERS M, GROUPS G WHERE memberid = '" .$_SESSION["username"]. "' AND M.GID = G.groupid"; 
+	$result = mysqli_query($con, $query);
+	
+	while($row = mysqli_fetch_assoc($result))
+	{
+		echo $row["name"];
+		echo $row["description"];
+		echo $row["owner"];
+		echo;
+	}
+
 
 ?>

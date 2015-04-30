@@ -27,7 +27,7 @@
     }
     if ($insert)
     {
-      $_SESSION["User"] = $_POST["username"];
+      $_SESSION["username"] = $_POST["username"];
       header("Location: http://inceptisol.us.to:6670/profile/profile.php");
       exit();
     }

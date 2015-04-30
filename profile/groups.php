@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../images/logo.png">
-	
+	 
 	<title>OrangeMesa</title>
 
     <!-- Bootstrap core CSS -->
@@ -95,9 +95,11 @@
 	 
 	 <div class="listGroups">
 		Groups you belong to:
-		
-		
-	 
+		<div class="listgroups2">
+		<?php
+			require("grouplist.php");
+		?>
+		</div>
 	 </div>
     </div>
    </div>

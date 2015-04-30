@@ -5,17 +5,19 @@
 	$result = mysqli_query($con, $query);
 	if(mysqli_num_rows($result) == 0)
 	{
-		echo "in if statement";
 		$query = "INSERT INTO GROUPS (name, description, owner) VALUES ('".$_POST["groupName"]."', '".$_POST["groupDesc"]."', '".$_SESSION["username"]."')";
 		$insert = mysqli_query($con, $query);
-		echo $query;
+		
+		//Insert in owner as member of group
+		$query = "INSERT INTO GROUP_MEMBERS VALUES(SELECT groupid FROM GROUPS WHERE name = '".$_POST["groupname"]."', SELECT owner FROM GROUPS WHERE name = '".$_POST["groupname"]."')";
+		$insert = mysqli_query($con, $query);
 	}
 	else
 	{
-		//header("Location: http://inceptisol.us.to:6670/profile/groups.php?error=groupnametaken");
+		header("Location: http://inceptisol.us.to:6670/profile/groups.php?error=groupnametaken");
 		exit();
 	}
-	//header("Location: http://inceptisol.us.to:6670/profile/groups.php");
+	header("Location: http://inceptisol.us.to:6670/profile/groups.php");
 	exit();
 
 ?>

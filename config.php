@@ -1,3 +1,3 @@
 <?php
-  $con = mysqli_connect("localhost", "root", "password", "ORANGEMESA");
+  $con = mysqli_connect("localhost", "root", "password", "orangemesa");
 ?>
