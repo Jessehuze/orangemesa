@@ -4,7 +4,7 @@
   $update = mysqli_query($con, "UPDATE PEOPLE 
                                 SET lname = '".$_POST["lname"]."' 
                                 WHERE username = '".$_SESSION["username"]."'"); 
-  header($_POST["refer"]);
+  header("Location: ".$_POST["refer"]);
   exit();
   
 ?>
