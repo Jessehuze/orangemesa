@@ -323,7 +323,7 @@
             </table>
           </div>
         </div>
-        <div class:"col-md-2">
+        <div class="col-md-2 tabinfo">
           <div role="tabpanel">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
@@ -334,9 +334,15 @@
 
             <!-- Tab panes -->
             <div class="tab-content">
-              <div role="tabpanel" class="tab-pane fade in active" id="friends">...</div>
-              <div role="tabpanel" class="tab-pane fade" id="events">...</div>
-              <div role="tabpanel" class="tab-pane fade" id="groups">...</div>
+              <div role="tabpanel" class="tab-pane fade in active" id="friends">
+              
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="events">
+              
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="groups">
+              
+              </div>
             </div>
 
           </div>

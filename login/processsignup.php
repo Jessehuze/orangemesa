@@ -3,20 +3,25 @@
   session_start();
   if ($_POST["usr_pass"] == $_POST["usr_pass_check"]) //Passwords match
   {
-    $result = mysqli_query($con, "SELECT username FROM PEOPLE WHERE username = '" .$_POST["username"]. "'");
+    $username = mysqli_real_escape_string($con, $_POST["username"]);
+    $usr_pass = mysqli_real_escape_string($con, $_POST["usr_pass"]);
+    $fname = mysqli_real_escape_string($con, $_POST["fname"]);
+    $minit = mysqli_real_escape_string($con, $_POST["minit"]);
+    $lname = mysqli_real_escape_string($con, $_POST["lname"]);
+    $result = mysqli_query($con, "SELECT username FROM PEOPLE WHERE username = '" .$username. "'");
     if (mysqli_num_rows($result) == 0)
     {
       $date = DateTime::createFromFormat('m-d-Y', $_POST["dob"]);
       $date = $date->format('Y-m-d');
-      if ($_POST["minit"] == "") { //NO MIDDLE NAME GIVEN
+      if ($minit == "") { //NO MIDDLE NAME GIVEN
       
         $insert = mysqli_query($con, "INSERT INTO PEOPLE (username, usr_pass, fname, lname, dob)
-                                      VALUES ('".$_POST["username"]."', '".$_POST["usr_pass"]."', 
-                                              '".$_POST["fname"]."', '".$_POST["lname"]."', '".$date."')");
+                                      VALUES ('".$username."', '".$usr_pass."', 
+                                              '".$fname."', '".$lname."', '".$date."')");
       } else { //MIDDLE NAME GIVEN
         $insert = mysqli_query($con, "INSERT INTO PEOPLE (username, usr_pass, fname, minit, lname, dob)
-                        VALUES ('".$_POST["username"]."', '".$_POST["usr_pass"]."', '".$_POST["fname"]."',
-                                            '".$_POST["minit"]."', '".$_POST["lname"]."' , '".$date."')");
+                        VALUES ('".$username."', '".$usr_pass."', '".$fname."',
+                                            '".$minit."', '".$lname."' , '".$date."')");
 
       }
     }
@@ -27,7 +32,7 @@
     }
     if ($insert)
     {
-      $_SESSION["username"] = $_POST["username"];
+      $_SESSION["username"] = $username;
       header("Location: http://inceptisol.us.to:6670/profile/profile.php");
       exit();
     }

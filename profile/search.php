@@ -95,17 +95,17 @@
           <h1>People</h1>
           <hr>
           <?php
-            $friends_result = mysqli_query($con, "SELECT fname, lname, description FROM PEOPLE WHERE fname LIKE '%".$_GET["query"]."%' OR lname LIKE '%".$_GET["query"]."%' ORDER BY fname, lname"); 
+            $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE fname LIKE '%".$_GET["query"]."%' OR lname LIKE '%".$_GET["query"]."%' ORDER BY fname, lname"); 
             if ($friends_result)
             {
               while ($friend = mysqli_fetch_array($friends_result)) 
               {
-                echo "<div class=\"row\">
-                  <div class=\"col-xs-4\">
-                    <img class=\"usrimg\" src=\"../images/user.png\"/>
-                    <button class=\"btn addbtn btn-default\" type=\"button\">Add</button>
+                echo "<div class='row'>
+                  <div href='profile.php?user=" . $friend["username"] . " class='col-xs-4'>
+                    <img class='usrimg' src='../images/user.png'/>
+                    <button class='btn addbtn btn-default' type='button'>Add</button>
                   </div>
-                  <div class=\"col-xs-8\">
+                  <div class='col-xs-8'>
                     <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
                     <p>". $friend["description"] . "</p>
                   </div>
