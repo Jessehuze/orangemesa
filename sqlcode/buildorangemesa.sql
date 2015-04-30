@@ -1,6 +1,6 @@
 -- buildorangemesa.sql - Building OrangeMesa
 
-USE ORANGEMESA;
+USE orangemesa;
 
 CREATE TABLE IF NOT EXISTS PEOPLE (
     username VARCHAR(15),
@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS PEOPLE (
     lname VARCHAR(15) NOT NULL,
     description VARCHAR(144),
     dob DATE NOT NULL,
-    ppid VARCHAR(15),
+    ppid INT(15),
     PRIMARY KEY (username)
 );
 
@@ -24,11 +24,11 @@ CREATE TABLE IF NOT EXISTS FRIENDS (
 );
 
 CREATE TABLE IF NOT EXISTS PHOTOS (
-    photoid VARCHAR(15),
+    photoid INT(15) AUTO_INCREMENT,
     owner VARCHAR(15) REFERENCES PEOPLE(username),
     caption VARCHAR(144),
     uploaddate DATE NOT NULL,
-  	photoURL VARCHAR(2083),
+  	photourl VARCHAR(2083),
     PRIMARY KEY (photoid, owner)
 );
 
@@ -37,17 +37,23 @@ ADD FOREIGN KEY (ppid)
 REFERENCES PHOTOS(photoid);
 
 CREATE TABLE IF NOT EXISTS GROUPS (
-    groupid VARCHAR(15),
+    groupid INT(15) AUTO_INCREMENT,
     name VARCHAR(15) NOT NULL,
     ocstatus CHAR(1) NOT NULL CHECK(ocstatus = 'o' OR ocstatus = 'c'),
     description VARCHAR(144),
     owner VARCHAR(15) REFERENCES PEOPLE(username),
-    gpid VARCHAR(15) REFERENCES PHOTOS(photoid),
+    gpid INT(15) REFERENCES PHOTOS(photoid),
     PRIMARY KEY (groupid)
 );
 
+CREATE TABLE IF NOT EXISTS GROUP_MEMBERS (
+  	gid INT(15) REFERENCES GROUPS(groupid),
+  	memberid VARCHAR(15) REFERENCES PEOPLE(username),
+  	PRIMARY KEY (gid, memberid)
+);
+
 CREATE TABLE IF NOT EXISTS PAGES (
-    pageid VARCHAR(15),
+    pageid INT(15) AUTO_INCREMENT,
     pagename VARCHAR(15) NOT NULL UNIQUE,
     description VARCHAR(144),
     creation_date DATE NOT NULL,
@@ -56,7 +62,7 @@ CREATE TABLE IF NOT EXISTS PAGES (
 );
 
 CREATE TABLE IF NOT EXISTS EVENTS (
-    eventid VARCHAR(15),
+    eventid INT(15) AUTO_INCREMENT,
     eventname VARCHAR(15) NOT NULL,
     description VARCHAR(144),
     eventdate DATE NOT NULL,
@@ -65,78 +71,78 @@ CREATE TABLE IF NOT EXISTS EVENTS (
 );
 
 CREATE TABLE IF NOT EXISTS PAGE_FOLLOWERS (
-  	PID INT REFERENCES PAGES(pageid),
-  	FollowerID VARCHAR(15) REFERENCES PEOPLE(username),
-  	PRIMARY KEY (PID, FollowerID)
+  	pid INT(15) REFERENCES PAGES(pageid),
+  	followerid VARCHAR(15) REFERENCES PEOPLE(username),
+  	PRIMARY KEY (pid, followerid)
 );
 
 CREATE TABLE IF NOT EXISTS POST_PEOPLE2PAGE (
-  postid INT,
-  reciever VARCHAR(15) REFERENCES PAGES(pageid),
+  postid INT(15) AUTO_INCREMENT,
+  reciever INT(15) REFERENCES PAGES(pageid),
   sender VARCHAR(15) REFERENCES PEOPLE(username),
   message VARCHAR(144),
   PRIMARY KEY (postid, reciever, sender)
 );
 
 CREATE TABLE IF NOT EXISTS POST_PAGE2PEOPLE (
-  postid INT,
+  postid INT(15) AUTO_INCREMENT,
   reciever VARCHAR(15) REFERENCES PEOPLE(username),
-  sender VARCHAR(15) REFERENCES PAGES(pageid),
+  sender INT(15) REFERENCES PAGES(pageid),
   message VARCHAR(144),
   PRIMARY KEY (postid, reciever, sender)
 );
   
 CREATE TABLE IF NOT EXISTS POST_PEOPLE2EVENT (
-  postid INT,
-  reciever VARCHAR(15) REFERENCES EVENTS(eventid),
+  postid INT(15) AUTO_INCREMENT,
+  reciever INT(15) REFERENCES EVENTS(eventid),
   sender VARCHAR(15) REFERENCES PEOPLE(username),
   message VARCHAR(144),
   PRIMARY KEY (postid, reciever, sender)
 );
 
 CREATE TABLE IF NOT EXISTS POST_PEOPLE2GROUP (
-  postid INT,
-  reciever VARCHAR(15) REFERENCES GROUPS(GroupID),
+  postid INT(15) AUTO_INCREMENT,
+  reciever VARCHAR(15) REFERENCES GROUPS(groupid),
   sender VARCHAR(15) REFERENCES PEOPLE(username),
   message VARCHAR(144),
   PRIMARY KEY (postid, reciever, sender)
   );
 
 CREATE TABLE IF NOT EXISTS EVENT_INVITES(
-	EVENT VARCHAR(15),
-	INVITES VARCHAR(15),
-	STATUS CHAR(1) CHECK(STATUS = 'g' OR STATUS = 'n' OR STATUS = 'u'),
-	PRIMARY KEY (EVENT,INVITES)
+	eventid INT(15) REFERENCES EVENT(eventid),
+	invitee VARCHAR(15),
+	status CHAR(1) CHECK(status = 'g' OR status = 'n' OR status = 'u'),
+	PRIMARY KEY (eventid,invitee)
 );
 
 CREATE TABLE IF NOT EXISTS POST_PAGE2PAGE (
-  	postid INT,
- 	reciever VARCHAR(15) REFERENCES PAGES(pageID),
-  	sender VARCHAR(15) REFERENCES PAGES(pageID),
+  	postid INT(15) AUTO_INCREMENT,
+    reciever INT(15) REFERENCES PAGES(pageID),
+  	sender INT(15) REFERENCES PAGES(pageID),
   	message VARCHAR(144),
   	PRIMARY KEY (postid, sender, reciever)
   );
 
 CREATE TABLE IF NOT EXISTS POST_PEOPLE2PEOPLE(
-	POSTID INT,
-	RECIEVER VARCHAR(15) REFERENCES PEOPLE(USERNAME),
-  	SENDER VARCHAR(15) REFERENCES PEOPLE(USERNAME),
-  	MESSAGE VARCHAR(144),
-	PRIMARY KEY (POSTID,RECIEVER,SENDER)
+	postid INT(15) AUTO_INCREMENT,
+	reciever VARCHAR(15) REFERENCES PEOPLE(username),
+ 	sender VARCHAR(15) REFERENCES PEOPLE(username),
+  message VARCHAR(144),
+	PRIMARY KEY (postid,reciever,sender)
 );
 
 CREATE TABLE IF NOT EXISTS POST_PAGE2GROUP (
-  	postid INT,
-  	reciever VARCHAR(15) REFERENCES GROUPS(GroupID),
-  	sender VARCHAR(15) REFERENCES PAGES(pageid),
+  	postid INT(15) AUTO_INCREMENT,
+  	reciever VARCHAR(15) REFERENCES GROUPS(groupid),
+  	sender INT(15) REFERENCES PAGES(pageid),
   	message VARCHAR(144),
   	PRIMARY KEY (postid, reciever, sender)
 );
 
 CREATE TABLE IF NOT EXISTS POST_PAGE2EVENT(
-	POSTID INT,
-	RECIEVER VARCHAR(15) REFERENCES PAGE(PAGEID),
-	SENDER VARCHAR(15) REFERENCES EVENT(EVENTID),
-	MESSAGE VARCHAR(144),
-	PRIMARY KEY (POSTID,RECIEVER,SENDER)
+	postid INT(15) AUTO_INCREMENT,
+	reciever INT(15) REFERENCES PAGE(pageid),
+	sender INT(15) REFERENCES EVENT(eventid),
+	message VARCHAR(144),
+	PRIMARY KEY (postid,reciever,sender)
 );
