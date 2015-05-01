@@ -154,11 +154,11 @@
           <h2>
             <?php
               require("/var/config.php");
-              if (isset($_GET["user"])
+              if (isset($_GET["user"]))
                 $user=$_GET["user"];
               else
                 $user=$_SESSION["username"];
-              $result = mysqli_query($con, "SELECT fname, lname FROM PEOPLE WHERE username = '" .$_user. "'");
+              $result = mysqli_query($con, "SELECT fname, lname FROM PEOPLE WHERE username = '" .$user. "'");
               $name = mysqli_fetch_array($result);
               echo ($name["fname"]." ".$name["lname"]);
             ?>
@@ -167,11 +167,11 @@
           <p>
             <?php
               require("/var/config.php");
-              if (isset($_GET["user"])
+              if (isset($_GET["user"]))
                 $user=$_GET["user"];
               else
                 $user=$_SESSION["username"];
-              $result = mysqli_query($con, "SELECT description FROM PEOPLE WHERE username = '" .$_user. "'");
+              $result = mysqli_query($con, "SELECT description FROM PEOPLE WHERE username = '" .$user. "'");
               $desc = mysqli_fetch_array($result);
               echo $desc["description"];
             ?>
