@@ -291,9 +291,9 @@
             ?>
             >
             <?php 
-              if (isset($_GET["user"])
+              if (isset($_GET["user"]))
               {
-                if ($_GET["user"] != $_SESSION["username"] {}
+                if ($_GET["user"] != $_SESSION["username"]) {}
                 else
                 {
                   echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
