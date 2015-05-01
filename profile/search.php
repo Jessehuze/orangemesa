@@ -36,6 +36,7 @@
       overflow-y: scroll;
       overflow-x: hidden; 
       word-wrap: break-word;
+      padding-right: 15px
     }
   </style>
 
