@@ -137,8 +137,10 @@
                 echo "<div class=\"row\">
                   <div class=\"col-xs-4\">
                     <img class=\"usrimg\" src=\"../images/user.png\"/>
-                    <button class=\"btn addbtn btn-default\" type=\"button\">Join</button>
-                  </div>
+					<form action='joinGroup.php?group=" .$group["groupid"]. "' method = 'get'>
+					  <button class=\"btn addbtn btn-default\" type=\"button\">Join</button>
+					</form>
+				  </div>
                   <div class=\"col-xs-8\">
                     <h3>" . $group["name"] . " </h3>
                     <p>". $group["description"] . "</p>
