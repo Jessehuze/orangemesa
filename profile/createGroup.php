@@ -3,7 +3,6 @@
 	session_start();
   $groupName = mysqli_real_escape_string($con, $_POST["groupName"]);
   $groupDesc = mysqli_real_escape_string($con, $_POST["groupDesc"]);
-  $groupid = mysqli_real_escape_string($con, $_POST["groupid"]);
 	$query = "SELECT name FROM GROUPS WHERE name = '" .$groupName. "'";
 	$result = mysqli_query($con, $query);
 	if(mysqli_num_rows($result) == 0)
@@ -13,10 +12,10 @@
 		$insert = mysqli_query($con, $query);
 		
 		$query = mysqli_query($con, "SELECT groupid, owner FROM GROUPS WHERE name = '".$groupName."'");
-		$row1 =mysqli_fetch_array($query);
+		$row1 = mysqli_fetch_array($query);
 		
 		//Insert owner as member of group
-		$query = "INSERT INTO GROUP_MEMBERS (GID, memberid) VALUES('".$groupid."','".$_SESSION["username"]."')";
+		$query = "INSERT INTO GROUP_MEMBERS (GID, memberid) VALUES('".$row1."','".$_SESSION["username"]."')";
 		$insert = mysqli_query($con, $query);
 	}
 	else
