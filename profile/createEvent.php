@@ -4,7 +4,7 @@
 	
 	$eventName = mysqli_real_escape_string($con, $_POST["eventName"]);
 	$eventDate = mysqli_real_escape_string($con, $_POST["eventDate"]);
-	$eventDecr = mysqli_real_escape_string($con, $POST_["eventDesc"]);
+	$eventDecr = mysqli_real_escape_string($con, $_POST_["eventDesc"]);
 	
 	$query = "SELECT eventname FROM EVENTS WHERE eventname = '" .$eventName. "'";
 	$result = mysqli_query($con, $query);
