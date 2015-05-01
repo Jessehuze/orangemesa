@@ -1,5 +1,5 @@
 <?php
-	require("/var/www/config.php");
+	require("/var/config.php");
 	session_start();
 	
 	$eventName = mysqli_real_escape_string($con, $_POST["eventName"]);
