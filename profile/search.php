@@ -32,7 +32,7 @@
 
   <style>
     .search{
-      max-height: calc(100vh - 100px);
+      max-height: calc(100vh - 175px);
       overflow-y: scroll;
       overflow-x: hidden; 
     }
