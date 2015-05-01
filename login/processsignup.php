@@ -5,6 +5,7 @@
   {
     $username = mysqli_real_escape_string($con, $_POST["username"]);
     $usr_pass = mysqli_real_escape_string($con, $_POST["usr_pass"]);
+    $hash = password_hash($usr_pass, PASSWORD_DEFAULT);
     $fname = mysqli_real_escape_string($con, $_POST["fname"]);
     $minit = mysqli_real_escape_string($con, $_POST["minit"]);
     $lname = mysqli_real_escape_string($con, $_POST["lname"]);
