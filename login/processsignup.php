@@ -1,5 +1,5 @@
 <?php
-  require("/var/www/config.php");
+  require("/var/config.php");
   session_start();
   if ($_POST["usr_pass"] == $_POST["usr_pass_check"]) //Passwords match
   {
