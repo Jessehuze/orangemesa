@@ -1,7 +1,7 @@
 <?php
 require("/var/config.php");
 session_start();
-$maxresult = mysqli_query($con, "SELECT photoid FROM PHOTOS WHERE owner = '" .$_SESSION["username"]. "'");
+$maxresult = mysqli_query($con, "SELECT photoid FROM PHOTOS WHERE owner = '" .$_SESSION["username"]. "' ORDER BY photoid DESC");
 if (mysqli_num_rows($maxresult) == 0)
   $max = 1;
 else
@@ -40,7 +40,7 @@ if ($_FILES["fileToUpload"]["size"] > 5000000) {
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
+    $uploadOk = 0;
 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
