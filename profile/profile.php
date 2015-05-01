@@ -59,24 +59,7 @@
                   </div>
 
                   <div class="editProfile_row">
-                    <?php
-                    require("/var/config.php");
-                    if (isset($_GET["user"]))
-                      $user=$_GET["user"];
-                    else
-                      $user=$_SESSION["username"];
-                    $result = mysqli_query($con, "SELECT photourl 
-                                                  FROM PHOTOS 
-                                                  WHERE owner = '" .$user. "' AND photoid IN (SELECT ppid 
-                                                                                              FROM PEOPLE
-                                                                                              WHERE username ='" .$user. "')");
-                    $photo = mysqli_fetch_array($result);
-                    if ($photo["photourl"] != "")
-                      echo "..".$photo["photourl"];
-                    else
-                      echo "../images/user.png";
-                    ?>
-                    >
+                    
                     <?php 
                       if (isset($_GET["user"]))
                       {
