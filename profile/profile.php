@@ -418,7 +418,7 @@
                 </h4>
               </div>
               <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div class="panel-body search">
+                <div class="panel-body infobar">
                   <?php
                     $friends_result = mysqli_query($con, "SELECT username, fname, lname FROM PEOPLE WHERE username != '".$_SESSION["username"]."' ORDER BY fname, lname"); 
                     if ($friends_result)
