@@ -2,8 +2,8 @@
 	require("/var/config.php");
 	session_start();
 	
-	$friend = $_GET["user"];
-	$friender = $_SESSION["username"];
+	$friend = mysqli_real_escape_string($con, $_POST["user"]);
+	$friender = mysqli_real_escape_string($con, $_SESSION["username"]);
 	
 	$query = "INSERT INTO FRIENDS (userid, friendid, status) VALUES ('".$friender."', '".$friend."', a)";
 	echo $query;

@@ -178,8 +178,8 @@
                     <a href='profile.php?user=" . $friend["username"] . "'>
                       <img class='usrimg' src='../images/user.png'/>
                      </a>
-                    <form action='addFriend.php?user=" . $friend["username"] . "' method='POST'>
-                      <button class='btn addbtn btn-default' type='submit'>Add</button>
+                    <form action='addFriend.php' method='POST'>
+                      <button class='btn addbtn btn-default' value='".$friend["username"]."' type='submit'>Add</button>
                     </form>
                   </div>
                   <div class='col-xs-8'>
