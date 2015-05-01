@@ -17,11 +17,11 @@
       if ($minit == "") { //NO MIDDLE NAME GIVEN
       
         $insert = mysqli_query($con, "INSERT INTO PEOPLE (username, usr_pass, fname, lname, dob)
-                                      VALUES ('".$username."', '".$usr_pass."', 
+                                      VALUES ('".$username."', '".$hash."', 
                                               '".$fname."', '".$lname."', '".$date."')");
       } else { //MIDDLE NAME GIVEN
         $insert = mysqli_query($con, "INSERT INTO PEOPLE (username, usr_pass, fname, minit, lname, dob)
-                        VALUES ('".$username."', '".$usr_pass."', '".$fname."',
+                        VALUES ('".$username."', '".$hash."', '".$fname."',
                                             '".$minit."', '".$lname."' , '".$date."')");
 
       }
