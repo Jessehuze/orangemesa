@@ -271,7 +271,7 @@
     </style>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar userinfo">
+        <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
           <div>
             <img class="usrimg" src="../images/user.png">
             <form action="../upload.php" method="post" enctype="multipart/form-data">
