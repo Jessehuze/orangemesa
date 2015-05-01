@@ -103,12 +103,16 @@
               while ($friend = mysqli_fetch_array($friends_result)) 
               {
                 echo "<div class='row'>
-                  <div href='profile.php?user=" . $friend["username"] . "' class='col-xs-4'>
-                    <img class='usrimg' src='../images/user.png'/>
+                  <div class='col-xs-4'>
+                    <a href='profile.php?user=" . $friend["username"] . "'>
+                      <img class='usrimg' src='../images/user.png'/>
+                     </a>
                     <button class='btn addbtn btn-default' type='button'>Add</button>
                   </div>
                   <div class='col-xs-8'>
-                    <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
+                    <a href='profile.php?user=" . $friend["username"] . "'>
+                      <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
+                    </a>
                     <p>". $friend["description"] . "</p>
                   </div>
                 </div>";
