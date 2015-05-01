@@ -103,7 +103,7 @@
               while ($friend = mysqli_fetch_array($friends_result)) 
               {
                 echo "<div class='row'>
-                  <div href='profile.php?user=" . $friend["username"] . " class='col-xs-4'>
+                  <div href='profile.php?user=" . $friend["username"] . "' class='col-xs-4'>
                     <img class='usrimg' src='../images/user.png'/>
                     <button class='btn addbtn btn-default' type='button'>Add</button>
                   </div>
