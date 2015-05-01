@@ -35,6 +35,7 @@
       max-height: calc(100vh - 175px);
       overflow-y: scroll;
       overflow-x: hidden; 
+      word-wrap: break-word;
     }
   </style>
 
