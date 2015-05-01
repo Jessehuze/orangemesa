@@ -34,6 +34,16 @@
     require("../logincheck.php");
   ?>
   
+  <style>
+    .infobar{
+      max-height: calc(100vh - 175px);
+      overflow-y: scroll;
+      overflow-x: hidden; 
+      word-wrap: break-word;
+      padding-right: 15px
+    }
+  </style>
+  
   <body>
 
   <!-- firsttimelogin Modal -->
@@ -408,7 +418,7 @@
                 </h4>
               </div>
               <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div class="panel-body">
+                <div class="panel-body search">
                   <?php
                     $friends_result = mysqli_query($con, "SELECT username, fname, lname FROM PEOPLE WHERE username != '".$_SESSION["username"]."' ORDER BY fname, lname"); 
                     if ($friends_result)
