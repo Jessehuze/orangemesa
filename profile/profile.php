@@ -189,7 +189,7 @@
                 echo $name["fname"];
             ?>
             </a></li>
-            <li><a data-toggle="modal" data-target="#myModal" href="#myModal3">Groups</a></li>
+            <li><a data-toggle="modal" data-target="#myModal3" href="#myModal3">Groups</a></li>
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
