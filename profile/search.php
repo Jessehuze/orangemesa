@@ -29,12 +29,6 @@
   <?php
     require("../logincheck.php");
   ?>
-  
-  <style>
-    body{
-      overflow: visible;
-    }
-  </style>
 
 
   <body>
