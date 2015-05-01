@@ -409,7 +409,31 @@
               </div>
               <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  <?php
+                    $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE (fname LIKE '%""%' OR lname LIKE '%""%') AND username != '".$_SESSION["username"]."' ORDER BY fname, lname"); 
+                    if ($friends_result)
+                    {
+                      while ($friend = mysqli_fetch_array($friends_result)) 
+                      {
+                        echo "<div class='row'>
+                          <div class='col-xs-4'>
+                            <a href='profile.php?user=" . $friend["username"] . "'>
+                              <img class='usrimg' src='../images/user.png'/>
+                             </a>
+                            <form action='addFriend.php' method='POST'>
+                              <button class='btn addbtn btn-default' value='".$friend["username"]."' type='submit'>Add</button>
+                            </form>
+                          </div>
+                          <div class='col-xs-8'>
+                            <a href='profile.php?user=" . $friend["username"] . "'>
+                              <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
+                            </a>
+                            <p>". $friend["description"] . "</p>
+                          </div>
+                        </div>";
+                      }
+                    }
+                  ?> 
                 </div>
               </div>
             </div>
@@ -444,7 +468,7 @@
           </div>
           <style>
             .panel-group {
-                height: 100% !important;
+                height: auto !important;
              }
           </style>
         </div>
