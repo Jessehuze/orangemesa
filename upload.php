@@ -1,6 +1,6 @@
 <?php
 require("/var/config.php");
-$maxresult = mysqli_query($con, "SELECT photoid FROM PHOTOS WHERE owner = '" $_SESSION["username"] "'");
+$maxresult = mysqli_query($con, "SELECT photoid FROM PHOTOS WHERE owner = '" .$_SESSION["username"]. "'");
 if (mysqli_num_rows($maxresult) == 0)
   $max = 1;
 else
