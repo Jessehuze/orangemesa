@@ -390,7 +390,10 @@
             </div>
           </div>
 
-          
+          <h2 class="sub-header">Section title</h2>
+          <div class="table-responsive">
+            
+        </div>
         <div class="col-md-2 tabinfo">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
