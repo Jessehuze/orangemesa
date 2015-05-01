@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href="settings.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,8 +29,75 @@
   <?php
     require("../logincheck.php");
   ?>
-  
+
+  <style>
+    .search{
+      max-height: calc(100vh - 175px);
+      overflow-y: scroll;
+      overflow-x: hidden; 
+      word-wrap: break-word;
+      padding-right: 15px
+    }
+  </style>
+
+
   <body>
+
+    <!-- Settings Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Settings</h4>
+          </div>
+          <div class="modal-body">
+           <div class="cont">
+           <div class = "demo">
+            <div class="editProfile">
+              <div class="editProfile_form">
+
+               <div class="editProfile_row">
+                <form action="updateProfile/processEdit_fname.php" method="POST">
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                <input name="fname" type="text" class="edit__input fname" placeholder="First Name" />
+                <button name="update_fname" type="submit" class="edit__submit">Update First Name</button>
+                </form>
+               </div>
+
+               <div class="editProfile_row">
+                <form action="updateProfile/processEdit_minit.php" method="POST">
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                <input name="minit" type="text" class="edit__input minit" placeholder="Middle Initial" />
+                <button name="update_minit" type="submit" class="edit__submit">Update Middle Initial</button>
+                </form>
+               </div>
+
+               <div class="editProfile_row">
+                <form action="updateProfile/processEdit_lname.php" method="POST">
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                <input name="lname" type="text" class="edit__input lname" placeholder="Last Name" />
+                <button name="update_lname" type="submit" class="edit__submit">Update Last Name</button>
+                </form>
+               </div>
+
+               <div class="editProfile_row">
+                <form action="updateProfile/processEdit_description.php" method="POST">
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                <textarea name="description" class="edit__input description" placeholder="Description" rows="6"></textarea>
+                <button name="update_description" type="submit" class="edit__submit">Update Description</button>
+                </form>
+               </div>
+
+              </div>
+             </div>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -57,10 +125,8 @@
                 echo $name["fname"];
             ?>
             </a></li>
-            <li><a href="friends.php">Friends</a></li>
-            <li><a href="events.php">Events</a></li>
             <li><a href="groups.php">Groups</a></li>
-            <li><a href="settings.php">Settings</a></li>
+            <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
           <form class="navbar-form navbar-left" action="search.php" method="GET">
@@ -99,9 +165,10 @@
         <div class="col-md-4">
           <h1>People</h1>
           <hr>
+          <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
-            $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE fname LIKE '%".$query."%' OR lname LIKE '%".$query."%' ORDER BY fname, lname"); 
+            $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE fname LIKE '%".$query."%' OR lname LIKE '%".$query."%' AND username != ".$_SESSION["username"]." ORDER BY fname, lname"); 
             if ($friends_result)
             {
               while ($friend = mysqli_fetch_array($friends_result)) 
@@ -111,7 +178,7 @@
                     <a href='profile.php?user=" . $friend["username"] . "'>
                       <img class='usrimg' src='../images/user.png'/>
                      </a>
-                    <form action='addfriend.php?user=" . $friend["username"] . "' method='GET'>
+                    <form action='addFriend.php?user=" . $friend["username"] . "' method='POST'>
                       <button class='btn addbtn btn-default' type='submit'>Add</button>
                     </form>
                   </div>
@@ -125,10 +192,12 @@
               }
             }
           ?> 
+          </div>
         </div>
         <div class="col-md-4">
           <h1>Groups</h1>
           <hr>
+          <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
             $group_result = mysqli_query($con, "SELECT name, description FROM GROUPS WHERE name LIKE '%".$query."%' ORDER BY name"); 
@@ -139,8 +208,10 @@
                 echo "<div class=\"row\">
                   <div class=\"col-xs-4\">
                     <img class=\"usrimg\" src=\"../images/user.png\"/>
-                    <button class=\"btn addbtn btn-default\" type=\"button\">Join</button>
-                  </div>
+					<form action='joinGroup.php?group= '".$group["name"]."' method = 'GET'>
+					  <button class=\"btn addbtn btn-default\" type='submit'>Join</button>
+					</form>
+				  </div>
                   <div class=\"col-xs-8\">
                     <h3>" . $group["name"] . " </h3>
                     <p>". $group["description"] . "</p>
@@ -149,10 +220,12 @@
               }
             }
           ?> 
+          </div>
         </div>
         <div class="col-md-4">
           <h1>Events</h1>
           <hr>
+          <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
             $event_result = mysqli_query($con, "SELECT eventname, eventdate, description FROM GROUPS WHERE eventname LIKE '%".$query."%' ORDER BY eventname"); 
@@ -173,6 +246,7 @@
               }
             }
           ?> 
+          </div>
         </div>
       </div>
     </div>

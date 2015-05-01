@@ -113,8 +113,6 @@
                 echo $name["fname"];
             ?>
             </a></li>
-            <li><a href="friends.php">Friends</a></li>
-            <li><a href="events.php">Events</a></li>
             <li><a href="groups.php">Groups</a></li>
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
@@ -160,7 +158,7 @@
                 $user=$_SESSION["username"];
               $result = mysqli_query($con, "SELECT fname, minit, lname FROM PEOPLE WHERE username = '" .$user. "'");
               $name = mysqli_fetch_array($result);
-              if($name["minit"] != "")
+              if($name["minit"] == "")
                 echo ($name["fname"]." ".$name["lname"]);
               else
                 echo ($name["fname"]." ".$name["minit"].". ".$name["lname"]);

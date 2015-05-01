@@ -116,8 +116,6 @@
                 echo $name["fname"];
             ?>
             </a></li>
-            <li><a href="friends.php">Friends</a></li>
-            <li><a href="events.php">Events</a></li>
             <li class="active"><a href="groups.php">Groups</a></li>
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
