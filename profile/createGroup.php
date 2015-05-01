@@ -1,5 +1,5 @@
 <?php
-	require("/var/www/config.php");
+	require("/var/config.php");
 	session_start();
   $groupName = mysqli_real_escape_string($con, $_POST["name"]);
   $groupDesc = mysqli_real_escape_string($con, $_POST["description"]);
