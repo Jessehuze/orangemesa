@@ -35,7 +35,7 @@
   
   <body>
 
-  <li><a name="firsttimemodal" data-toggle="modal" data-target="#myModal2" href="#myModal"></a></li>
+  <li><a name="firsttimemodal" data-toggle="modal" data-target="#myModal2" href="#myModal2"></a></li>
   <script>
   <?php
   //if ($_SESSION["firsttimelogin"] == 1) 
