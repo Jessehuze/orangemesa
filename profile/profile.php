@@ -36,8 +36,6 @@
   
   <body>
 
-  <li><a name="firsttimemodal" data-toggle="modal" data-target="#myModal2" href="#myModal2"></a></li>
-
   <!-- firsttimelogin Modal -->
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -73,7 +71,7 @@
   //if ($_SESSION["firsttimelogin"] == 1) 
   if(1==1)
   {
-    echo 'setTimeout(function() {$("#firsttimemodal").modal("show");}, 100);';
+    echo 'setTimeout(function() {$("#myModal2").modal("show");}, 100);';
   }
   ?>
   </script>
