@@ -185,6 +185,11 @@
         <div class="col-sm-3 col-md-2 sidebar userinfo">
           <div>
             <img class="usrimg" src="../images/user.png">
+            <form action="../upload.php" method="post" enctype="multipart/form-data">
+              Select image to upload:
+              <input type="file" name="fileToUpload" id="fileToUpload">
+              <input type="submit" value="Upload Image" name="submit">
+            </form>
           </div>
           <hr>
           <h2>
