@@ -34,6 +34,8 @@
   ?>
   
   <body>
+
+  <li><a name="firsttimemodal" data-toggle="modal" data-target="#myModal2" href="#myModal"></a></li>
   <script>
   <?php
   //if ($_SESSION["firsttimelogin"] == 1) 
@@ -43,8 +45,6 @@
   }
   ?>
   </script>
-
-  <li><a name="firsttimemodal" data-toggle="modal" data-target="#myModal2" href="#myModal"></a></li>
 
   <!-- firsttimelogin Modal -->
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
