@@ -420,13 +420,10 @@
                             <a href='profile.php?user=" . $friend["username"] . "'>
                               <img class='usrimg' src='../images/user.png'/>
                              </a>
-                            <form action='addFriend.php' method='POST'>
-                              <button class='btn addbtn btn-default' value='".$friend["username"]."' type='submit'>Add</button>
-                            </form>
                           </div>
                           <div class='col-xs-8'>
                             <a href='profile.php?user=" . $friend["username"] . "'>
-                              <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
+                              <h5>" . $friend["fname"] . " "  . $friend["lname"] . " </h5>
                             </a>
                             <p>". $friend["description"] . "</p>
                           </div>
