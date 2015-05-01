@@ -159,8 +159,9 @@
     
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4 search">
+        <div class="col-md-4">
           <h1>People</h1>
+          <div class="search">
           <hr>
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
@@ -188,9 +189,11 @@
               }
             }
           ?> 
+          </div>
         </div>
-        <div class="col-md-4 search">
+        <div class="col-md-4">
           <h1>Groups</h1>
+          <div class="search">
           <hr>
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
@@ -214,9 +217,11 @@
               }
             }
           ?> 
+          </div>
         </div>
-        <div class="col-md-4 search">
+        <div class="col-md-4">
           <h1>Events</h1>
+          <div class="search">
           <hr>
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
@@ -238,6 +243,7 @@
               }
             }
           ?> 
+          </div>
         </div>
       </div>
     </div>
