@@ -11,6 +11,7 @@ else
 }
 
 $target_dir = getcwd()."/images/";
+$mysqlpath = "/images/" . $_SESSION["username"] . $max . basename($_FILES["fileToUpload"]["name"]);
 $target_file = $target_dir . $_SESSION["username"] . $max . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -48,9 +49,9 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        $cleansedurl = mysqli_real_escape_string($con, $target_file);
+        $cleansedurl = mysqli_real_escape_string($con, $mysqlpath);
         mysqli_query($con, "INSERT INTO PHOTOS (owner, uploaddate, photourl)
-                            VALUES ('".$_SESSION["username"]."', '".date("Y-m-d")."', '".$target_file."')");
+                            VALUES ('".$_SESSION["username"]."', '".date("Y-m-d")."', '".$mysqlpath."')");
         mysqli_query($con, "UPDATE PEOPLE SET ppid='".$max."' WHERE username='".$_SESSION["username"]."'");
     } else {
         echo "Sorry, there was an error uploading your file.";

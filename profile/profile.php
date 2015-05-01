@@ -271,7 +271,25 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
           <div>
-            <img class="usrimg" src="../images/user.png">
+            <img class="usrimg" src=
+            <?php
+              require("/var/config.php");
+              if (isset($_GET["user"]))
+                $user=$_GET["user"];
+              else
+                $user=$_SESSION["username"];
+              $result = mysqli_query($con, "SELECT photourl 
+                                            FROM PHOTOS 
+                                            WHERE owner = '" .$user. "' AND photoid IN (SELECT ppid 
+                                                                                        FROM PEOPLE
+                                                                                        WHERE username ='" .$user. "')");
+              $photo = mysqli_fetch_array($result);
+              if ($photo["photourl"] != "")
+                echo "..".$photo["photourl"];
+              else
+                echo "../images/user.png";
+            ?>
+            >
             <form action="../upload.php" method="post" enctype="multipart/form-data">
               Select image to upload:
               <input type="file" name="fileToUpload" id="fileToUpload">
