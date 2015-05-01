@@ -11,13 +11,13 @@
 	if(mysqli_num_rows($result) == 0)
 	{
 		//Create Event in database
-		$query = "INSERT INTO EVENTS (eventname, description, eventdate) VALUES ('".$eventName."', '".$eventDesc."', '".$eventDate."')";
+		$query = "INSERT INTO EVENTS (eventname, description, eventdate, creatorid) VALUES ('".$eventName."', '".$eventDesc."', '".$eventDate."', '".$_SESSION["username"]."')";
 		$insert = mysqli_query($con, $query);
 		
-		$result = mysqli_query($con, "SELECT eventid FROM EVENTS WHERE eventname = '".$eventName."'");
-		$eID = mysqli_fetch_array($result);
+		$result = mysqli_query($con, "SELECT eventid, creatorid FROM EVENTS WHERE eventname = '".$eventName."'");
+		$row = mysqli_fetch_array($result);
 		
-		$query = "INSERT INTO EVENT_INVITES (eventid, invitee, status) VALUES ('".$eID."','".$_SESSION["username"]."', 'g')";
+		$query = "INSERT INTO EVENT_INVITES (eventid, invitee, status) VALUES ('".$row["eventid"]."','".$row["creatorid"]."', 'g')";
 		$insert = mysqli_query($con, $query);
 	}
 	else
