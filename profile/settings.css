@@ -70,6 +70,11 @@ input, button {
       -ms-transform: scale(1);
           transform: scale(1);
 }
+
+.profileSideBar{
+  background: -webkit-linear-gradient(left, #FA7B01 0%, #fea249 80%);
+}
+
 .login.inactive {
   opacity: 0;
   -webkit-transform: scale(1.1);

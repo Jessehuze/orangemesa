@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="login.js"></script>
     <script type="text/javascript"></script>
+
     <link rel="stylesheet" type="text/css" href="settings.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,7 +36,7 @@
   
   <body>
 
-  <li><a name="firsttimemodal" data-toggle="modal" data-target="#myModal2" href="#myModal"></a></li>
+  <li><a name="firsttimemodal" data-toggle="modal" data-target="#myModal2" href="#myModal2"></a></li>
   <script>
   <?php
   //if ($_SESSION["firsttimelogin"] == 1) 
@@ -132,6 +133,86 @@
       </div>
     </div>
 
+  <!-- Groups Modal -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Groups</h4>
+          </div>
+          <div class="modal-body">
+           <div class="cont">
+           <div class = "demo">
+            <div class="editProfile">
+              <div class="editProfile_form">
+
+              <form action="createGroup.php" method="POST">
+                <div class="createGroup__row">
+                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+                  </svg>
+                  <input name="groupName" type="text" class="edit__input groupName" placeholder="Group Name" required/>
+                </div>
+
+                <div class="createGroupDesc__row">
+                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+                  </svg>
+                  <textarea name="groupDesc" type="text" class="edit__input description" rows="6" placeholder="Description" required></textarea>
+                </div>
+
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                <button name="createGroup" type="submit" class="edit__submit">Create Group</button>
+              </form>
+
+              </div>
+             </div>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Events Modal -->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Events</h4>
+          </div>
+          <div class="modal-body">
+           <div class="cont">
+           <div class = "demo">
+            <div class="editProfile">
+              <div class="editProfile_form">
+
+              <form action="createEvent.php" method="POST">
+                <div class="createGroup__row">
+                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+                  </svg>
+                  <input name="groupName" type="text" class="edit__input groupName" placeholder="Event Name" required/>
+                </div>
+
+                <div class="createGroupDesc__row">
+                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+                  </svg>
+                  <textarea name="groupDesc" type="text" class="edit__input description" rows="6" placeholder="Description" required></textarea>
+                </div>
+
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                <button name="createGroup" type="submit" class="edit__submit">Create Event</button>
+              </form>
+
+              </div>
+             </div>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -158,7 +239,8 @@
                 echo $name["fname"];
             ?>
             </a></li>
-            <li><a href="groups.php">Groups</a></li>
+            <li><a data-toggle="modal" data-target="#myModal4" href="#myModal4">Events</a></li>
+            <li><a data-toggle="modal" data-target="#myModal3" href="#myModal3">Groups</a></li>
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
@@ -189,7 +271,7 @@
     </style>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar userinfo">
+        <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
           <div>
             <img class="usrimg" src="../images/user.png">
             <form action="../upload.php" method="post" enctype="multipart/form-data">
