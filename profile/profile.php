@@ -28,6 +28,7 @@
   
   <?php
     require("../logincheck.php");
+    require("../first_time_login_check.php");
   ?>
   
   <body>
