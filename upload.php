@@ -51,6 +51,7 @@ if ($uploadOk == 0) {
         $cleansedurl = mysqli_real_escape_string($con, $target_file);
         mysqli_query($con, "INSERT INTO PHOTOS (owner, uploaddate, photourl)
                             VALUES ('".$_SESSION["username"]."', '".date("Y-m-d")."', '".$target_file."')");
+        mysqli_query($con, "UPDATE PEOPLE SET ppid='".$max."' WHERE username='".$_SESSION["username"]."'");
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
