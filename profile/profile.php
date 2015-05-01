@@ -160,7 +160,7 @@
                 $user=$_SESSION["username"];
               $result = mysqli_query($con, "SELECT fname, minit, lname FROM PEOPLE WHERE username = '" .$user. "'");
               $name = mysqli_fetch_array($result);
-              if($name["minit"] != NULL)
+              if($name["minit"] != "")
                 echo ($name["fname"]." ".$name["minit"].". ".$name["lname"]);
               else
                 echo ($name["fname"]." ".$name["minit"].". ".$name["lname"]);
