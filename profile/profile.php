@@ -173,6 +173,46 @@
       </div>
     </div>
 
+  <!-- Events Modal -->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Events</h4>
+          </div>
+          <div class="modal-body">
+           <div class="cont">
+           <div class = "demo">
+            <div class="editProfile">
+              <div class="editProfile_form">
+
+              <form action="createEvent.php" method="POST">
+                <div class="createGroup__row">
+                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+                  </svg>
+                  <input name="groupName" type="text" class="edit__input groupName" placeholder="Event Name" required/>
+                </div>
+
+                <div class="createGroupDesc__row">
+                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+                  </svg>
+                  <textarea name="groupDesc" type="text" class="edit__input description" rows="6" placeholder="Description" required></textarea>
+                </div>
+
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                <button name="createGroup" type="submit" class="edit__submit">Create Event</button>
+              </form>
+
+              </div>
+             </div>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -199,6 +239,7 @@
                 echo $name["fname"];
             ?>
             </a></li>
+            <li><a data-toggle="modal" data-target="#myModal4" href="#myModal4">Events</a></li>
             <li><a data-toggle="modal" data-target="#myModal3" href="#myModal3">Groups</a></li>
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
