@@ -1,8 +1,8 @@
 <?php
 	require("/var/config.php");
 	session_start();
-  $groupName = mysqli_real_escape_string($con, $_POST["name"]);
-  $groupDesc = mysqli_real_escape_string($con, $_POST["description"]);
+  $groupName = mysqli_real_escape_string($con, $_POST["groupName"]);
+  $groupDesc = mysqli_real_escape_string($con, $_POST["groupDesc"]);
   $groupid = mysqli_real_escape_string($con, $_POST["groupid"]);
 	$query = "SELECT name FROM GROUPS WHERE name = '" .$groupName. "'";
 	$result = mysqli_query($con, $query);
