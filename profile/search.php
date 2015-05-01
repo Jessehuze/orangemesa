@@ -203,7 +203,7 @@
                   <div class=\"col-xs-4\">
                     <img class=\"usrimg\" src=\"../images/user.png\"/>
 					<form action='joinGroup.php?group=" .$group["name"]. "' method = 'GET'>
-					  <button class=\"btn addbtn btn-default\" type=\"button\">Join</button>
+					  <button class=\"btn addbtn btn-default\" type='submit'>Join</button>
 					</form>
 				  </div>
                   <div class=\"col-xs-8\">
