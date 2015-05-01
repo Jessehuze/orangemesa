@@ -13,11 +13,6 @@
       header("Location: http://inceptisol.us.to:6670/profile/profile.php");
       exit();
     }
-    $row = mysqli_fetch_array($result);
-    $_SESSION["username"] = $row["username"];
-    $_SESSION["fname"] = $row["fname"];
-    header("Location: http://inceptisol.us.to:6670/profile/profile.php");
-    exit();
     header("Location: http://inceptisol.us.to:6670/login/login.php?error=Incorrect Username/Password.");
     exit();
   }
