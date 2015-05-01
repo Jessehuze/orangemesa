@@ -151,13 +151,13 @@
                 <div class="createGroup__row">
                   <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
                   </svg>
-                  <input name="groupName" type="text" class="createGroup__input groupName" placeholder="Group Name" required/>
+                  <input name="groupName" type="text" class="edit__input groupName" placeholder="Group Name" required/>
                 </div>
 
                 <div class="createGroupDesc__row">
                   <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
                   </svg>
-                  <input name="groupDesc" type="text" class="createGroup__input groupDesc" placeholder="Description" required/>
+                  <input name="groupDesc" type="text" class="edit__input groupDesc" placeholder="Description" required/>
                 </div>
 
                 <button name="createGroup" type="submit" class="edit__submit">Create Group</button>
