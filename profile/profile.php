@@ -65,21 +65,24 @@
                       {
                         if ($_GET["user"] == $_SESSION["username"]) 
                           echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
+                                  <div class="editProfile_row">
                                   Select image to upload:
-                                  <input type="file edit__submit" name="fileToUpload" id="fileToUpload">
+                                  <input type="file" name="fileToUpload" id="fileToUpload">
                                   <input type="submit" value="Upload Image" name="submit" class="edit__submit">
+                                  </div>
                                 </form>';
                       }
                       else
                       {
                         echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
+                                <div class="editProfile_row">
                                 Select image to upload:
-                                <input type="file edit__submit" name="fileToUpload" id="fileToUpload">
+                                <input type="file" name="fileToUpload" id="fileToUpload">
                                 <input type="submit" value="Upload Image" name="submit" class="edit__submit">
+                                </div>
                               </form>';
                       }
                     ?>
-                  </div>
                 </form>
 
               </div>
