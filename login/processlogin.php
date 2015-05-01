@@ -7,7 +7,7 @@
     $result = mysqli_query($con, "SELECT username, fname, usr_pass FROM PEOPLE WHERE username = '" .$username. "'");
     $row = mysqli_fetch_array($result);
     
-    if (password_verify($_POST["pass"], $row["usr_pass"]) {
+    if (password_verify($_POST["pass"], $row["usr_pass"])) {
       $_SESSION["username"] = $row["username"];
       $_SESSION["fname"] = $row["fname"];
       header("Location: http://inceptisol.us.to:6670/profile/profile.php");
