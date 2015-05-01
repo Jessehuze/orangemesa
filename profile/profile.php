@@ -392,7 +392,10 @@
 
           <h2 class="sub-header">Section title</h2>
           <div class="table-responsive">
-            
+            <table class="table table-striped">
+              
+            </table>
+          </div>
         </div>
         <div class="col-md-2 tabinfo">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
