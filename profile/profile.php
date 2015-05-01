@@ -148,13 +148,13 @@
               <div class="editProfile_form">
 
               <form action="createGroup.php" method="POST">
-                <div class="createGroup__row">
+                <div class="editProfile_row">
                   <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
                   </svg>
                   <input name="groupName" type="text" class="createGroup__input groupName" placeholder="Group Name" required/>
                 </div>
 
-                <div class="createGroupDesc__row">
+                <div class="editProfile_row">
                   <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
                   </svg>
                   <input name="groupDesc" type="text" class="createGroup__input groupDesc" placeholder="Description" required/>
