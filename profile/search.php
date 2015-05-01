@@ -85,6 +85,10 @@
         border-radius: 512px;
         box-shadow: 0 0 10px rgba(0,0,0, .3)
       }
+      a{
+        color:#000;
+        text-decoration:none;
+      }
       .addbtn {
         margin:5% calc(50% - 27px);
       }
