@@ -1,6 +1,6 @@
 <?php
 require("/var/config.php");
-$maxresult = mysqli_query($con, "SELECT photoid FROM PHOTOS WHERE owner = '" $_SESSION["username"] "'");
+$maxresult = mysqli_query($con, "SELECT photoid FROM PHOTOS WHERE owner = '" .$_SESSION["username"]. "'");
 if (mysqli_num_rows($maxresult) == 0)
   $max = 1;
 else
@@ -49,7 +49,7 @@ if ($uploadOk == 0) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         $cleansedurl = mysqli_real_escape_string($con, $target_file);
         mysqli_query($con, "INSERT INTO PHOTOS (owner, uploaddate, photourl)
-                            VALUES ('".$_SESSION["username"]."', '".date("Y-m-d")."', '"$target_file"')";
+                            VALUES ('".$_SESSION["username"]."', '".date("Y-m-d")."', '".$target_file."')");
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
