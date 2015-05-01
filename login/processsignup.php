@@ -34,6 +34,7 @@
     if ($insert)
     {
       $_SESSION["username"] = $username;
+      $_SESSION["firsttimelogin"] = 1;
       header("Location: http://inceptisol.us.to:6670/profile/profile.php");
       exit();
     }

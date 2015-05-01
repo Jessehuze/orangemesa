@@ -1,10 +1,16 @@
 <?php
 require("/var/config.php");
-$maxresult = mysqli_query($con, "SELECT max(photoid) FROM PHOTOS WHERE owner = '" $_SESSION["username"] "' ORDER BY photoid DESC");
-$maxfetch = mysqli_fetch_array($maxresult);
+$maxresult = mysqli_query($con, "SELECT photoid FROM PHOTOS WHERE owner = '" $_SESSION["username"] "'");
+if (mysqli_num_rows($maxresult) == 0)
+  $max = 1;
+else
+{
+  $maxfetch = mysqli_fetch_array($maxresult);
+  $max = $maxfetch["photoid"] + 1;
+}
 
 $target_dir = "images/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]) . $_SESSION["username"] . $max;
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
@@ -41,8 +47,11 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        mysqli_query($con, "INSERT INTO PHOTOS (owner, uploaddate, photourl)
+                            VALUES ('".$_SESSION["username"]."', '".date("Y-m-d")."', 
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+
 ?>
