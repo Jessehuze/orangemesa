@@ -173,7 +173,7 @@
                     <a href='profile.php?user=" . $friend["username"] . "'>
                       <img class='usrimg' src='../images/user.png'/>
                      </a>
-                    <form action='addFriend.php?user=" . $friend["username"] . "' method='get'>
+                    <form action='addFriend.php?user=" . $friend["username"] . "' method='GET'>
                       <button class='btn addbtn btn-default' type='submit'>Add</button>
                     </form>
                   </div>
@@ -201,7 +201,7 @@
                 echo "<div class=\"row\">
                   <div class=\"col-xs-4\">
                     <img class=\"usrimg\" src=\"../images/user.png\"/>
-					<form action='joinGroup.php?group=" .$group["groupid"]. "' method = 'get'>
+					<form action='joinGroup.php?group=" .$group["groupid"]. "' method = 'GET'>
 					  <button class=\"btn addbtn btn-default\" type=\"button\">Join</button>
 					</form>
 				  </div>
