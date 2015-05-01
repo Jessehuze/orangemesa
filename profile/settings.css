@@ -76,7 +76,7 @@ input, button {
 }
 
 .postsHeader{
-  background: -webkit-linear-gradient(top, #FFF 0%, rgba(146, 135, 187, 0.8) 80%);
+  background: -webkit-linear-gradient(bottom, #FFF 0%, rgba(146, 135, 187, 0.8) 80%);
 }
 
 .login.inactive {
