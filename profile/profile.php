@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="login.js"></script>
+    <script type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="settings.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,13 +34,17 @@
   ?>
   
   <body>
+  <script>
   <?php
   //if ($_SESSION["firsttimelogin"] == 1) 
   if(1==1)
   {
-    echo '<div data-toggle="modal" data-target="#myModal2"></div>';
+    echo 'setTimeout(function() {$("#firsttimemodal").click();}, 50);';
   }
   ?>
+  </script>
+
+  <li><a name="firsttimemodal" data-toggle="modal" data-target="#myModal2" href="#myModal"></a></li>
 
   <!-- firsttimelogin Modal -->
     <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
