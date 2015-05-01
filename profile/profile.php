@@ -154,7 +154,7 @@
           <h2>
             <?php
               require("/var/config.php");
-              if (isset($_GET["user"])
+              if (isset($_GET["user"]))
                 $user=$_GET["user"];
               else
                 $user=$_SESSION["username"];
@@ -167,7 +167,7 @@
           <p>
             <?php
               require("/var/config.php");
-              if (isset($_GET["user"])
+              if (isset($_GET["user"]))
                 $user=$_GET["user"];
               else
                 $user=$_SESSION["username"];
