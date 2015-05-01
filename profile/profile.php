@@ -162,7 +162,8 @@
               $name = mysqli_fetch_array($result);
               if($name["minit"] != NULL)
                 echo ($name["fname"]." ".$name["minit"].". ".$name["lname"]);
-              echo ($name["fname"]." ".$name["minit"].". ".$name["lname"]);
+              else
+                echo ($name["fname"]." ".$name["minit"].". ".$name["lname"]);
             ?>
           </h2>
           <h3>About</h3>
