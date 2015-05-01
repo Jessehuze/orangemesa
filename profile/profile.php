@@ -290,11 +290,28 @@
                 echo "../images/user.png";
             ?>
             >
-            <form action="../upload.php" method="post" enctype="multipart/form-data">
-              Select image to upload:
-              <input type="file" name="fileToUpload" id="fileToUpload">
-              <input type="submit" value="Upload Image" name="submit">
-            </form>
+            <?php 
+              if (isset($_GET["user"])
+              {
+                if ($_GET["user"] != $_SESSION["username"] {}
+                else
+                {
+                  echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
+                          Select image to upload:
+                          <input type="file" name="fileToUpload" id="fileToUpload">
+                          <input type="submit" value="Upload Image" name="submit">
+                        </form>'
+                }
+              }
+              else
+              {
+                echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
+                        Select image to upload:
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <input type="submit" value="Upload Image" name="submit">
+                      </form>'
+              }
+            ?>
           </div>
           <hr>
           <h2>
