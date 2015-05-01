@@ -51,7 +51,8 @@
             <li><a href="profile.php"><i class="fa fa-user"></i>
             <?php
                 require("/var/www/config.php");
-                $result = mysqli_query($con, "SELECT fname FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
+                $username = mysqli_real_escape_string($con, $_SESSION["username"]);
+                $result = mysqli_query($con, "SELECT fname FROM PEOPLE WHERE username = '" .$username. "'");
                 $name = mysqli_fetch_array($result);
                 echo $name["fname"];
             ?>
@@ -95,7 +96,8 @@
           <h1>People</h1>
           <hr>
           <?php
-            $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE fname LIKE '%".$_GET["query"]."%' OR lname LIKE '%".$_GET["query"]."%' ORDER BY fname, lname"); 
+            $query = mysqli_real_escape_string($con, $_GET["query"]);
+            $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE fname LIKE '%".$query."%' OR lname LIKE '%".$query."%' ORDER BY fname, lname"); 
             if ($friends_result)
             {
               while ($friend = mysqli_fetch_array($friends_result)) 
@@ -118,7 +120,8 @@
           <h1>Groups</h1>
           <hr>
           <?php
-            $group_result = mysqli_query($con, "SELECT name, description FROM GROUPS WHERE name LIKE '%".$_GET["query"]."%' ORDER BY name"); 
+            $query = mysqli_real_escape_string($con, $_GET["query"]);
+            $group_result = mysqli_query($con, "SELECT name, description FROM GROUPS WHERE name LIKE '%".$query."%' ORDER BY name"); 
             if ($group_result)
             {
               while ($group = mysqli_fetch_array($group_result)) 
@@ -141,7 +144,8 @@
           <h1>Events</h1>
           <hr>
           <?php
-            $event_result = mysqli_query($con, "SELECT eventname, eventdate, description FROM GROUPS WHERE eventname LIKE '%".$_GET["query"]."%' ORDER BY eventname"); 
+            $query = mysqli_real_escape_string($con, $_GET["query"]);
+            $event_result = mysqli_query($con, "SELECT eventname, eventdate, description FROM GROUPS WHERE eventname LIKE '%".$query."%' ORDER BY eventname"); 
             if ($event_result)
             {
               while ($event = mysqli_fetch_array($event_result)) 

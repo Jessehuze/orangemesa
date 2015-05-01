@@ -1,9 +1,11 @@
 <?php
   require("/var/www/config.php");
   session_start();
+  $username = mysqli_real_escape_string($con, $_POST["username"]);
+  $description = mysqli_real_escape_string($con, $_POST["description"]);
   $update = mysqli_query($con, "UPDATE PEOPLE 
-                                SET description = '".$_POST["description"]."' 
-                                WHERE username = '".$_SESSION["username"]."'"); 
+                                SET description = '".$description."' 
+                                WHERE username = '".$username."'"); 
   header("Location: ".$_POST["refer"]);
   exit();
   
