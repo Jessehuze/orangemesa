@@ -162,7 +162,7 @@
           <h3>About</h3>
           <p>
             <?php
-              require("/var/www/config.php");
+              require("/var/config.php");
               $result = mysqli_query($con, "SELECT description FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
               $desc = mysqli_fetch_array($result);
               echo $desc["description"];
