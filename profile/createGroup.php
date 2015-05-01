@@ -15,7 +15,7 @@
 		$row1 = mysqli_fetch_array($query);
 		
 		//Insert owner as member of group
-		$query = "INSERT INTO GROUP_MEMBERS (GID, memberid) VALUES('".$row1."','".$_SESSION["username"]."')";
+		$query = "INSERT INTO GROUP_MEMBERS (GID, memberid) VALUES('".$row1["name"]."','".$row1["owner"]."')";
 		$insert = mysqli_query($con, $query);
 	}
 	else
