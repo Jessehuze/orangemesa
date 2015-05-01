@@ -168,7 +168,7 @@
           <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
-            $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE (fname LIKE '%".$query."%' OR lname LIKE '%".$query."%') AND username != ".$_SESSION["username"]." ORDER BY fname, lname"); 
+            $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE (fname LIKE '%".$query."%' OR lname LIKE '%".$query."%') AND username != '".$_SESSION["username"]."' ORDER BY fname, lname"); 
             if ($friends_result)
             {
               while ($friend = mysqli_fetch_array($friends_result)) 
