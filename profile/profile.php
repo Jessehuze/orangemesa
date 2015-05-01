@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="login.js"></script>
     <script type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="groups.css">
     <link rel="stylesheet" type="text/css" href="settings.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -146,13 +147,21 @@
             <div class="editProfile">
               <div class="editProfile_form">
 
-               <div class="editProfile_row">
-                <form action="updateProfile/processEdit_fname.php" method="POST">
-                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
-                <input name="fname" type="text" class="edit__input fname" placeholder="First Name" />
-                <button name="update_fname" type="submit" class="edit__submit">This is a test</button>
-                </form>
-               </div>
+              <form action="createGroup.php" method="POST">
+                <div class="createGroup__row">
+                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+                  </svg>
+                  <input name="groupName" type="text" class="createGroup__input groupName" placeholder="Group Name" required/>
+                </div>
+
+                <div class="createGroupDesc__row">
+                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+                  </svg>
+                  <input name="groupDesc" type="text" class="createGroup__input groupDesc" placeholder="Description" required/>
+                </div>
+
+                <button name="createGroup" type="submit" class="createGroup__submit">Create Group</button>
+              </form>
 
               </div>
              </div>
