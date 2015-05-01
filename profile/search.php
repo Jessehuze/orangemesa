@@ -30,6 +30,13 @@
     require("../logincheck.php");
   ?>
 
+  <style>
+    .search{
+      max-height: calc(100vh - 100px);
+      overflow-y: scroll;
+    }
+  </style>
+
 
   <body>
 
@@ -152,7 +159,7 @@
     
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 search">
           <h1>People</h1>
           <hr>
           <?php
@@ -182,7 +189,7 @@
             }
           ?> 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 search">
           <h1>Groups</h1>
           <hr>
           <?php
@@ -208,7 +215,7 @@
             }
           ?> 
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 search">
           <h1>Events</h1>
           <hr>
           <?php
