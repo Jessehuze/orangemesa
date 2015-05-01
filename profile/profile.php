@@ -4,7 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="login.js"></script>
     <script type="text/javascript"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="settings.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -157,9 +157,10 @@
                 <div class="createGroupDesc__row">
                   <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
                   </svg>
-                  <input name="groupDesc" type="text" class="edit__input description" placeholder="Description" required/>
+                  <textarea name="groupDesc" type="text" class="edit__input description" rows="6" placeholder="Description" required></textarea>
                 </div>
 
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                 <button name="createGroup" type="submit" class="edit__submit">Create Group</button>
               </form>
 
