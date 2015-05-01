@@ -32,7 +32,8 @@
   
   <body>
   <?php
-  if ($_SESSION["firsttimelogin"] == 1) 
+  //if ($_SESSION["firsttimelogin"] == 1) 
+  if(1==1)
   {
     echo '<div data-toggle="modal" data-target="#myModal2" href="#myModal"></div>';
   }
