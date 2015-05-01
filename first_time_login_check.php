@@ -1,7 +1,7 @@
 <?php
   require("/var/config.php");
   session_start();
-  if (isset($_SESSION["firsttimelogin"]) 
+  if (isset($_SESSION["firsttimelogin"])) 
   {
   	echo '
     <!-- Settings Modal -->
