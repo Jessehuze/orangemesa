@@ -10,7 +10,7 @@ else
   $max = $maxfetch["photoid"] + 1;
 }
 
-$target_dir = "/var/www/images/";
+$target_dir = "/images/";
 $target_file = $target_dir . $_SESSION["username"] . $max . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
