@@ -32,8 +32,9 @@
 
   <style>
     .search{
-      max-height: calc(100vh - 100px);
+      max-height: calc(100vh - 175px);
       overflow-y: scroll;
+      overflow-x: hidden; 
     }
   </style>
 
@@ -161,8 +162,8 @@
       <div class="row">
         <div class="col-md-4">
           <h1>People</h1>
-          <div class="search">
           <hr>
+          <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
             $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE fname LIKE '%".$query."%' OR lname LIKE '%".$query."%' ORDER BY fname, lname"); 
@@ -193,8 +194,8 @@
         </div>
         <div class="col-md-4">
           <h1>Groups</h1>
-          <div class="search">
           <hr>
+          <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
             $group_result = mysqli_query($con, "SELECT name, description FROM GROUPS WHERE name LIKE '%".$query."%' ORDER BY name"); 
@@ -221,8 +222,8 @@
         </div>
         <div class="col-md-4">
           <h1>Events</h1>
-          <div class="search">
           <hr>
+          <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
             $event_result = mysqli_query($con, "SELECT eventname, eventdate, description FROM GROUPS WHERE eventname LIKE '%".$query."%' ORDER BY eventname"); 
