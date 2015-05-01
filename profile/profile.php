@@ -132,6 +132,37 @@
       </div>
     </div>
 
+  <!-- Groups Modal -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Groups</h4>
+          </div>
+          <div class="modal-body">
+           <div class="cont">
+           <div class = "demo">
+            <div class="editProfile">
+              <div class="editProfile_form">
+
+               <div class="editProfile_row">
+                <form action="updateProfile/processEdit_fname.php" method="POST">
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                <input name="fname" type="text" class="edit__input fname" placeholder="First Name" />
+                <button name="update_fname" type="submit" class="edit__submit">This is a test</button>
+                </form>
+               </div>
+
+              </div>
+             </div>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -158,7 +189,7 @@
                 echo $name["fname"];
             ?>
             </a></li>
-            <li><a href="groups.php">Groups</a></li>
+            <li><a data-toggle="modal" data-target="#myModal" href="#myModal3">Groups</a></li>
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
