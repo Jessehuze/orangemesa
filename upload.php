@@ -1,5 +1,6 @@
 <?php
 require("/var/config.php");
+session_start();
 $maxresult = mysqli_query($con, "SELECT photoid FROM PHOTOS WHERE owner = '" .$_SESSION["username"]. "'");
 if (mysqli_num_rows($maxresult) == 0)
   $max = 1;
@@ -10,7 +11,7 @@ else
 }
 
 $target_dir = "images/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]) . $_SESSION["username"] . $max;
+$target_file = $target_dir . $_SESSION["username"] . $max . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
