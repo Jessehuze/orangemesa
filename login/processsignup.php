@@ -5,6 +5,7 @@
   {
     $username = mysqli_real_escape_string($con, $_POST["username"]);
     $usr_pass = mysqli_real_escape_string($con, $_POST["usr_pass"]);
+    $hash = password_hash($usr_pass, PASSWORD_DEFAULT);
     $fname = mysqli_real_escape_string($con, $_POST["fname"]);
     $minit = mysqli_real_escape_string($con, $_POST["minit"]);
     $lname = mysqli_real_escape_string($con, $_POST["lname"]);
@@ -16,11 +17,11 @@
       if ($minit == "") { //NO MIDDLE NAME GIVEN
       
         $insert = mysqli_query($con, "INSERT INTO PEOPLE (username, usr_pass, fname, lname, dob)
-                                      VALUES ('".$username."', '".$usr_pass."', 
+                                      VALUES ('".$username."', '".$hash."', 
                                               '".$fname."', '".$lname."', '".$date."')");
       } else { //MIDDLE NAME GIVEN
         $insert = mysqli_query($con, "INSERT INTO PEOPLE (username, usr_pass, fname, minit, lname, dob)
-                        VALUES ('".$username."', '".$usr_pass."', '".$fname."',
+                        VALUES ('".$username."', '".$hash."', '".$fname."',
                                             '".$minit."', '".$lname."' , '".$date."')");
 
       }

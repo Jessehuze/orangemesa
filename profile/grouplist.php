@@ -1,5 +1,5 @@
 <?php
-	require("/var/www/config.php");
+	require("/var/config.php");
 	
 	
 	
