@@ -111,7 +111,7 @@
                     <a href='profile.php?user=" . $friend["username"] . "'>
                       <img class='usrimg' src='../images/user.png'/>
                      </a>
-                    <form action='addfriend.php?user=" . $friend["username"] . "' method='get'>
+                    <form action='addFriend.php?user=" . $friend["username"] . "' method='get'>
                       <button class='btn addbtn btn-default' type='submit'>Add</button>
                     </form>
                   </div>
