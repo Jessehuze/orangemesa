@@ -205,14 +205,14 @@
             {
               while ($group = mysqli_fetch_array($group_result)) 
               {
-                echo "<div class=\"row\">
-                  <div class=\"col-xs-4\">
-                    <img class=\"usrimg\" src=\"../images/user.png\"/>
+                echo "<div class='row'>
+                  <div class='col-xs-4'>
+                    <img class='usrimg' src='../images/user.png'/>
 					<form action='joinGroup.php?group= '".$group["name"]."' method = 'GET'>
-					  <button class=\"btn addbtn btn-default\" type='submit'>Join</button>
+					  <button class='btn addbtn btn-default' type='submit'>Join</button>
 					</form>
 				  </div>
-                  <div class=\"col-xs-8\">
+                  <div class='col-xs-8'>
                     <h3>" . $group["name"] . " </h3>
                     <p>". $group["description"] . "</p>
                   </div>
@@ -233,12 +233,12 @@
             {
               while ($event = mysqli_fetch_array($event_result)) 
               {
-                echo "<div class=\"row\">
-                  <div class=\"col-xs-4\">
-                    <img class=\"usrimg\" src=\"../images/user.png\"/>
-                    <button class=\"btn addbtn btn-default\" type=\"button\">Going</button>
+                echo "<div class='row'>
+                  <div class='col-xs-4'>
+                    <img class='usrimg' src='../images/user.png'/>
+                    <button class='btn addbtn btn-default' type='button'>Going</button>
                   </div>
-                  <div class=\"col-xs-8\">
+                  <div class='col-xs-8'>
                     <h3>" . $event["eventname"] . " " . $friend["eventdate"] . "</h3>
                     <p>". $event["description"] . "</p>
                   </div>
