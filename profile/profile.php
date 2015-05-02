@@ -280,7 +280,7 @@
                     echo $user;
                   ?>
                 />
-                <button name="createGroup" type="submit" class="edit__submit">Send Message</button>
+                <button name="createGroup" data-toggle="modal" data-target="#postModal" type="submit" class="edit__submit">Send Message</button>
               </form>
 
               </div>
@@ -293,7 +293,7 @@
     </div>
     
     <script>
-      $('#postModal').on('hidden', function () {
+      $('#postModal').on('hide', function () {
           location.reload();
       });
     </script>
