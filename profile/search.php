@@ -186,7 +186,7 @@
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <a href='profile.php?user=" . $friend["username"] . "'>
-                      <img class='usrimg' src='"$imageurl"'/>
+                      <img class='usrimg' src='".$imageurl."'/>
                      </a>
                     <form action='addFriend.php' method='POST'>
                       <button class='btn addbtn btn-default' value='".$friend["username"]."' type='submit'>Add</button>
