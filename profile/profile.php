@@ -407,6 +407,24 @@
             </table>
           </div>
         </div>
+        
+        <style>
+          .infobar{
+            max-height: calc(100vh - 175px);
+            overflow-y: scroll;
+            overflow-x: hidden; 
+            word-wrap: break-word;
+            padding-right: 15px
+          }
+          .friendimg{
+              margin-left: 13%;
+              width: 70%;
+              margin-top: 15%;
+              border-radius: 512px;
+              box-shadow: 0 0 10px rgba(0,0,0, .3)
+            }
+        </style>
+        
         <div class="col-md-2 tabinfo">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
@@ -428,7 +446,7 @@
                         echo "<div class='row'>
                           <div class='col-xs-4'>
                             <a href='profile.php?user=" . $friend["username"] . "'>
-                              <img class='usrimg' src='../images/user.png'/>
+                              <img class='friendimg' src='../images/user.png'/>
                              </a>
                           </div>
                           <div class='col-xs-8'>
