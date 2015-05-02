@@ -44,7 +44,7 @@
   <body>
 
     <!-- Settings Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -125,8 +125,7 @@
                 echo $name["fname"];
             ?>
             </a></li>
-            <li><a href="groups.php">Groups</a></li>
-            <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
+            <li><a data-toggle="modal" data-target="#settingsModal" href="#settingsModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
           <form class="navbar-form navbar-left" action="search.php" method="GET">
