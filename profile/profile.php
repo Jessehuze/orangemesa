@@ -226,13 +226,13 @@
                 <div class="createGroup__row">
                   <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
                   </svg>
-                  <input name="groupName" type="text" class="edit__input groupName" placeholder="Event Name" required/>
+                  <input name="eventName" type="text" class="edit__input groupName" placeholder="Event Name" required/>
                 </div>
 
                 <div class="createGroupDesc__row">
                   <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
                   </svg>
-                  <textarea name="groupDesc" type="text" class="edit__input description" rows="6" placeholder="Description" required></textarea>
+                  <textarea name="eventDesc" type="text" class="edit__input description" rows="6" placeholder="Description" required></textarea>
                 </div>
 
                 <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
