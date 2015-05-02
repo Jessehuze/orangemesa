@@ -410,7 +410,7 @@
         
         <style>
           .infobar{
-            max-height: calc(70vh);
+            max-height: calc(75vh);
             overflow-y: scroll;
             overflow-x: hidden; 
             word-wrap: break-word;
