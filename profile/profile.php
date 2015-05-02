@@ -102,10 +102,13 @@
     </div>
   <script>
   <?php
-  //if ($_SESSION["firsttimelogin"] == 1) 
-  if(1==1)
+  if (isset($_SESSION["firsttimelogin"]))
   {
-    echo 'setTimeout(function() {$("#myModal2").modal("show");}, 100);';
+    if ($_SESSION["firsttimelogin"] == 1) 
+    {
+      $_SESSION["firsttimelogin"] = 0;
+      echo 'setTimeout(function() {$("#myModal2").modal("show");}, 100);';
+    }
   }
   ?>
   </script>
