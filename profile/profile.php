@@ -379,36 +379,51 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
           <h2 class="page-header">Posts</h2>
-
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
-
-          <h2 class="sub-header">Section title</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
               
-            </table>
-          </div>
+          <?php
+            require("/var/config.php");
+            if (isset($_GET["user"]))
+              $user=$_GET["user"];
+            else
+              $user=$_SESSION["username"];
+            
+            $query = "SELECT * FROM POST_PEOPLE2PEOPLE WHERE reciever = '".$user."' ORDER BY timestamp DESC";
+                    
+            $msgresult = mysqli_query($con, $query); 
+  
+             if (mysqli_num_rows($msgresult) != 0)
+            {
+              while ($msg = mysqli_fetch_array($msgresult)) 
+              {
+                $result = mysqli_query($con, "SELECT photourl 
+                                      FROM PHOTOS 
+                                      WHERE owner = '" .$msg["sender"]. "' AND photoid IN (SELECT ppid 
+                                                                                  FROM PEOPLE
+                                                                                  WHERE username ='" .$msg["sender"]. "')");
+                $photo = mysqli_fetch_array($result);
+                $name = mysqli_query($con, "SELECT fname, lname FROM PEOPLE WHERE username = '".$msg["sender"]."'");
+                if ($photo["photourl"] != "")
+                  $imageurl = "..".$photo["photourl"];
+                else
+                  $imageurl = "../images/user.png";
+                echo "<div class='row'>
+                  <div class='col-xs-4'>
+                    <a href='profile.php?user=".$msg["sender"]."'>
+                      <img class='friendimg' src='".$imageurl."'/>
+                     </a>
+                  </div>
+                  <div class='col-xs-8'>
+                    <a href='profile.php?user=".$msg["sender"]."'>
+                      <h5>".$name["fname"]." ".$name["lname"]." </h5>
+                      <p>".$msg["message"]."</p>
+                    </a>
+                  </div>
+                </div>";
+              }
+            }
+          ?>
+            
+          
         </div>
         
         <style>
