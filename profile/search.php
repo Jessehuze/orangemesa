@@ -166,16 +166,27 @@
           <hr>
           <div class="search">
           <?php
-            $query = mysqli_real_escape_string($con, $_GET["query"]);
-            $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE (fname LIKE '%".$query."%' OR lname LIKE '%".$query."%') AND username != '".$_SESSION["username"]."' ORDER BY fname, lname"); 
-            if ($friends_result)
-            {
-              while ($friend = mysqli_fetch_array($friends_result)) 
+              $query = mysqli_real_escape_string($con, $_GET["query"]);
+              $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE (fname LIKE '%".$query."%' OR lname LIKE '%".$query."%') AND username != '".$_SESSION["username"]."' ORDER BY fname, lname"); 
+              if ($friends_result)
               {
+                while ($friend = mysqli_fetch_array($friends_result)) 
+                {
+                  $imageurl = require("/var/config.php");
+                  $result = mysqli_query($con, "SELECT photourl 
+                                              FROM PHOTOS 
+                                              WHERE owner = '" .$friend["username"]. "' AND photoid IN (SELECT ppid 
+                                                                                          FROM PEOPLE
+                                                                                          WHERE username ='" .$friend["username"]. "')");
+                  $photo = mysqli_fetch_array($result);
+                  if ($photo["photourl"] != "")
+                    $imageurl = "..".$photo["photourl"];
+                  else
+                    $imageurl = "../images/user.png";
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <a href='profile.php?user=" . $friend["username"] . "'>
-                      <img class='usrimg' src='../images/user.png'/>
+                      <img class='usrimg' src='"$imageurl"'/>
                      </a>
                     <form action='addFriend.php' method='POST'>
                       <button class='btn addbtn btn-default' value='".$friend["username"]."' type='submit'>Add</button>
