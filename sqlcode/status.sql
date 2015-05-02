@@ -1,2 +1,5 @@
 INSERT INTO POST_PEOPLE2PEOPLE (reciever, sender, message, timestamp)
 VALUES("jessenewmex", "somsomguy", "This is a test. A giant, stinking test. Please understand that this is simply a giant test. I hope that the image is displaying above.", "2015-5-2 3:00:00");
+
+INSERT INTO POST_PEOPLE2PEOPLE (reciever, sender, message, timestamp)
+VALUES("jessenewmex", "Firsttime", "Cray pug Bushwick distillery Vice squid. Wes Anderson mlkshk bicycle rights cornhole Williamsburg, Truffaut slow-carb bitters synth selfies cronut sriracha ugh vinyl. Sustainable butcher Helvetica post-ironic tote bag asymmetrical. IPhone Truffaut fanny pack, keffiyeh farm-to-table Intelligentsia Tumblr typewriter freegan meditation Wes Anderson tofu. Typewriter vinyl skateboard shabby chic Neutra Odd Future freegan, Helvetica listicle tilde PBR kitsch cray Vice. Disrupt paleo bicycle rights polaroid fashion axe flannel you probably haven't heard of them art party, cornhole kitsch. Messenger bag four dollar toast shabby chic, Etsy direct trade leggings Thundercats Tumblr banjo.", "2015-5-2 3:00:00");

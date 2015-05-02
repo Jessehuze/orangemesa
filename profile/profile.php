@@ -247,6 +247,41 @@
         </div>
       </div>
     </div>
+    
+    <!-- Post Modal -->
+    <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Post</h4>
+          </div>
+          <div class="modal-body">
+           <div class="cont">
+           <div class = "demo">
+            <div class="editProfile">
+              <div class="editProfile_form">
+
+              <form action="addPost.php" method="POST">
+
+                <div class="createGroupDesc__row">
+                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
+                  </svg>
+                  <textarea name="message" type="text" class="edit__input description" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                <button name="createGroup" type="submit" class="edit__submit">Create Event</button>
+              </form>
+
+              </div>
+             </div>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
@@ -378,7 +413,7 @@
           </p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-          <h2 class="page-header">Posts</h2>
+          <h2 class="page-header">Posts<a data-toggle="modal" data-target="#postModal" href="#postModal"><i class="fa fa-plus-square"></i></a></h2>
               
           <?php
             require("/var/config.php");
