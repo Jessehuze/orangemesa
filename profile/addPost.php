@@ -12,7 +12,8 @@
 
 	$insert = mysqli_query($con, $query);
 	
-	header("Location: http://inceptisol.us.to::6670/profile/profile.php?user=".reciever."");
+  echo '<script>parent.window.location.reload(true);</script>';
+//	header("Location: http://inceptisol.us.to::6670/profile/profile.php?user=".reciever."");
 
 
 ?>
