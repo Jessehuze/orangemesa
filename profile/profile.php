@@ -442,7 +442,8 @@
                 <div class="panel-body infobar">
                   <?php
 					
-					$query = "SELECT fname, lname, username FROM PEOPLE, FRIENDS WHERE username = userid AND username = '".$_SESSION["username"]."'";
+					$query = "SELECT fname, lname, username FROM PEOPLE WHERE username IN
+									SELECT friendid FROM FRIENDS WHERE username = '".$_SESSION["username"]."'";
 					
 					$friends_result = mysqli_query($con, $query); 
                     
