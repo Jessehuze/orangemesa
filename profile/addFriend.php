@@ -6,12 +6,11 @@
 	$friender = mysqli_real_escape_string($con, $_SESSION["username"]);
   
   $friendstatus = mysqli_query($con, "SELECT * FROM FRIENDS
-                                                  WHERE (userid = '".$friend."' AND friendid = '".$friender."') OR 
-                                                            (userid = '".$friend."' AND friendid = '".$friender."') ");
+                                                  WHERE userid = ' ".$friender." ' AND friendid = ' ".$friend." ' ");
   
   if (mysqli_num_rows($friendstatus) == 0)
   {
-    $query = "INSERT INTO FRIENDS (userid, friendid, request_state) VALUES ('".$friender."', '".$friend."', 'a')";
+    $query = "INSERT INTO FRIENDS (userid, friendid, request_state) VALUES (' ".$friender." ', ' ".$friend." ', 'a') ";
     echo $query;
     $insert = mysqli_query($con, $query);
     header("Location: http://inceptisol.us.to:6670/profile/profile.php");
