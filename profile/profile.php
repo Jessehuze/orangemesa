@@ -444,7 +444,7 @@
                   <?php
 					
                     $query = "SELECT fname, lname, username FROM PEOPLE WHERE username IN
-                        (SELECT friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."'";
+                        (SELECT friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."')";
                     
                     $friends_result = mysqli_query($con, $query); 
 					
