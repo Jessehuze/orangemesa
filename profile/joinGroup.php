@@ -9,7 +9,7 @@
 	$query = "INSERT INTO GROUP_MEMBERS (gid, memberid) VALUES ('".$groupid."', '".$user."')";
 	$insert = mysqli_query($con, $query);
 	
-	//header("Location: http://inceptisol.us.to::6670/profile/search.php");
+	header("Location: http://inceptisol.us.to::6670/profile/search.php");
 
 
 ?>

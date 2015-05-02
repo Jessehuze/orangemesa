@@ -246,8 +246,8 @@
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <img class='usrimg' src='../images/user.png'/>
-                    <form action='joinEvent.php?event= '".$event["eventid"]."' method = 'GET'>
-                      <button class='btn addbtn btn-default' type='submit'>Going</button>
+                    <form action='joinEvent.php' method = 'POST'>
+                      <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Going</button>
                     </form>
                   </div>
                   <div class='col-xs-8'>
