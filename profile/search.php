@@ -238,7 +238,7 @@
           <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
-            $event_result = mysqli_query($con, "SELECT eventname, eventdate, description FROM GROUPS WHERE eventname LIKE '%".$query."%' ORDER BY eventname"); 
+            $event_result = mysqli_query($con, "SELECT eventname, description FROM EVENTS WHERE eventname LIKE '%".$query."%' ORDER BY eventname"); 
             if ($event_result)
             {
               while ($event = mysqli_fetch_array($event_result)) 
