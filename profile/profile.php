@@ -441,7 +441,7 @@
               <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body infobar">
                   <?php
-                    $friends_result = mysqli_query($con, "SELECT username, fname, lname FROM PEOPLE WHERE username != '".$_SESSION["username"]."' ORDER BY fname, lname"); 
+                    $friends_result = mysqli_query($con, "SELECT username, fname, lname FROM FRIENDS WHERE userid = '".$_SESSION["username"]."' OR friendid = '".$_SESSION["username"]."'  ORDER BY fname, lname"); 
                     if ($friends_result)
                     {
                       while ($friend = mysqli_fetch_array($friends_result)) 
