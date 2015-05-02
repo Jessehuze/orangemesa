@@ -304,7 +304,7 @@
     </style>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
+        <div class="col-sm-3 col-md-3 sidebar userinfo profileSideBar">
           <div>
             <img class="usrimg" src=
             <?php
@@ -377,7 +377,7 @@
             ?>
           </p>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+        <div class="col-sm-9 col-sm-offset-3 col-md-6 col-md-offset-2 main">
           <h2 class="page-header">Posts</h2>
 
           <div class="row placeholders">
@@ -429,7 +429,7 @@
             }
         </style>
         
-        <div class="col-md-2 tabinfo">
+        <div class="col-md-3 tabinfo">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingOne">
