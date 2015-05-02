@@ -4,8 +4,8 @@
 	
 	$friend = mysqli_real_escape_string($con, $_POST["user"]);
 	$friender = mysqli_real_escape_string($con, $_SESSION["username"]);
-	
-	$query = "INSERT INTO FRIENDS (userid, friendid, status) VALUES ('".$friender."', '".$friend."', 'a')";
+  
+	$query = "INSERT INTO FRIENDS (userid, friendid, request_state) VALUES ('".$friender."', '".$friend."', 'a')";
 	echo $query;
 	$insert = mysqli_query($con, $query);
 	if ($insert == false)
