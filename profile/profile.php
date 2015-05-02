@@ -444,9 +444,7 @@
               box-shadow: 0 0 10px rgba(0,0,0, .3)
             }
             .statusimg{
-              margin-left: 13%;
-              width: 70%;
-              margin-top: 15%;
+              width: 50%;
               border-radius: 50px;
               box-shadow: 0 0 10px rgba(0,0,0, .3)
             }
