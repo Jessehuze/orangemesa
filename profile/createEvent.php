@@ -3,7 +3,7 @@
 	session_start();
 	
 	$eventname = mysqli_real_escape_string($con, $_POST["eventName"]);
-	$eventdesc = mysqli_real_escape_string($con, $_POST_["eventDesc"]);
+	$eventdesc = mysqli_real_escape_string($con, $_POST["eventDesc"]);
 	
 	$query = "SELECT eventname FROM EVENTS WHERE eventname = '" .$eventName. "'";
 	$result = mysqli_query($con, $query);
