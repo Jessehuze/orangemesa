@@ -34,7 +34,15 @@
     require("../logincheck.php");
   ?>
   
-
+  <style>
+    .infobar{
+     <!--max-height: calc(100vh - 175px);-->
+      overflow-y: scroll;
+      overflow-x: hidden; 
+      word-wrap: break-word;
+      padding-right: 15px
+    }
+  </style>
   
   <body>
 
@@ -399,24 +407,6 @@
             </table>
           </div>
         </div>
-        
-          <style>
-             .infobar{
-               <!--max-height: calc(100vh - 175px);-->
-                overflow-y: scroll !important;
-                overflow-x: hidden; 
-                word-wrap: break-word;
-                padding-right: 15px
-              }
-              .friendimg{
-                  margin-left: 13%;
-                  width: 70%;
-                  margin-top: 15%;
-                  border-radius: 512px;
-                  box-shadow: 0 0 10px rgba(0,0,0, .3)
-                }
-          </style>
-        
         <div class="col-md-2 tabinfo">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
