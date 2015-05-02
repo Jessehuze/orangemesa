@@ -410,12 +410,12 @@
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <a href='profile.php?user=".$msg["sender"]."'>
-                      <img class='friendimg' src='".$imageurl."'/>
+                      <img class='statusimg' src='".$imageurl."'/>
                      </a>
                   </div>
                   <div class='col-xs-8'>
                     <a href='profile.php?user=".$msg["sender"]."'>
-                      <h5>".$name["fname"]." ".$name["lname"]." </h5>
+                      <h3>".$name["fname"]." ".$name["lname"]." </h3>
                       <p>".$msg["message"]."</p>
                     </a>
                   </div>
@@ -441,6 +441,13 @@
               width: 70%;
               margin-top: 15%;
               border-radius: 512px;
+              box-shadow: 0 0 10px rgba(0,0,0, .3)
+            }
+            .statusimg{
+              margin-left: 13%;
+              width: 70%;
+              margin-top: 15%;
+              border-radius: 50px;
               box-shadow: 0 0 10px rgba(0,0,0, .3)
             }
         </style>
