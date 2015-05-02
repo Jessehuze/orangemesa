@@ -489,8 +489,8 @@
                           $imageurl = "..".$photo["photourl"];
                         else
                           $imageurl = "../images/user.png";
-                        echo "<div class='row inforow'>
-                          <div class='col-xs-4'>
+                        echo "<div class='row'>
+                          <div class='col-xs-4 inforow'>
                             <a href='profile.php?user=".$friend["username"]."'>
                               <img class='friendimg' src='".$imageurl."'/>
                              </a>
