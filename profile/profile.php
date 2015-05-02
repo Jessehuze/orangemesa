@@ -291,6 +291,12 @@
         </div>
       </div>
     </div>
+    
+    <script>
+      $('#postModal').on('hidden.bs.modal', function () {
+          location.reload();
+      });
+    </script>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
