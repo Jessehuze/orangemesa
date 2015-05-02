@@ -614,8 +614,8 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
   
-  <script>
-jQuery('input[name="eventdate"]').bind('keyup',function(e){
+<script>
+jQuery('input[name="eventDate"]').bind('keyup',function(e){
 
     var strokes = $(this).val().length;
     if (!((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) && e.keyCode != 8 && e.keyCode != 37 && e.keyCode != 39)
