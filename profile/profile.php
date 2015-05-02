@@ -378,7 +378,7 @@
           </p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
-          <h2 class="page-header postsHeader">Posts</h2>
+          <h2 class="page-header">Posts</h2>
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
