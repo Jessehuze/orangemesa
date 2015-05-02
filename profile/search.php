@@ -249,7 +249,7 @@
                     <button class='btn addbtn btn-default' type='button'>Going</button>
                   </div>
                   <div class='col-xs-8'>
-                    <h3>" . $event["eventname"] . " " . $event["eventdate"] . "</h3>
+                    <h3>" . $event["eventname"] . "</h3>
                     <p>". $event["description"] . "</p>
                   </div>
                 </div>";
