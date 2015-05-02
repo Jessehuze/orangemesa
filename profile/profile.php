@@ -443,8 +443,8 @@
                   <?php
 					
 					$query = "SELECT fname, lname, username FROM PEOPLE WHERE username IN
-									SELECT friendid FROM FRIENDS WHERE username = '".$_SESSION["username"]."'";
-					
+									SELECT friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."'";
+					echo $query;
 					$friends_result = mysqli_query($con, $query); 
                     
 					if ($friends_result)
