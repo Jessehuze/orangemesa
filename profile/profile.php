@@ -328,6 +328,7 @@
                 if ($_GET["user"] == $_SESSION["username"]) 
                   echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
                           Select image to upload:
+                          <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                           <input type="file" name="fileToUpload" id="fileToUpload">
                           <input type="submit" value="Upload Image" name="submit">
                         </form>';
@@ -336,6 +337,7 @@
               {
                 echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
                         Select image to upload:
+                        <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                         <input type="file" name="fileToUpload" id="fileToUpload">
                         <input type="submit" value="Upload Image" name="submit">
                       </form>';
