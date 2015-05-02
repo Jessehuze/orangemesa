@@ -454,13 +454,13 @@
                       {
                         echo "<div class='row'>
                           <div class='col-xs-4'>
-                            <a href='profile.php?user=" . $friend["username"] . "'>
+                            <a href='profile.php?user=".$friend["username"]."'>
                               <img class='friendimg' src='../images/user.png'/>
                              </a>
                           </div>
                           <div class='col-xs-8'>
-                            <a href='profile.php?user=" . $friend["username"] . "'>
-                              <h5>" . $friend["fname"] . " "  . $friend["lname"] . " </h5>
+                            <a href='profile.php?user=".$friend["username"]."'>
+                              <h5>".$friend["fname"]." ".$friend["lname"]." </h5>
                             </a>
                           </div>
                         </div>";
