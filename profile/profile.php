@@ -453,7 +453,8 @@
 						echo "Got Here";
                       while ($friend = mysqli_fetch_array($friends_result)) 
                       {
-                        echo "<div class='row'>
+                        echo "Got here 2";
+						echo "<div class='row'>
                           <div class='col-xs-4'>
                             <a href='profile.php?user=" . $friend["username"] . "'>
                               <img class='friendimg' src='../images/user.png'/>
