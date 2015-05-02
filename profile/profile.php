@@ -206,7 +206,7 @@
     </div>
 
   <!-- Events Modal -->
-    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="groupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -271,7 +271,7 @@
                 echo $name["fname"];
             ?>
             </a></li>
-            <li><a data-toggle="modal" data-target="#myModal4" href="#myModal4">Events</a></li>
+            <li><a data-toggle="modal" data-target="#groupModal" href="#groupModal">Events</a></li>
             <li><a data-toggle="modal" data-target="#myModal3" href="#myModal3">Groups</a></li>
             <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
@@ -431,7 +431,7 @@
               <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Friends List
+                    Friends
                   </a>
                 </h4>
               </div>
@@ -465,8 +465,9 @@
               <div class="panel-heading" role="tab" id="headingTwo">
                 <h4 class="panel-title">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Groups List
+                    Groups
                   </a>
+                  <a data-toggle="modal" data-target="#groupModal" href="groupModal"><i class="fa fa-plus-square"></i></a>
                 </h4>
               </div>
               <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
@@ -479,7 +480,7 @@
               <div class="panel-heading" role="tab" id="headingThree">
                 <h4 class="panel-title">
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Events List
+                    Events
                   </a>
                 </h4>
               </div>
