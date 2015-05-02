@@ -210,7 +210,7 @@
           <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
-            $group_result = mysqli_query($con, "SELECT name, description FROM GROUPS WHERE name LIKE '%".$query."%' ORDER BY name"); 
+            $group_result = mysqli_query($con, "SELECT groupid, name, description FROM GROUPS WHERE name LIKE '%".$query."%' ORDER BY name"); 
             if ($group_result)
             {
               while ($group = mysqli_fetch_array($group_result)) 
@@ -218,7 +218,7 @@
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <img class='usrimg' src='../images/user.png'/>
-					<form action='joinGroup.php?group= '".$group["name"]."' method = 'GET'>
+					<form action='joinGroup.php?group= '".$group["groupid"]."' method = 'GET'>
 					  <button class='btn addbtn btn-default' type='submit'>Join</button>
 					</form>
 				  </div>
@@ -238,7 +238,7 @@
           <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
-            $event_result = mysqli_query($con, "SELECT eventname, description FROM EVENTS WHERE eventname LIKE '%".$query."%' ORDER BY eventname"); 
+            $event_result = mysqli_query($con, "SELECT eventid, eventname, description FROM EVENTS WHERE eventname LIKE '%".$query."%' ORDER BY eventname"); 
             if ($event_result)
             {
               while ($event = mysqli_fetch_array($event_result)) 
@@ -246,7 +246,9 @@
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <img class='usrimg' src='../images/user.png'/>
-                    <button class='btn addbtn btn-default' type='button'>Going</button>
+                    <form action='joinEvent.php?event= '".$event["eventid"]."' method = 'GET'>
+                      <button class='btn addbtn btn-default' type='submit'>Going</button>
+                    </form>
                   </div>
                   <div class='col-xs-8'>
                     <h3>" . $event["eventname"] . "</h3>
