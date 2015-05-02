@@ -613,4 +613,28 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
+  
+  <script>
+jQuery('input[name="eventdate"]').bind('keyup',function(e){
+
+    var strokes = $(this).val().length;
+    if (!((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) && e.keyCode != 8 && e.keyCode != 37 && e.keyCode != 39)
+    {
+      var thisVal = $(this).val();
+      thisVal = thisVal.substr(0, strokes - 1);
+      $(this).val(thisVal);
+    } else if(strokes === 2 || strokes === 5) {
+      if (e.keyCode != 8) {
+        var thisVal = $(this).val();
+        thisVal += '-';
+        $(this).val(thisVal);
+      }
+    } else if(strokes >= 11) {
+       var thisVal = $(this).val();
+       thisVal = thisVal.substr(0,10);
+       $(this).val(thisVal);
+    }
+});
+</script>
+  
 </html>
