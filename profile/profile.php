@@ -293,7 +293,7 @@
     </div>
     
     <script>
-      $("#postModall").on("shown.bs.modal", function () { 
+      $("#postModal").on("shown.bs.modal", function () { 
           alert('Hi');
       }).modal('show');
       $('#postModal').on('hidden.bs.modal', function () {
