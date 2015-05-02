@@ -172,7 +172,7 @@
               {
                 while ($friend = mysqli_fetch_array($friends_result)) 
                 {
-                  $imageurl = require("/var/config.php");
+                  require("/var/config.php");
                   $result = mysqli_query($con, "SELECT photourl 
                                               FROM PHOTOS 
                                               WHERE owner = '" .$friend["username"]. "' AND photoid IN (SELECT ppid 

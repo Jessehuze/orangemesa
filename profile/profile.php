@@ -452,10 +452,20 @@
                     {
                       while ($friend = mysqli_fetch_array($friends_result)) 
                       {
+                        $result = mysqli_query($con, "SELECT photourl 
+                                              FROM PHOTOS 
+                                              WHERE owner = '" .$friend["username"]. "' AND photoid IN (SELECT ppid 
+                                                                                          FROM PEOPLE
+                                                                                          WHERE username ='" .$friend["username"]. "')");
+                        $photo = mysqli_fetch_array($result);
+                        if ($photo["photourl"] != "")
+                          $imageurl = "..".$photo["photourl"];
+                        else
+                          $imageurl = "../images/user.png";
                         echo "<div class='row'>
                           <div class='col-xs-4'>
                             <a href='profile.php?user=".$friend["username"]."'>
-                              <img class='friendimg' src='../images/user.png'/>
+                              <img class='friendimg' src='".$imageurl."'/>
                              </a>
                           </div>
                           <div class='col-xs-8'>
