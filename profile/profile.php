@@ -401,7 +401,8 @@
                                                                                   FROM PEOPLE
                                                                                   WHERE username ='" .$msg["sender"]. "')");
                 $photo = mysqli_fetch_array($result);
-                $name = mysqli_query($con, "SELECT fname, lname FROM PEOPLE WHERE username = '".$msg["sender"]."'");
+                $nameresult = mysqli_query($con, "SELECT fname, lname FROM PEOPLE WHERE username = '".$msg["sender"]."'");
+                $name = mysqli_fetch_array($nameresult);
                 if ($photo["photourl"] != "")
                   $imageurl = "..".$photo["photourl"];
                 else
