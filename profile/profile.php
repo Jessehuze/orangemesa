@@ -410,7 +410,7 @@
         
         <style>
           .infobar{
-            max-height: calc(72vh);
+            max-height: calc(71vh);
             overflow-y: scroll;
             overflow-x: hidden; 
             word-wrap: break-word;
@@ -423,20 +423,6 @@
               border-radius: 512px;
               box-shadow: 0 0 10px rgba(0,0,0, .3)
             }
-            .groupbar{
-                max-height: calc(72vh);
-                overflow-y: scroll;
-                overflow-x: hidden; 
-                word-wrap: break-word;
-                padding-right: 15px
-              }
-              .eventbar{
-                max-height: calc(72vh);
-                overflow-y: scroll;
-                overflow-x: hidden; 
-                word-wrap: break-word;
-                padding-right: 15px
-              }
         </style>
         
         <div class="col-md-2 tabinfo">
