@@ -2,7 +2,7 @@
 	require("/var/config.php");
 	session_start();
 	
-	$friend = mysqli_real_escape_string($con, $_POST["user"]);
+	$friend = mysqli_real_escape_string($con, $_POST["value"]);
 	$friender = mysqli_real_escape_string($con, $_SESSION["username"]);
 	
 	$query = "INSERT INTO FRIENDS (userid, friendid, status) VALUES ('".$friender."', '".$friend."', a)";
