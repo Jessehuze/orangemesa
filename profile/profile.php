@@ -450,6 +450,10 @@
               border-radius: 50px;
               box-shadow: 0 0 10px rgba(0,0,0, .3)
             }
+            .inforow{
+              max-height: calc(7vh);
+              min-height: calc(7vh);
+            }
         </style>
         
         <div class="col-md-3 tabinfo">
@@ -485,7 +489,7 @@
                           $imageurl = "..".$photo["photourl"];
                         else
                           $imageurl = "../images/user.png";
-                        echo "<div class='row'>
+                        echo "<div class='row inforow'>
                           <div class='col-xs-4'>
                             <a href='profile.php?user=".$friend["username"]."'>
                               <img class='friendimg' src='".$imageurl."'/>
