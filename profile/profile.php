@@ -450,7 +450,7 @@
 					if ($friends_result)
                     {
 					  $result = mysqli_fetch_assoc($friends_result);
-					  echo '".$result["username"]."';
+					  echo $result["username"];
 					  echo "after";
                       while ($friend = mysqli_fetch_assoc($friends_result)) 
                       {
