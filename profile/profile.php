@@ -442,7 +442,7 @@
                 <div class="panel-body infobar">
                   <?php
 					
-					$query = "(SELECT friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."')";
+					$query = "(SELECT friendid FROM FRIENDS)";
 					
 					$friends_result = mysqli_query($con, $query); 
                     echo $query;
