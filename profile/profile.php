@@ -377,7 +377,7 @@
             ?>
           </p>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
+        <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
           <h2 class="page-header">Posts</h2>
               
           <?php
@@ -452,7 +452,7 @@
             }
         </style>
         
-        <div class="col-md-2 tabinfo">
+        <div class="col-md-3 tabinfo">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingOne">
@@ -486,12 +486,12 @@
                         else
                           $imageurl = "../images/user.png";
                         echo "<div class='row'>
-                          <div class='col-xs-3'>
+                          <div class='col-xs-4'>
                             <a href='profile.php?user=".$friend["username"]."'>
                               <img class='friendimg' src='".$imageurl."'/>
                              </a>
                           </div>
-                          <div class='col-xs-9'>
+                          <div class='col-xs-8'>
                             <a href='profile.php?user=".$friend["username"]."'>
                               <h5>".$friend["fname"]." ".$friend["lname"]." </h5>
                             </a>
