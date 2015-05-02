@@ -218,8 +218,8 @@
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <img class='usrimg' src='../images/user.png'/>
-					<form action='joinGroup.php?group= '".$group["groupid"]."' method = 'GET'>
-					  <button class='btn addbtn btn-default' type='submit'>Join</button>
+					<form action='joinGroup.php' method = 'POST'>
+					  <button class='btn addbtn btn-default' type='submit' name='group' value='".$group["groupid"]."'>Join</button>
 					</form>
 				  </div>
                   <div class='col-xs-8'>

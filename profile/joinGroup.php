@@ -2,7 +2,7 @@
 	require("/var/config.php");
 	session_start();
 	
-	$groupid = mysqli_real_escape_string($con, $_GET["group"]);
+	$groupid = mysqli_real_escape_string($con, $_POST["group"]);
 	$user = mysqli_real_escape_string($con, $_SESSION["username"]);
 	
 	//Insert user into group
