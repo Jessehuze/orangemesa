@@ -403,7 +403,7 @@
           <style>
              .infobar{
                <!--max-height: calc(100vh - 175px);-->
-                overflow-y: scroll;
+                overflow-y: scroll !important;
                 overflow-x: hidden; 
                 word-wrap: break-word;
                 padding-right: 15px
