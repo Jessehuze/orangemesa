@@ -442,17 +442,20 @@
                 <div class="panel-body infobar">
                   <?php
 					
-					$query = "SELECT fname, lname, username FROM PEOPLE WHERE username IN
-									(SELECT friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."')";
+					$query = "(SELECT friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."')";
 					
 					$friends_result = mysqli_query($con, $query); 
                     echo $query;
-					if ($friends_result)
-                    {
-					  $result = mysqli_fetch_assoc($friends_result);
-					  echo $result["username"];
+					 $result = mysqli_fetch_array($friends_result);
+					  echo $result["friendid"];
 					  echo "after";
-                      while ($friend = mysqli_fetch_assoc($friends_result)) 
+					
+					if ($friends_result AND false)
+                    {
+					  $result = mysqli_fetch_array($friends_result);
+					  echo $result["friendid"];
+					  echo "after";
+                      while ($friend = mysqli_fetch_array($friends_result)) 
                       {
                         echo "Got here 2";
 						echo "<div class='row'>
