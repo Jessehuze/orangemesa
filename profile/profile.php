@@ -111,7 +111,7 @@
   </script>
 
 <!-- Settings Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -166,7 +166,7 @@
     </div>
 
   <!-- Groups Modal -->
-    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="groupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -206,7 +206,7 @@
     </div>
 
   <!-- Events Modal -->
-    <div class="modal fade" id="groupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -271,9 +271,9 @@
                 echo $name["fname"];
             ?>
             </a></li>
-            <li><a data-toggle="modal" data-target="#groupModal" href="#groupModal">Events</a></li>
-            <li><a data-toggle="modal" data-target="#myModal3" href="#myModal3">Groups</a></li>
-            <li><a data-toggle="modal" data-target="#myModal" href="#myModal">Settings</a></li>
+            <li><a data-toggle="modal" data-target="#eventModal" href="#eventModal">Events</a></li>
+            <li><a data-toggle="modal" data-target="#groupModal" href="#groupModal">Groups</a></li>
+            <li><a data-toggle="modal" data-target="#settingsModal" href="#settingsModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
           <form class="navbar-form navbar-left" action="search.php" method="GET">
