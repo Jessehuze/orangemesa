@@ -436,10 +436,12 @@
             word-wrap: break-word;
             padding-right: 15px
           }
+          a{
+            color:#000;
+            text-decoration:none;
+          }
           .friendimg{
-              margin-left: 13%;
-              width: 70%;
-              margin-top: 15%;
+              width: 100%;
               border-radius: 512px;
               box-shadow: 0 0 10px rgba(0,0,0, .3)
             }
