@@ -443,17 +443,16 @@
                 <div class="panel-body infobar">
                   <?php
 					
-					$query = "SELECT fname, lname, username FROM PEOPLE WHERE username IN
-							(SELECT friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."'";
+                    $query = "SELECT fname, lname, username FROM PEOPLE WHERE username IN
+                        (SELECT friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."'";
+                    
+                    $friends_result = mysqli_query($con, $query); 
 					
-					$friends_result = mysqli_query($con, $query); 
-					
-					if ($friends_result AND false)
+                     if (mysqli_num_rows($friends_result) != 0)
                     {
                       while ($friend = mysqli_fetch_array($friends_result)) 
                       {
-                        echo "Got here 2";
-						echo "<div class='row'>
+                        echo "<div class='row'>
                           <div class='col-xs-4'>
                             <a href='profile.php?user=" . $friend["username"] . "'>
                               <img class='friendimg' src='../images/user.png'/>
