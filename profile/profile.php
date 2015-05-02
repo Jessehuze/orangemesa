@@ -408,7 +408,7 @@
                 word-wrap: break-word;
                 padding-right: 15px
               }
-              .friendimg{
+              .friendimgs{
                   margin-left: 13%;
                   width: 70%;
                   margin-top: 15%;
