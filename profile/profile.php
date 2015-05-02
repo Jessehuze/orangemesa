@@ -449,7 +449,8 @@
                     echo $query;
 					if ($friends_result)
                     {
-					  echo (mysqli_fetch_assoc($friends_result))["username"];
+					  $result = mysqli_fetch_assoc($friends_result);
+					  echo '".$result["username"]."';
 					  echo "after";
                       while ($friend = mysqli_fetch_assoc($friends_result)) 
                       {
