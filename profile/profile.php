@@ -293,7 +293,7 @@
     </div>
     
     <script>
-      $('#postModal').on('hidden.bs.modal', function () {
+      $('#postModal').on('hidden', function () {
           location.reload();
       });
     </script>
