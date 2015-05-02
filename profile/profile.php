@@ -442,6 +442,7 @@
           }
           .friendimg{
               width: 100%;
+              height:100%
               border-radius: 512px;
               box-shadow: 0 0 10px rgba(0,0,0, .3)
             }
@@ -490,7 +491,7 @@
                         else
                           $imageurl = "../images/user.png";
                         echo "<div class='row'>
-                          <div class='col-xs-4 inforow'>
+                          <div class='col-xs-4'>
                             <a href='profile.php?user=".$friend["username"]."'>
                               <img class='friendimg' src='".$imageurl."'/>
                              </a>
