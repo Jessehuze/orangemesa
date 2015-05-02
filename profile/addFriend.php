@@ -13,12 +13,12 @@
     $query = "INSERT INTO FRIENDS (userid, friendid, request_state) VALUES ('".$friender."' , '".$friend."', 'a') ";
     echo $query;
     $insert = mysqli_query($con, $query);
-    header("Location: http://inceptisol.us.to:6670/profile/profile.php");
+    header("Location: http://inceptisol.us.to:6670/profile/search.php");
     exit();
   }
   else
   {
-    header("Location: http://inceptisol.us.to:6670/profile/profile.php");
+    header("Location: http://inceptisol.us.to:6670/profile/search.php");
     exit();
   }
 	
