@@ -408,12 +408,12 @@
                 else
                   $imageurl = "../images/user.png";
                 echo "<div class='row'>
-                  <div class='col-xs-2'>
+                  <div class='col-xs-3'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <img class='statusimg' src='".$imageurl."'/>
                      </a>
                   </div>
-                  <div class='col-xs-10'>
+                  <div class='col-xs-9'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <h3>".$name["fname"]." ".$name["lname"]." </h3>
                     </a>
