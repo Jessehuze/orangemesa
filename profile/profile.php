@@ -447,10 +447,10 @@
 					
 					$friends_result = mysqli_query($con, $query); 
                     echo $query;
-					echo mysqli_error($con);
 					if ($friends_result)
                     {
-						echo "Got Here";
+					  echo (mysqli_fetch_assoc($friends_result))["username"];
+					  echo "after";
                       while ($friend = mysqli_fetch_assoc($friends_result)) 
                       {
                         echo "Got here 2";
