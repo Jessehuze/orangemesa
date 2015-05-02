@@ -237,7 +237,7 @@
 				
 				<div class="createGroupDate__row">
 				  <svg class="signup__icon username svg-icon" viewbox="0 0 20 20"></svg>
-				  <input name="eventDate" type="text" class="edit__input dob" name="eventDate" placeholder="mm-dd-yyyy" required pattern="((((0[13578]|1[02])(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[01]))|((0[469]|11)(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[0]))|((02)((\/|-|.)(0[1-9]|1[0-9]|2[0-8]))))(\/|-|.)(19([6-9][0-9])|20(0[0-9]|1[0-4])))|((02)(\/|-|.)(29)(\/|-|.)(19(6[048]|7[26]|8[048]|9[26])|20(0[048]|1[26])))"/>
+				  <input name="eventDate" type="text" class="edit__input dob" name="eventDate" placeholder="Event Date" required pattern="((((0[13578]|1[02])(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[01]))|((0[469]|11)(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[0]))|((02)((\/|-|.)(0[1-9]|1[0-9]|2[0-8]))))(\/|-|.)(19([6-9][0-9])|20(0[0-9]|1[0-4])))|((02)(\/|-|.)(29)(\/|-|.)(19(6[048]|7[26]|8[048]|9[26])|20(0[048]|1[26])))"/>
 				</div>
 
                 <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
