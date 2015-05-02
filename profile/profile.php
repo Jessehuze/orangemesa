@@ -271,8 +271,6 @@
                 echo $name["fname"];
             ?>
             </a></li>
-            <li><a data-toggle="modal" data-target="#eventModal" href="#eventModal">Events</a></li>
-            <li><a data-toggle="modal" data-target="#groupModal" href="#groupModal">Groups</a></li>
             <li><a data-toggle="modal" data-target="#settingsModal" href="#settingsModal">Settings</a></li>
             <li><a href="../logout.php"><i class="fa fa-power-off"></i> Log Out</a></li>
           </ul>
@@ -482,6 +480,7 @@
                   <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     Events
                   </a>
+                   <a data-toggle="modal" data-target="#eventModal" href="eventModal"><i class="fa fa-plus-square"></i></a>
                 </h4>
               </div>
               <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
