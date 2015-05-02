@@ -325,8 +325,6 @@
                 echo "../images/user.png";
             ?>
             >
-          </div>
-          <div>
             <?php 
               if (isset($_GET["user"]))
               {
