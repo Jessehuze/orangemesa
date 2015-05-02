@@ -451,7 +451,7 @@
 					if ($friends_result)
                     {
 						echo "Got Here";
-                      while ($friend = mysqli_fetch_array($friends_result)) 
+                      while ($friend = mysqli_fetch_assoc($friends_result)) 
                       {
                         echo "Got here 2";
 						echo "<div class='row'>
