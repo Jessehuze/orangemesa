@@ -6,9 +6,9 @@
 	$friender = mysqli_real_escape_string($con, $_SESSION["username"]);
 	
 	$query = "INSERT INTO FRIENDS (userid, friendid, status) VALUES ('".$friender."', '".$friend."', 'a')";
-	echo $query;
+	$query;
 	$insert = mysqli_query($con, $query);
 	
-	//header("Location: http://inceptisol.us.to:6670/profile/search.php");
+	header("Location: http://inceptisol.us.to:6670/profile/profile.php");
 
 ?>

@@ -443,7 +443,7 @@
                   <?php
 					
 					$query = "SELECT fname, lname, username FROM PEOPLE, FRIENDS WHERE username = userid AND username = '".$_SESSION["username"]."'";
-					echo $query;
+					
 					$friends_result = mysqli_query($con, $query); 
                     
 					if ($friends_result)
