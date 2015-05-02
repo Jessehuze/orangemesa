@@ -446,9 +446,11 @@
 									(SELECT friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."')";
 					
 					$friends_result = mysqli_query($con, $query); 
-                    
+                    echo $query;
+					echo mysqli_error($con);
 					if ($friends_result)
                     {
+						echo "Got Here";
                       while ($friend = mysqli_fetch_array($friends_result)) 
                       {
                         echo "<div class='row'>
