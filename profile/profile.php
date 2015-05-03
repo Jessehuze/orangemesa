@@ -538,7 +538,7 @@
                         if ($user != $_SESSION["username"])
                           echo $name["fname"]." Follows ".$count["count(userid)"]." people:";
                         else
-                          echo "You follow " .$count["counr(userid)"]." people:";
+                          echo "You follow " .$count["count(userid)"]." people:";
                       ?>
                   </a>
                 </h4>
