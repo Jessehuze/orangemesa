@@ -430,7 +430,7 @@
           </p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-          <h2 class="page-header">Posts</h2><a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
+          <h2 class="page-header">Posts<a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a></h2>
               
           <?php
             require("/var/config.php");
@@ -470,6 +470,19 @@
                       <h3>".$name["fname"]." ".$name["lname"]." </h3>
                     </a>
                     <p>".$msg["message"]."</p>
+                  </div>
+                </div>";
+                echo "<div class='row'>
+                  <div style='text-align: right;' class='col-xs-10'>
+                    <a href='profile.php?user=".$msg["sender"]."'>
+                      <h3>".$name["fname"]." ".$name["lname"]." </h3>
+                    </a>
+                    <p>".$msg["message"]."</p>
+                  </div>
+                  <div class='col-xs-2'>
+                    <a href='profile.php?user=".$msg["sender"]."'>
+                      <img class='statusimg' src='".$imageurl."'/>
+                     </a>
                   </div>
                 </div>";
               }
