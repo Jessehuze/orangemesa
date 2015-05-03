@@ -615,7 +615,30 @@
               <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body infobar">
                    <?php
-						$query =
+						$query = "SELECT eventname, description, eventdate FROM EVENTS WHERE eventid IN
+								(SELECT eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION."')";
+						
+						$event_result = mysqli_query($con, $query);
+						
+						if(mysqli_num_rows($event_result) != 0)
+						{
+							while($event = mysqli_fetch_array($event_result)
+							{
+								echo 	"<div class='row'>
+										  <div class='col-xs-8'>
+										   <h2>".$event["eventname"]."</h2>
+										  </div>
+										  <div class='col-xs-4'>
+										   <h5>".$event["eventdate"]."</h5>
+										
+										</div>
+										<div class='row'>
+										  <h5>".$event["description"]."</h5>
+										</div>";
+										
+							}
+						}
+						
 
 					?>
 				</div>
