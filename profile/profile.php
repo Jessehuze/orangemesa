@@ -604,15 +604,14 @@
 					{
 						while ($group = mysqli_fetch_array($group_result))
 						{
-							//Picture for group?
-							
-							echo "<div class='row'>
-								<h2>".$group["name"]."</h2>
-								</div>
-								<div class='row'>
-								<h5>".$group["description"]."</h5>
-								<br>
-								</div>";
+							//Picture for group? 
+              echo "<div class='row'>
+                          <div class='col-xs-9'>
+                            <a href='profile.php?user=".$group["name"]."'>
+                              <h5>".$group["description"]."</h5>
+                            </a>
+                        </div>
+                      </div>";
 							
 						}
 					}
