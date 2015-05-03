@@ -666,7 +666,7 @@
                         $name = mysqli_fetch_array($result);
 						
 						$query = "SELECT COUNT(*) FROM EVENT_INVITES WHERE invitee = '".$user."'";
-						$result = mysli_query($con, $query);
+						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
 						
 						if ($user != $_SESSION["username"])
