@@ -260,8 +260,10 @@
 					<div class='col-xs-6'>
 					  <h5>".$event["eventdate"]."</h5>
 					</div>
-					<h5>". $event["description"] . "</h5>
-                  </div>
+					<div class='row'>
+					  <h5>". $event["description"] . "</h5>
+                    </div>
+				  </div>
                 </div>";
               }
             }
