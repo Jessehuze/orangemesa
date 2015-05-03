@@ -350,16 +350,10 @@
       .usrimg{
         margin-left: 13%;
         width: 70%;
+        height: 70%;
         border-radius: 512px;
-        box-shadow: 0 0 10px rgba(0,0,0, .3)
-      }
-    </style>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
-          <div>
-            <img class="usrimg" src=
-            <?php
+        box-shadow: 0 0 10px rgba(0,0,0, .3);
+        background-image: url("<?php
               require("/var/config.php");
               if (isset($_GET["user"]))
                 $user=$_GET["user"];
@@ -375,8 +369,16 @@
                 echo "..".$photo["photourl"];
               else
                 echo "../images/user.png";
-            ?>
-            >
+            ?>");
+          background-repeat: no-repeat;
+          background-position: center;
+      }
+    </style>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
+          <div>
+            <div class="usrimg"></div>
             <?php 
               if (isset($_GET["user"]))
               {
@@ -430,7 +432,7 @@
           </p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-          <h2 class="page-header">Posts<a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a></h2>
+          <h2 class="page-header">Posts</h2><a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
               
           <?php
             require("/var/config.php");
