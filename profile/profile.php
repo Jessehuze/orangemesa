@@ -593,10 +593,12 @@
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingTwo">
                 <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Groups
-                  </a>
-                  <a data-toggle="modal" data-target="#groupModal" href="groupModal"><i class="fa fa-plus-square"></i></a>
+                  <a data-toggle="collapse" data-target="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				    <?php
+						echo "Is it working?"
+					?>
+				  
+				  </a>
                 </h4>
               </div>
               <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
