@@ -5,7 +5,7 @@
 	$eventid = mysqli_real_escape_string($con, $_POST["event"]);
 	$user = mysqli_real_escape_string($con, $_SESSION["username"]);
 	
-	//Insert user into group
+	//Insert user into event
 	$query = "INSERT INTO EVENT_INVITES VALUES ('".$eventid."', '".$user."', 'g')";
 	$insert = mysqli_query($con, $query);
 	
