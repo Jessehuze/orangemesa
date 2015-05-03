@@ -604,7 +604,7 @@
                         $result = mysqli_query($con, $query); 
                         $name = mysqli_fetch_array($result);
 						
-						$query "SELECT COUNT(*) FROM GROUP_MEMBERS WHERE memberid= '".$user."'";
+						$query = "SELECT COUNT(*) FROM GROUP_MEMBERS WHERE memberid= '".$user."'";
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
 						
