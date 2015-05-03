@@ -374,33 +374,16 @@
           background-position: center;
           background-size: 200px;
       }
+      .updateimg{
+        
+      }
     </style>
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
           <div>
             <div class="usrimg"></div>
-            <?php 
-              if (isset($_GET["user"]))
-              {
-                if ($_GET["user"] == $_SESSION["username"]) 
-                  echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
-                          Select image to upload:
-                          <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
-                          <input type="file" name="fileToUpload" id="fileToUpload">
-                          <input type="submit" value="Upload Image" name="submit">
-                        </form>';
-              }
-              else
-              {
-                echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
-                        Select image to upload:
-                        <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
-                        <input type="file" name="fileToUpload" id="fileToUpload">
-                        <input type="submit" value="Upload Image" name="submit">
-                      </form>';
-              }
-            ?>
+            <div class="updateimg" id="updateimg"><i class="fa fa-gear"></i></div>
           </div>
           <hr>
           <h2>
@@ -534,6 +517,10 @@
               padding: 20px;
               margin: 10px 0;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
+            }
+            .tabinfo{
+              position: fixed;
+              right: -15px;
             }
         </style>
         
