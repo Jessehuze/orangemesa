@@ -430,7 +430,7 @@
           </p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-          <h2 class="page-header">Posts<a data-toggle="modal" data-target="#postModal" href="#postModal"><i class="fa fa-plus-square"></i></a></h2>
+          <h2 class="page-header">Posts<a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a></h2>
               
           <?php
             require("/var/config.php");
@@ -481,7 +481,7 @@
         
         <style>
           .infobar{
-            height: calc(100vh - 50px);
+            height: calc(100vh - 70px);
             overflow-y: scroll;
             overflow-x: hidden; 
             word-wrap: break-word;
@@ -502,8 +502,7 @@
               box-shadow: 0 0 10px rgba(0,0,0, .3)
             }
             .inforow{
-              max-height: calc(7vh);
-              min-height: calc(7vh);
+              height: 50px;
             }
         </style>
         
@@ -610,7 +609,7 @@
 						  echo "You are in ".$count["COUNT(*)"]." groups:";
 					?>
 					
-					<a data-toggle="modal" data-target="#groupModal" href="#groupModal"><i class="fa fa-plus-square"></i></a>
+					<a data-toggle="modal" data-target="#groupModal" href="#groupModal"><i class="pull-right fa fa-plus-square"></i></a>
 					
 				  </a>
                 </h4>
@@ -674,7 +673,7 @@
                           echo "You are going to " .$count["COUNT(*)"]." events:";
 					 ?>
 					 
-					 <a data-toggle="modal" data-target="#eventModal" href="#eventModal"><i class="fa fa-plus-square"></i></a>
+					 <a data-toggle="modal" data-target="#eventModal" href="#eventModal"><i class="pull-right fa fa-plus-square"></i></a>
 					 
 				   </a>
 				</h4>
