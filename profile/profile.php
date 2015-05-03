@@ -582,7 +582,7 @@
                             <a href='profile.php?user=".$friend["username"]."'>
                               <h5>".$friend["fname"]." ".$friend["lname"]." </h5>
                             </a>
-							<a href='profile/removefriend.php'><i class='fa fa-minus-square'></i></a>
+							
                           </div>
                         </div>";
                       }
