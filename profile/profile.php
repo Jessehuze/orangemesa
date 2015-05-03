@@ -465,7 +465,7 @@
                 echo "<div class='row'>
                   <div class='col-xs-2'>
                     <a href='profile.php?user=".$msg["sender"]."'>
-                      <img class='statusimg' src='".$imageurl."'/>
+                      <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
                   </div>
                   <div class='col-xs-10'>
@@ -509,18 +509,23 @@
           }
           .friendimg{
               margin-left: 13%;
-              width: 200px;
-              height: 200px;
+              width: 75px;
+              height: 75px;
               border-radius: 512px;
               box-shadow: 0 0 10px rgba(0,0,0, .3);
               background-repeat: no-repeat;
               background-position: center;
-              background-size: 200px;
+              background-size: 75px;
             }
             .statusimg{
-              width: 100%;
-              border-radius: 50px;
-              box-shadow: 0 0 10px rgba(0,0,0, .3)
+              margin-left: 13%;
+              width: 100px;
+              height: 100px;
+              border-radius: 512px;
+              box-shadow: 0 0 10px rgba(0,0,0, .3);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 100px;
             }
             .inforow{
               height: 50px;
@@ -590,7 +595,7 @@
                         echo "<div class='row'>
                           <div class='col-xs-3'>
                             <a href='profile.php?user=".$friend["username"]."'>
-                              <div class='friendimg' style='background-image:url('".$imageurl."')'></div>
+                              <div class='friendimg' style='background-image:url(". $imageurl .")'></div>
                              </a>
                           </div>
                           <div class='col-xs-9'>
