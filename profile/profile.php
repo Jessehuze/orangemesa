@@ -530,7 +530,10 @@
                         
                         $result = mysqli_query($con, $query); 
                         $name = mysqli_fetch_array($result);
-                        echo $name["fname"]."'s Friends";
+                        if ($user != $_SESSION["username"])
+                          echo $name["fname"]." Follows:";
+                        else
+                          echo "Following:
                       ?>
                   </a>
                 </h4>
