@@ -665,7 +665,7 @@
                         $result = mysqli_query($con, $query); 
                         $name = mysqli_fetch_array($result);
 						
-						$query = "SELECT COUNT(*) FROM EVENT_INVITES WHERE invitee = '".$user."'";
+						$query = "SELECT DISTINCT COUNT(*) FROM EVENT_INVITES WHERE invitee = '".$user."'";
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
 						
