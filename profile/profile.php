@@ -532,11 +532,13 @@
                         $name = mysqli_fetch_array($result);
 						
 						$query = "SELECT userid, count(distinct userid) FROM FRIENDS WHERE userid='".$user."'";
+						$result = mysqli_query($con, $query);
+						$count = mysqli_fetch_array($result);
 						
                         if ($user != $_SESSION["username"])
-                          echo $name["fname"]." Follows:";
+                          echo $name["fname"]." Follows: ".$count["userid_count"]." people";
                         else
-                          echo "Following:";
+                          echo "You follow " .$count["userid_count"]." people:";
                       ?>
                   </a>
                 </h4>
