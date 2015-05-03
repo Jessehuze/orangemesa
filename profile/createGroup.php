@@ -25,6 +25,9 @@
 		//Insert owner as member of group
 		$query = "INSERT INTO GROUP_MEMBERS (GID, memberid) VALUES('".$row1["groupid"]."','".$row1["owner"]."')";
 		$insert = mysqli_query($con, $query);
+
+		//Reloads reference page
+		header("Location: ".$_POST["refer"]);
 	}
 	else
 	{
