@@ -622,7 +622,7 @@
 						
 						if(mysqli_num_rows($event_result) != 0)
 						{
-							while($event = mysqli_fetch_array($event_result)
+							while($event = mysqli_fetch_array($event_result))
 							{
 								echo 	"<div class='row'>
 										  <div class='col-xs-8'>
@@ -638,8 +638,6 @@
 										
 							}
 						}
-						
-
 					?>
 				</div>
               </div>
