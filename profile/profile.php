@@ -536,7 +536,7 @@
 						$count = mysqli_fetch_array($result);
 						
                         if ($user != $_SESSION["username"])
-                          echo $name["fname"]." Follows ".$count["COUNT(*)"]." people:";
+                          echo $name["fname"]." follows ".$count["COUNT(*)"]." people:";
                         else
                           echo "You follow " .$count["COUNT(*)"]." people:";
                       ?>
@@ -654,11 +654,28 @@
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingThree">
                 <h4 class="panel-title">
-                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Events
-                  </a>
-                   <a data-toggle="modal" data-target="#eventModal" href="eventModal"><i class="fa fa-plus-square"></i></a>
-                </h4>
+                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                     <?php
+					    if (isset($_GET["user"]))
+                          $user=$_GET["user"];
+                        else
+                          $user=$_SESSION["username"];
+              
+                        $query = "SELECT fname FROM PEOPLE WHERE username = '".$user."'";
+                        $result = mysqli_query($con, $query); 
+                        $name = mysqli_fetch_array($result);
+						
+						$query = "SELECT COUNT(*) FROM EVENT_INVITES WHERE invitee = '".$user."'";
+						$result = mysli_query($con, $query);
+						$count = mysqli_fetch_array($result);
+						
+						if ($user != $_SESSION["username"])
+                          echo $name["fname"]." in going to ".$count["COUNT(*)"]." events:";
+                        else
+                          echo "You are going to " .$count["COUNT(*)"]." events:";
+					 ?>
+				   </a>
+				</h4>
               </div>
               <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body infobar">
