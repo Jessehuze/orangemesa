@@ -531,12 +531,12 @@
                         $result = mysqli_query($con, $query); 
                         $name = mysqli_fetch_array($result);
 						
-						$query = "SELECT userid, count(distinct userid) FROM FRIENDS WHERE userid='".$user."'";
+						$query = "SELECT userid, COUNT(distinct userid) FROM FRIENDS WHERE userid='".$user."'";
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
 						
                         if ($user != $_SESSION["username"])
-                          echo $name["fname"]." Follows ".$count["count(userid)"]." people:";
+                          echo $name["fname"]." Follows ".$count["COUNT(userid)"]." people:";
                         else
                           echo "You follow " .$count["count(userid)"]." people:";
                       ?>
