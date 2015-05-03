@@ -256,6 +256,7 @@
                   <div class='col-xs-8'>
 				    <div class='col-xs-6'>
                       <h3>" . $event["eventname"] . "</h3>
+					</div>
 					<div class='col-xs-6'>
 					  <h5>".$event["eventdate"]."</h5>
 					</div>
