@@ -520,7 +520,18 @@
               <div class="panel-heading" role="tab" id="headingOne">
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Friends
+                    <?php
+                      if (isset($_GET["user"]))
+                          $user=$_GET["user"];
+                        else
+                          $user=$_SESSION["username"];
+              
+                        $query = "SELECT fname FROM PEOPLE WHERE username = '".$user."'";
+                        
+                        $result = mysqli_query($con, $query); 
+                        $name = mysqli_fetch_array($result);
+                        echo $name["fname"]."'s Friends";
+                      ?>
                   </a>
                 </h4>
               </div>
