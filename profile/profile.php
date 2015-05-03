@@ -595,9 +595,24 @@
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 				    <?php
-						echo "Is it working?"
+						if (isset($_GET["user"]))
+                          $user=$_GET["user"];
+                        else
+                          $user=$_SESSION["username"];
+						  
+						$query = "SELECT fname FROM PEOPLE WHERE username = '".$user."'";
+                        $result = mysqli_query($con, $query); 
+                        $name = mysqli_fetch_array($result);
+						
+						$query "SELECT COUNT(*) FROM GROUP_MEMBERS WHERE memberid= '".$user."'";
+						$result = mysqli_query($con, $query);
+						$count = mysqli_fetch_array($result);
+						
+						if($user != $_SESSION["username"])
+						  echo $name["fname"}." is in ".$count["COUNT(*)"]." groups:";
+						else
+						  echo "You are in ".$count["COUNT(*)"]." groups:";
 					?>
-				  
 				  </a>
                 </h4>
               </div>
