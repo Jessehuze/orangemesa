@@ -285,7 +285,7 @@
                     echo $user;
                   ?>
                 />
-                <button name="createGroup" data-toggle="modal" data-target="#postModal" type="submit" class="edit__submit">Send Message</button>
+                <button name="createGroup" type="submit" class="edit__submit">Send Message</button>
               </form>
 
               </div>
@@ -296,15 +296,6 @@
         </div>
       </div>
     </div>
-    
-    <script>
-      $("#postModal").on("shown.bs.modal", function () { 
-          alert('Hi');
-      }).modal('show');
-      $('#postModal').on('hidden.bs.modal', function () {
-          location.reload();
-      });
-    </script>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
