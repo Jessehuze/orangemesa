@@ -430,7 +430,7 @@
           </p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-          <h2 class="page-header">Posts<a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a></h2>
+          <h2 class="page-header">Posts</h2><a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
               
           <?php
             require("/var/config.php");
