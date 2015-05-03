@@ -583,8 +583,7 @@
 					
 					$group_result = mysqli_query($con, $query);
 					
-					if(mysqli_num_rows($group_result != 0)
-					{
+					if(mysqli_num_rows($group_result != 0) {
 						while ($group = mysqli_fetch_array($group_result))
 						{
 							//Picture for group?
