@@ -241,7 +241,7 @@
           <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
-            $event_result = mysqli_query($con, "SELECT eventid, eventname, description FROM EVENTS WHERE eventname LIKE '%".$query."%' ORDER BY eventname"); 
+            $event_result = mysqli_query($con, "SELECT eventid, eventname, description, eventdate FROM EVENTS WHERE eventname LIKE '%".$query."%' ORDER BY eventname"); 
             if ($event_result)
             {
               while ($event = mysqli_fetch_array($event_result)) 
@@ -254,7 +254,11 @@
                     </form>
                   </div>
                   <div class='col-xs-8'>
-                    <h3>" . $event["eventname"] . "</h3>
+				    <div class='col-xs-6'>
+                      <h3>" . $event["eventname"] . "</h3>
+					<div class='col-xs-6'>
+					  <h5>".$event["eventdate"]."</h5>
+					</div>
                     <p>". $event["description"] . "</p>
                   </div>
                 </div>";
