@@ -462,7 +462,7 @@
                   $imageurl = "..".$photo["photourl"];
                 else
                   $imageurl = "../images/user.png";
-                echo "<div class='row'>
+                echo "<div class='row usrpost'>
                   <div class='col-xs-2'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
@@ -474,9 +474,8 @@
                     </a>
                     <p>".$msg["message"]."</p>
                   </div>
-                </div>
-                <hr>";
-                echo "<div class='row'>
+                </div>";
+                echo "<div class='row usrpost'>
                   <div style='text-align: right;' class='col-xs-10'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <h3>".$name["fname"]." ".$name["lname"]." </h3>
@@ -488,8 +487,7 @@
                       <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
                   </div>
-                </div>
-                <hr>";
+                </div>";
               }
             }
           ?>
@@ -531,6 +529,9 @@
             }
             .inforow{
               height: 50px;
+            }
+            .usrpost{
+              box-shadow: 0 0 5px rgba(0,0,0, 0.5);
             }
         </style>
         
