@@ -526,12 +526,11 @@
                         else
                           $user=$_SESSION["username"];
               
-                        $query = "SELECT fname FROM PEOPLE WHERE username IN
-                            (SELECT friendid FROM FRIENDS WHERE userid = '".$user."')";
+                        $query = "SELECT fname FROM PEOPLE WHERE username = '".$user."'";
                         
                         $result = mysqli_query($con, $query); 
                         $name = mysqli_fetch_array($result);
-                        echo $name["fname"]."\'s Friends";
+                        echo $name["fname"]."'s Friends";
                       ?>
                   </a>
                 </h4>
