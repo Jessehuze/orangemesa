@@ -276,7 +276,8 @@
                 </div>
 
                 <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
-                <input name="reciever" type="hidden" value=
+                <button name="createGroup" type="submit" class="edit__submit">Send Message</button>
+                <input name="reciever" type="hidden" value="
                   <?php
                     if (isset($_GET["user"]))
                       $user=$_GET["user"];
@@ -284,8 +285,8 @@
                       $user=$_SESSION["username"];
                     echo $user;
                   ?>
-                />
-                <button name="createGroup" type="submit" class="edit__submit">Send Message</button>
+                "/>
+                
               </form>
 
               </div>
@@ -297,6 +298,9 @@
       </div>
     </div>
 
+    
+    
+    
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
