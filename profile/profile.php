@@ -617,6 +617,7 @@
               echo "<div class='row'>
                           <div class='col-xs-9'>
                             <a href='profile.php?user=".$group["name"]."'>
+                              <h4>".$group["name"]."</h4>
                               <h5>".$group["description"]."</h5>
                             </a>
                         </div>
