@@ -594,9 +594,15 @@
               <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                 <div class="panel-body infobar">
                  <?php
+					if (isset($_GET["user"]))
+						$user=$_GET["user"];
+					else
+						$user=$_SESSION["username"];
+            
+					
 					
 					$query = "SELECT gpid, name, description FROM GROUPS WHERE groupid IN
-							(SELECT gid FROM GROUP_MEMBERS WHERE memberid = '".$_SESSION["username"]."')";
+							(SELECT gid FROM GROUP_MEMBERS WHERE memberid = '".$user."')";
 					
 					$group_result = mysqli_query($con, $query);
 					
@@ -632,8 +638,14 @@
               <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                 <div class="panel-body infobar">
                    <?php
+						if (isset($_GET["user"]))
+							$user=$_GET["user"];
+						else
+							$user=$_SESSION["username"];
+            
+						
 						$query = "SELECT eventname, description, eventdate FROM EVENTS WHERE eventid IN
-								(SELECT eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."')";
+								(SELECT eventid FROM EVENT_INVITES WHERE invitee = '".$user."')";
 						
 						$event_result = mysqli_query($con, $query);
 						
