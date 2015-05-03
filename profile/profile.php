@@ -207,7 +207,48 @@
         </div>
       </div>
     </div>
+    
+    <!-- Post Modal -->
+    <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Post</h4>
+          </div>
+          <div class="modal-body">
+           <div class="cont">
+           <div class = "demo">
+            <div class="editProfile">
+              <div class="editProfile_form">
 
+              <form action="addPost.php" method="POST">
+
+                <div class="createGroupDesc__row">
+                  <textarea name="message" type="text" class="edit__input description" rows="6" placeholder="Message" required></textarea>
+                </div>
+
+                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                <button name="post" type="submit" class="edit__submit">Send Message</button>
+                <input name="reciever" type="hidden" value="<?php
+                    if (isset($_GET["user"]))
+                      $user=$_GET["user"];
+                    else
+                      $user=$_SESSION["username"];
+                    echo $user;
+                  ?>"/>
+                
+              </form>
+
+              </div>
+             </div>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
   <!-- Events Modal -->
     <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -253,52 +294,10 @@
       </div>
     </div>
     
-    <!-- Post Modal -->
-    <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Post</h4>
-          </div>
-          <div class="modal-body">
-           <div class="cont">
-           <div class = "demo">
-            <div class="editProfile">
-              <div class="editProfile_form">
 
-              <form action="addPost.php" method="POST">
 
-                <div class="createGroupDesc__row">
-                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
-                  </svg>
-                  <textarea name="message" type="text" class="edit__input description" rows="6" placeholder="Message" required></textarea>
-                </div>
-
-                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
-                <button name="createGroup" type="submit" class="edit__submit">Send Message</button>
-                <input name="reciever" type="hidden" value="
-                  <?php
-                    if (isset($_GET["user"]))
-                      $user=$_GET["user"];
-                    else
-                      $user=$_SESSION["username"];
-                    echo $user;
-                  ?>
-                "/>
-                
-              </form>
-
-              </div>
-             </div>
-           </div>
-           </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    
+    <script>
+    </script>
     
     
     <nav class="navbar navbar-inverse navbar-fixed-top">
