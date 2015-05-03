@@ -484,7 +484,7 @@
                   </div>
                   <div class='col-xs-2'>
                     <a href='profile.php?user=".$msg["sender"]."'>
-                      <img class='statusimg' src='".$imageurl."'/>
+                      <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
                   </div>
                 </div>";
