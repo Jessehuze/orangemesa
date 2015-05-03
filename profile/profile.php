@@ -528,10 +528,16 @@
                 <div class="panel-body infobar">
                   <?php
 					
+                    if (isset($_GET["user"]))
+                      $user=$_GET["user"];
+                    else
+                      $user=$_SESSION["username"];
+          
                     $query = "SELECT fname, lname, username FROM PEOPLE WHERE username IN
-                        (SELECT friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."')";
+                        (SELECT friendid FROM FRIENDS WHERE userid = '".$user."')";
                     
                     $friends_result = mysqli_query($con, $query); 
+                    
 					
                      if (mysqli_num_rows($friends_result) != 0)
                     {
