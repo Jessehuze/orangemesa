@@ -630,7 +630,7 @@
 										  </div>
 										  <div class='col-xs-4'>
 										   <h5>".$event["eventdate"]."</h5>
-										
+										  </div>
 										</div>
 										<div class='row'>
 										  <h5>".$event["description"]."</h5>
