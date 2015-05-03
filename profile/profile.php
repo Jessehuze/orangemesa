@@ -474,7 +474,8 @@
                     </a>
                     <p>".$msg["message"]."</p>
                   </div>
-                </div>";
+                </div>
+                <hr>";
                 echo "<div class='row'>
                   <div style='text-align: right;' class='col-xs-10'>
                     <a href='profile.php?user=".$msg["sender"]."'>
@@ -487,7 +488,8 @@
                       <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
                   </div>
-                </div>";
+                </div>
+                <hr>";
               }
             }
           ?>
