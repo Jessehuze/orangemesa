@@ -593,7 +593,7 @@
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingTwo">
                 <h4 class="panel-title">
-                  <a data-toggle="collapse" data-target="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
 				    <?php
 						echo "Is it working?"
 					?>
