@@ -616,7 +616,7 @@
                 <div class="panel-body infobar">
                    <?php
 						$query = "SELECT eventname, description, eventdate FROM EVENTS WHERE eventid IN
-								(SELECT eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION."')";
+								(SELECT eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION[username]."')";
 						
 						$event_result = mysqli_query($con, $query);
 						
