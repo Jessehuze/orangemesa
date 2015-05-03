@@ -657,10 +657,12 @@
 							while($event = mysqli_fetch_array($event_result))
 							{
 								echo 	"<div class='row'>
+                      <div class='col-xs-9'>
 										 <h3>".$event["eventname"]."</h3>
 										 <h5>".$event["eventdate"]."</h5>
 										 <h5>".$event["description"]."</h5>
-										</div>";
+										</div>
+                    </div>";
 										
 							}
 						}
