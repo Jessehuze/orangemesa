@@ -540,6 +540,8 @@
                         else
                           echo "You follow " .$count["COUNT(*)"]." people:";
                       ?>
+					  
+					  
                   </a>
                 </h4>
               </div>
@@ -614,6 +616,9 @@
 						else
 						  echo "You are in ".$count["COUNT(*)"]." groups:";
 					?>
+					
+					<a data-toggle="modal" data-target="#groupModal" href="#groupModal"><i class="fa fa-plus-square"></i></a>
+					
 				  </a>
                 </h4>
               </div>
@@ -675,6 +680,9 @@
                         else
                           echo "You are going to " .$count["COUNT(*)"]." events:";
 					 ?>
+					 
+					 <a data-toggle="modal" data-target="#eventModal" href="#eventModal"><i class="fa fa-plus-square"></i></a>
+					 
 				   </a>
 				</h4>
               </div>
