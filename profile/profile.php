@@ -533,7 +533,7 @@
                         if ($user != $_SESSION["username"])
                           echo $name["fname"]." Follows:";
                         else
-                          echo "Following:
+                          echo "Following:";
                       ?>
                   </a>
                 </h4>
