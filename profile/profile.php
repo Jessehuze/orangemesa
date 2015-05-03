@@ -654,7 +654,7 @@
             <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingThree">
                 <h4 class="panel-title">
-                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
                      <?php
 					    if (isset($_GET["user"]))
                           $user=$_GET["user"];
@@ -670,7 +670,7 @@
 						$count = mysqli_fetch_array($result);
 						
 						if ($user != $_SESSION["username"])
-                          echo $name["fname"]." in going to ".$count["COUNT(*)"]." events:";
+                          echo $name["fname"]." is going to ".$count["COUNT(*)"]." events:";
                         else
                           echo "You are going to " .$count["COUNT(*)"]." events:";
 					 ?>
