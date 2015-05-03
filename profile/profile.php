@@ -536,9 +536,9 @@
 						$count = mysqli_fetch_array($result);
 						
                         if ($user != $_SESSION["username"])
-                          echo $name["fname"]." Follows ".$count["COUNT(userid)"]." people:";
+                          echo $name["fname"]." Follows ".$count["COUNT(distinct userid)"]." people:";
                         else
-                          echo "You follow " .$count["count(userid)"]." people:";
+                          echo "You follow " .$count["count(distinct userid)"]." people:";
                       ?>
                   </a>
                 </h4>
