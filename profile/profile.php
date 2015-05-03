@@ -531,7 +531,7 @@
                         $result = mysqli_query($con, $query); 
                         $name = mysqli_fetch_array($result);
 						
-						$query = "SELECT COUNT(*) FROM FRIENDS WHERE userid='".$user."'";
+						$query = "SELECT DISTINCT COUNT(*) FROM FRIENDS WHERE userid='".$user."'";
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
 						
@@ -604,7 +604,7 @@
                         $result = mysqli_query($con, $query); 
                         $name = mysqli_fetch_array($result);
 						
-						$query = "SELECT COUNT(*) FROM GROUP_MEMBERS WHERE memberid= '".$user."'";
+						$query = "SELECT DISTINCT COUNT(*) FROM GROUP_MEMBERS WHERE memberid= '".$user."'";
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
 						
