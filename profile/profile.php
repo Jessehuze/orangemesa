@@ -535,6 +535,10 @@
               margin: 10px 0;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
             }
+            .tabinfo{
+              position: fixed;
+              right: 0;
+            }
         </style>
         
         <div class="col-md-3 tabinfo">
