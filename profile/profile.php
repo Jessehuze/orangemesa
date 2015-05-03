@@ -349,8 +349,8 @@
       }
       .usrimg{
         margin-left: 13%;
-        width: 70%;
-        height: 70%;
+        width: 200px;
+        height: 200px;
         border-radius: 512px;
         box-shadow: 0 0 10px rgba(0,0,0, .3);
         background-image: url("<?php
@@ -372,6 +372,7 @@
             ?>");
           background-repeat: no-repeat;
           background-position: center;
+          background-size: 200px;
       }
     </style>
     <div class="container-fluid">
@@ -507,9 +508,14 @@
             text-decoration:none;
           }
           .friendimg{
-              width: 100%;
+              margin-left: 13%;
+              width: 200px;
+              height: 200px;
               border-radius: 512px;
-              box-shadow: 0 0 10px rgba(0,0,0, .3)
+              box-shadow: 0 0 10px rgba(0,0,0, .3);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 200px;
             }
             .statusimg{
               width: 100%;
@@ -584,7 +590,7 @@
                         echo "<div class='row'>
                           <div class='col-xs-3'>
                             <a href='profile.php?user=".$friend["username"]."'>
-                              <img class='friendimg' src='".$imageurl."'/>
+                              <div class='friendimg' style='background-image:url('".$imageurl."')'></div>
                              </a>
                           </div>
                           <div class='col-xs-9'>
