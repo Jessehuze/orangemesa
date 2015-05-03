@@ -609,7 +609,7 @@
 						$count = mysqli_fetch_array($result);
 						
 						if($user != $_SESSION["username"])
-						  echo $name["fname"}." is in ".$count["COUNT(*)"]." groups:";
+						  echo $name["fname"]." is in ".$count["COUNT(*)"]." groups:";
 						else
 						  echo "You are in ".$count["COUNT(*)"]." groups:";
 					?>
