@@ -530,6 +530,9 @@
                         
                         $result = mysqli_query($con, $query); 
                         $name = mysqli_fetch_array($result);
+						
+						$query = "SELECT userid, count(distinct userid) FROM FRIENDS WHERE userid='".$user."'";
+						
                         if ($user != $_SESSION["username"])
                           echo $name["fname"]." Follows:";
                         else
