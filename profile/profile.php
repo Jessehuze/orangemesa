@@ -620,6 +620,7 @@
               echo "<div class='row'>
                           <div class='col-xs-9'>
                             <a href='profile.php?user=".$group["name"]."'>
+                              <h4>".$group["name"]."</h4>
                               <h5>".$group["description"]."</h5>
                             </a>
                         </div>
@@ -659,10 +660,12 @@
 							while($event = mysqli_fetch_array($event_result))
 							{
 								echo 	"<div class='row'>
+                      <div class='col-xs-9'>
 										 <h3>".$event["eventname"]."</h3>
 										 <h5>".$event["eventdate"]."</h5>
 										 <h5>".$event["description"]."</h5>
-										</div>";
+										</div>
+                    </div>";
 										
 							}
 						}
