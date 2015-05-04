@@ -233,17 +233,27 @@
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
-                    <img class='usrimg' src='../images/user.png'/>
-					<form action='joinGroup.php' method = 'POST'>
-					  <button class='btn addbtn btn-default' type='submit' name='group' value='".$group["groupid"]."'>Join</button>
-					  <input type='hidden' name='query' value='".$query."'>
-					</form>
-				  </div>
-                  <div class='col-xs-8'>
-                    <h3>" . $group["name"] . " </h3>
-                    <p>". $group["description"] . "</p>
-                  </div>
-                </div>";
+                    <img class='usrimg' src='../images/user.png'/>";
+					
+                $cond = mysqli_query($con, "SELECT gid, memberid FROM GROUP_MEMBERS WHERE gid = '".$group["groupid"]."' AND memberid = '".$_SESSION["username"]"'");				
+				
+				if(mysqli_num_rows($cond) == 0)
+				{
+				  echo "<form action='joinGroup.php' method = 'POST'>
+					      <button class='btn addbtn btn-default' type='submit' name='group' value='".$group["groupid"]."'>Join</button>
+					      <input type='hidden' name='query' value='".$query."'>
+					    </form>";
+				}
+				else
+				{
+				    echo "<button class='btn addbtn btn-info.active'>In Group</button>";	
+				)	
+				 echo " </div>
+                        <div class='col-xs-8'>
+                           <h3>" . $group["name"] . " </h3>
+                           <p>". $group["description"] . "</p>
+                        </div>
+                      </div>";
               }
             }
           ?> 
