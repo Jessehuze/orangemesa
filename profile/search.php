@@ -193,6 +193,7 @@
                      </a>
                     <form action='addFriend.php' method='POST'>
                       <button class='btn addbtn btn-default' name='user' value='".$friend["username"]."' type='submit'>Follow</button>
+					  <input type='hidden' name='query' value='".$query."'>
                     </form>
                   </div>
                   <div class='col-xs-8'>
