@@ -105,8 +105,6 @@
             <div class="editProfile">
               <div class="editProfile_form">
 
-                  <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
-
                   <div class="editProfile_row">
 
                     <?php
@@ -117,6 +115,7 @@
                                   Select image to upload:
                                   <input type="file" name="fileToUpload" id="fileToUpload">
                                   <input type="submit" value="Upload Image" name="submit" class="edit__submit">
+                                  <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                                 </form>';
                       }
                       else
@@ -125,6 +124,7 @@
                                 Select image to upload:
                                 <input type="file" name="fileToUpload" id="fileToUpload">
                                 <input type="submit" value="Upload Image" name="submit" class="edit__submit">
+                                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                               </form>';
                       }
                     ?>
