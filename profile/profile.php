@@ -478,7 +478,7 @@
                 {
                   echo "<div class='row usrpost hiddenrow'>
                     <div class='col-md-2 ownimg'>
-                      <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                      <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
                     <div class='col-md-8 owntxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
@@ -501,7 +501,7 @@
                     </div>
                     <div class='col-md-2 userimg'>
                       <a href='profile.php?user=".$msg["sender"]."'>
-                        <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                        <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                        </a>
                     </div>
                   </div>";
