@@ -504,15 +504,15 @@
                             <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
                           </div>
 
-                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php'/>
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=" . isset($_GET["user"]) ? $_GET["user"] : $_SESSION["username"] . "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
-                          <input name='reciever' type='hidden' value=''";
-                              if (isset($_GET["user"]))
-                                $user=$_GET["user"];
-                              else
-                                $user=$_SESSION["username"];
-                              echo $user;
-                            echo "/>
+                          <input name='reciever' type='hidden' value='";
+                          if (isset($_GET["user"]))
+                            $user=$_GET["user"];
+                          else
+                            $user=$_SESSION["username"];
+                          echo $user;
+                            echo "'/>
 
                         </form>
                     </div>
@@ -531,15 +531,15 @@
                             <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
                           </div>
 
-                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php'/>
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=". isset($_GET["user"]) ? $_GET["user"] : $_SESSION["username"]. "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
-                          <input name='reciever' type='hidden' value=''";
+                          <input name='reciever' type='hidden' value='";
                               if (isset($_GET["user"]))
                                 $user=$_GET["user"];
                               else
                                 $user=$_SESSION["username"];
                               echo $user;
-                            echo "/>
+                            echo "'/>
 
                         </form>
                     </div>
@@ -631,7 +631,7 @@
 
             position: relative;
             left: -75vw;
-            margin-bottom: -250px;
+            top: -175px;
           }
           .friendimg{
               margin-left: 13%;
