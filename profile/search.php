@@ -144,12 +144,14 @@
     
     <style>
       .usrimg{
-        margin-left: 13%;
-        width: 70%;
-        margin-top: 15%;
-        border-radius: 512px;
-        box-shadow: 0 0 10px rgba(0,0,0, .3)
-      }
+              width: 100px;
+              height: 100px;
+              border-radius: 512px;
+              box-shadow: 0 0 10px rgba(0,0,0, .5);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 100px;
+            }
       a{
         color:#000;
         text-decoration:none;
@@ -189,19 +191,30 @@
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <a href='profile.php?user=" . $friend["username"] . "'>
-                      <img class='usrimg' src='".$imageurl."'/>
-                     </a>
-                    <form action='addFriend.php' method='POST'>
-                      <button class='btn addbtn btn-default' name='user' value='".$friend["username"]."' type='submit'>Follow</button>
-                    </form>
-                  </div>
-                  <div class='col-xs-8'>
-                    <a href='profile.php?user=" . $friend["username"] . "'>
-                      <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
-                    </a>
-                    <p>". $friend["description"] . "</p>
-                  </div>
-                </div>";
+                      <div class='usrimg' style='background-image:url(". $imageurl .")'></div>
+                     </a>";
+					 
+					 $cond = mysqli_query($con, "SELECT userid, friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."' AND friendid = '".$friend["username"]."'");
+					 if(mysqli_num_rows($cond) == 0)
+					   {
+					      echo "<form action='addFriend.php' method='POST'>
+                                  <button class='btn addbtn btn-default' name='user' value='".$friend["username"]."' type='submit'>Follow</button>
+					              <input type='hidden' name='query' value='".$query."'>
+                                </form>";
+					   }
+					 else
+					 {
+						echo "<button class='btn addbtn btn.info-active'>Following</button>";
+					 }
+					 
+                    echo "</div>
+                          <div class='col-xs-8'>
+                            <a href='profile.php?user=" . $friend["username"] . "'>
+                            <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
+                            </a>
+                            <p>". $friend["description"] . "</p>
+                          </div>
+                        </div>";
               }
             }
           ?> 
@@ -220,16 +233,27 @@
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
-                    <img class='usrimg' src='../images/user.png'/>
-					<form action='joinGroup.php' method = 'POST'>
-					  <button class='btn addbtn btn-default' type='submit' name='group' value='".$group["groupid"]."'>Join</button>
-					</form>
-				  </div>
-                  <div class='col-xs-8'>
-                    <h3>" . $group["name"] . " </h3>
-                    <p>". $group["description"] . "</p>
-                  </div>
-                </div>";
+                    <img class='usrimg' src='../images/user.png'/>";
+					
+                $cond = mysqli_query($con, "SELECT gid, memberid FROM GROUP_MEMBERS WHERE gid = '".$group["groupid"]."' AND memberid = '".$_SESSION["username"]."'");				
+				
+				if(mysqli_num_rows($cond) == 0)
+				{
+				  echo "<form action='joinGroup.php' method = 'POST'>
+					      <button class='btn addbtn btn-default' type='submit' name='group' value='".$group["groupid"]."'>Join</button>
+					      <input type='hidden' name='query' value='".$query."'>
+					    </form>";
+				}
+				else
+				{
+				    echo "<button class='btn addbtn btn-info.active'>In Group</button>";	
+				}	
+				 echo " </div>
+                        <div class='col-xs-8'>
+                           <h3>" . $group["name"] . " </h3>
+                           <p>". $group["description"] . "</p>
+                        </div>
+                      </div>";
               }
             }
           ?> 
@@ -248,11 +272,22 @@
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
-                    <img class='usrimg' src='../images/user.png'/>
-                    <form action='joinEvent.php' method = 'POST'>
+                    <img class='usrimg' src='../images/user.png'/>";
+				
+				$query1 = "SELECT invitee, eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$event["eventid"]."'";
+                $cond = mysqli_query($con, $query1);
+				if(mysqli_num_rows($cond) == 0)
+				{
+					echo "<form action='joinEvent.php' method = 'POST'>
                       <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Going</button>
-                    </form>
-                  </div>
+                      <input type='hidden' name='query' value='".$query."'>
+					</form>";
+				}
+				else
+				{
+					echo "<button class='btn addbtn btn-info.active'>Going</button>";
+				}     
+				 echo " </div>
                   <div class='col-xs-8'>
                     <h3>" . $event["eventname"] . "</h3>
 					<h5>".$event["eventdate"]."</h5>

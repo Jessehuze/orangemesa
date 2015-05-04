@@ -1,3 +1,7 @@
+a:hover{
+  color: #fa7b01 !important;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;

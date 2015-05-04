@@ -105,8 +105,6 @@
             <div class="editProfile">
               <div class="editProfile_form">
 
-                  <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
-
                   <div class="editProfile_row">
 
                     <?php
@@ -117,6 +115,7 @@
                                   Select image to upload:
                                   <input type="file" name="fileToUpload" id="fileToUpload">
                                   <input type="submit" value="Upload Image" name="submit" class="edit__submit">
+                                  <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                                 </form>';
                       }
                       else
@@ -125,6 +124,7 @@
                                 Select image to upload:
                                 <input type="file" name="fileToUpload" id="fileToUpload">
                                 <input type="submit" value="Upload Image" name="submit" class="edit__submit">
+                                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                               </form>';
                       }
                     ?>
@@ -421,6 +421,13 @@
         -o-animation: spin 2s infinite linear;
         animation: spin 2s infinite linear;
       }
+      .middlerow{
+        -webkit-transition:all 1.5s ease-in-out;
+        -moz-transition:all 1.5s ease-in-out;
+        -o-transition:all 1.5s ease-in-out;
+        transition:all 1.5s ease-in-out;
+
+      }
 
     </style>
     <div class="container-fluid">
@@ -428,7 +435,15 @@
         <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
           <div>
             <div class="usrimg"></div>
-            <div data-toggle="modal" data-target="#propic" class="updateimg fa-spin-hover" id="updateimg"><i class="fa fa-lg fa-gear "></i></div>
+            <?php
+              require("/var/config.php");
+              if (isset($_GET["user"]))
+                $user=$_GET["user"];
+              else
+                $user=$_SESSION["username"];
+              if ($user == $_SESSION["username"])
+                echo '<div data-toggle="modal" data-target="#propic" class="updateimg fa-spin-hover" id="updateimg"><i class="fa fa-lg fa-gear "></i></div>';
+            ?>
           </div>
           <hr>
           <h2>
@@ -461,7 +476,7 @@
           </p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-          <h2 class="page-header">Posts</h2><a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
+          <h2 class="page-header">Posts</h2><a href="#"><span id="addpost" class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
 
           <?php
             require("/var/config.php");
@@ -474,60 +489,53 @@
 
             $msgresult = mysqli_query($con, $query);
 
+            $sender = mysqli_query($con, "SELECT fname, minit, lname FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
+            $sendername = mysqli_fetch_array($sender);
+
             if ($user == $_SESSION["username"])
                 {
                   echo "<div class='row usrpost hiddenrow'>
-                    <div class='col-md-2 ownimg'>
+                    <div class='col-sm-2 ownimg'>
                       <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
-                    <div class='col-md-8 owntxt'>
-                        <h3>".$name["fname"]." ".$name["lname"]." </h3>
+                    <div class='col-sm-8 owntxt'>
+                        <h3>".$sendername["fname"]." ".$sendername["lname"]." </h3>
                         <form action='addPost.php' method='POST'>
 
                           <div class='createGroupDesc__row'>
                             <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
                           </div>
 
-                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php'/>
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=" . $user . "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
-                          <input name='reciever' type='hidden' value=''";
-                              if (isset($_GET["user"]))
-                                $user=$_GET["user"];
-                              else
-                                $user=$_SESSION["username"];
-                              echo $user;
-                            echo "/>
+                          <button id='nope' type='button' class='edit__submit'>Cancel</button>
+                          <input name='reciever' type='hidden' value='" . $user . "'/>
 
                         </form>
                     </div>
-                    <div class='col-md-2'></div>
+                    <div class='col-sm-2'></div>
                   </div>";
                 }
                 else
                 {
                   echo "<div class='row usrpost hiddenrow'>
-                    <div class='col-md-2'></div>
-                    <div style='text-align: right;' class='col-md-8 usrtxt'>
-                        <h3>".$name["fname"]." ".$name["lname"]." </h3>
+                    <div class='col-sm-2'></div>
+                    <div style='text-align: right;' class='col-sm-8 usrtxt'>
+                        <h3>".$sendername["fname"]." ".$sendername["lname"]." </h3>
                         <form action='addPost.php' method='POST'>
 
                           <div class='createGroupDesc__row'>
                             <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
                           </div>
 
-                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php'/>
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=". $user . "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
-                          <input name='reciever' type='hidden' value=''";
-                              if (isset($_GET["user"]))
-                                $user=$_GET["user"];
-                              else
-                                $user=$_SESSION["username"];
-                              echo $user;
-                            echo "/>
+                          <button id='nope' type='button' class='edit__submit'>Cancel</button>
+                          <input name='reciever' type='hidden' value='" . $user . "'/>
 
                         </form>
                     </div>
-                    <div class='col-md-2 userimg'>
+                    <div class='col-sm-2 userimg' style='margin-left: -5%;'>
                         <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
                   </div>";
@@ -552,31 +560,37 @@
                 if ($user == $msg["sender"])
                 {
                   echo "<div class='row usrpost'>
-                    <div class='col-md-2 ownimg'>
+                    <div class='col-sm-2 ownimg'>
                       <a href='profile.php?user=".$msg["sender"]."'>
-                        <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                        <div href='deletepost.php' class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
                     </div>
-                    <div class='col-md-8 owntxt'>
+                    <div class='col-sm-8 owntxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-md-2'></div>
+                    <div class='col-md-2'>";
+                      if ($msg["sender"] = $_SESSION["username"])
+                        echo "<a class='deletepost'><i class='fa fa-times'></i></a>";
+                    echo "</div>
                   </div>";
                 }
                 else
                 {
                   echo "<div class='row usrpost'>
-                    <div class='col-md-2'></div>
-                    <div style='text-align: right;' class='col-md-8 usrtxt'>
+                    <div class='col-sm-2'>";
+                  if ($msg["sender"] = $_SESSION["username"])
+                      echo "<a href='deletepost.php' class='deletepost pull-right'><i class='fa fa-times'></i></a>";
+                    echo "</div>
+                    <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-md-2 userimg'>
+                    <div class='col-sm-2 userimg' style='margin-left: -5%;'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
@@ -589,7 +603,6 @@
 
 
         </div>
-
         <style>
           .infobar{
             height: calc(100vh - 70px);
@@ -601,6 +614,24 @@
           a{
             color:#000;
             text-decoration:none;
+          }
+          .posttext{
+            width: 100%;
+            height: 75px;
+            border:none;
+          }
+          .hiddenrow{
+            -webkit-transition:all 1.5s ease-in-out;
+            -moz-transition:all 1.5s ease-in-out;
+            -o-transition:all 1.5s ease-in-out;
+            transition:all 1.5s ease-in-out;
+            padding: 20px;
+            margin:-10px;
+            position: relative;
+            height: 0px;
+            left: -75vw;
+            margin-right: 35px;
+            overflow:hidden;
           }
           .friendimg{
               margin-left: 13%;
@@ -614,7 +645,7 @@
             }
             .statusimg{
               position: relative;
-              margin-left: 13%;
+              margin-left: -23px;
               width: 100px;
               height: 100px;
               border-radius: 512px;
@@ -978,6 +1009,15 @@ jQuery('input[name="eventDate"]').bind('keyup',function(e){
        thisVal = thisVal.substr(0,10);
        $(this).val(thisVal);
     }
+});
+
+$("#addpost").click(function () {
+  $(".hiddenrow").css('height', '250px');
+  $(".hiddenrow").css('left', '0');
+});
+$("#nope").click(function () {
+  $(".hiddenrow").css('height', '0px');
+  $(".hiddenrow").css('left', '-75vw');
 });
 </script>
 
