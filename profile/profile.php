@@ -564,12 +564,51 @@
               margin: 25px 0;
             }
             .usrtxt{
-              padding: 20px 75px;;
+              padding: 20px 75px;
+              background: #fff;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
             }
             .owntxt{
               padding: 20px 75px;
+              background: #fff;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
+            }
+            .owntxt:before, .owntxt:after{
+              	position: absolute;
+                width: 40%;
+                height: 10px;
+                content: ' ';
+                left: 12px;
+                bottom: 12px;
+                background: transparent;
+                z-index: -1;
+            }
+             .usrtxt:before, .usrtxt:after{
+              	position: absolute;
+                width: 40%;
+                height: 10px;
+                content: ' ';
+                left: 12px;
+                bottom: 12px;
+                background: transparent;
+                -webkit-transform: skew(-5deg) rotate(-5deg);
+                -moz-transform: skew(-5deg) rotate(-5deg);
+                -ms-transform: skew(-5deg) rotate(-5deg);
+                -o-transform: skew(-5deg) rotate(-5deg);
+                transform: skew(-5deg) rotate(-5deg);
+                -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                z-index: -1;
+            }
+            .owntxt:after{
+              	left: auto;
+                right: 12px;
+                -webkit-transform: skew(5deg) rotate(5deg);
+                -moz-transform: skew(5deg) rotate(5deg);
+                -ms-transform: skew(5deg) rotate(5deg);
+                -o-transform: skew(5deg) rotate(5deg);
+                transform: skew(5deg) rotate(5deg);
             }
             .ownimg{
               margin-right: -75px;
