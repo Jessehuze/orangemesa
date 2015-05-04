@@ -569,13 +569,17 @@
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-md-2'></div>
+                    <div class='col-md-2'>
+                      <a class='deletepost'><i class='fa fa-times'></i></a>
+                    </div>
                   </div>";
                 }
                 else
                 {
                   echo "<div class='row usrpost'>
-                    <div class='col-sm-2'></div>
+                    <div class='col-sm-2'>
+                      <a class='deletepost pull-right'><i class='fa fa-times'></i></a>
+                    </div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
