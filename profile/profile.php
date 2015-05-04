@@ -861,7 +861,7 @@
 
 						if($user != $_SESSION["username"] && $count["COUNT(*)"] != 1)
 						  echo $name["fname"]." is in ".$count["COUNT(*)"]." groups:";
-						else if($user != $_SESSION["username"] && $count["COUNT(*)"] != 1)
+						else if($user != $_SESSION["username"] && $count["COUNT(*)"] == 1)
 						  echo $name["fname"]." is in ".$count["COUNT(*)"]." group:";
 						else if($user == $_SESSION["username"] && $count["COUNT(*)"] != 1)
 						  echo "You are in ".$count["COUNT(*)"]." groups:";
