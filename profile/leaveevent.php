@@ -5,7 +5,7 @@
   $event = mysqli_real_excape_string($con, $_POST["event"]);
   $user = mysqli_real_escape_string($_SESSION["username"]);
   
-  $query = "";
+  $query = "DELETE FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$_POST["event"]."'";
   $delete = mysqli_query($con, $query);
   
   //Redirect to profile page
