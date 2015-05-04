@@ -235,7 +235,7 @@
                   <div class='col-xs-4'>
                     <img class='usrimg' src='../images/user.png'/>";
 					
-                $cond = mysqli_query($con, "SELECT gid, memberid FROM GROUP_MEMBERS WHERE gid = '".$group["groupid"]."' AND memberid = '".$_SESSION["username"]"'");				
+                $cond = mysqli_query($con, "SELECT gid, memberid FROM GROUP_MEMBERS WHERE gid = '".$group["groupid"]."' AND memberid = '".$_SESSION["username"]."'");				
 				
 				if(mysqli_num_rows($cond) == 0)
 				{
