@@ -512,7 +512,7 @@
                     </a>
                     <p>".$msg["message"]."</p>
                   </div>
-                  <div class='col-md-2 usrimg'>
+                  <div class='col-md-2 userimg'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
@@ -575,9 +575,11 @@
             }
             .ownimg{
               margin-right: -75px;
+              padding-top: 20px;
             }
-            .usrimg{
+            .userimg{
               margin-left: -75px;
+              padding-top: 20px;
             }
             .tabinfo{
               position: fixed;
