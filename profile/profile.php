@@ -618,9 +618,6 @@
             -moz-transition:all 1.5s ease-in-out;
             -o-transition:all 1.5s ease-in-out;
             transition:all 1.5s ease-in-out;
-
-            position: relative;
-            left: -75vw;
             height: 0px;
           }
           .friendimg{
