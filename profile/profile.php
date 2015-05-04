@@ -695,6 +695,10 @@
                               <h5>".$friend["fname"]." ".$friend["lname"]." </h5>
                             </a>
 							
+							<form action='removeFriend.php' method='POST'>
+					          <button class='btn addbtn btn-default' name='friend' value='".$friend["username"]."' type='submit'>Unfollow</button>
+                            </form>
+							
                           </div>
                         </div>";
                       }
