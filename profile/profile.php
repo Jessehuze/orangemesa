@@ -563,7 +563,7 @@
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2 ownimg'>
                       <a href='profile.php?user=".$msg["sender"]."'>
-                        <div href='deletepost.php?user=".$user."&postid=".$msg["postid"]."' class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                        <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
                     </div>
                     <div class='col-sm-8 owntxt'>
@@ -574,7 +574,7 @@
                     </div>
                     <div class='col-md-2'>";
                       if ($msg["sender"] == $_SESSION["username"])
-                        echo "<a class='deletepost'><i class='fa fa-times'></i></a>";
+                        echo "<a  href='deletepost.php?user=".$user."&postid=".$msg["postid"]."' class='deletepost'><i class='fa fa-times'></i></a>";
                     echo "</div>
                   </div>";
                 }
