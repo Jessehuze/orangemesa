@@ -573,17 +573,17 @@
               background: #fff;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
             }
-            .owntxt:before, .owntxt:after{
+            .usrtxt:before, .owntxt:after{
               	position: absolute;
                 width: 40%;
                 height: 10px;
                 content: ' ';
                 left: 12px;
                 bottom: 12px;
-                background: transparent;
+                background: transparent;
                 z-index: -1;
             }
-             .usrtxt:before, .usrtxt:after{
+             .owntxt:before, .usrtxt:after{
               	position: absolute;
                 width: 40%;
                 height: 10px;
