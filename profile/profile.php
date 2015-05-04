@@ -626,7 +626,7 @@
             overflow:hidden;
           }
           .friendimg{
-              margin-left: 13%;
+              margin-left: -5%;
               width: 75px;
               height: 75px;
               border-radius: 512px;
