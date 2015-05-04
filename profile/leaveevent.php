@@ -5,7 +5,7 @@
   $event = mysqli_real_escape_string($con, $_POST["event"]);
   $user = mysqli_real_escape_string($con, $_SESSION["username"]);
   
-  $query = "DELETE FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$_POST["event"]."'";
+  $query = "DELETE FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$event."'";
   $delete = mysqli_query($con, $query);
   
   echo $query;
