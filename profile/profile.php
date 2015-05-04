@@ -383,6 +383,16 @@
         margin-bottom: -40px;
         cursor: pointer;
       }
+      .updateimg:hover{
+        -webkit-animation-name: spin;
+        -webkit-animation-duration: 40000ms;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-name: spin;
+        -moz-animation-duration: 40000ms;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+      }
     </style>
     <div class="container-fluid">
       <div class="row">
