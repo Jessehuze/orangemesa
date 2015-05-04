@@ -624,7 +624,7 @@
             -o-transition:all 1.5s ease-in-out;
             transition:all 1.5s ease-in-out;
             height: 0px;
-            left: -75vh;
+            left: -75vw;
             margin-right: 35px;
             overflow:hidden;
           }
@@ -1012,7 +1012,7 @@ $("#addpost").click(function () {
 });
 $("#nope").click(function () {
   $(".hiddenrow").css('height', '0px');
-  $(".hiddenrow").css('left', '-75vh');
+  $(".hiddenrow").css('left', '-75vw');
 });
 </script>
 
