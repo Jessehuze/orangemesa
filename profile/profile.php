@@ -936,10 +936,14 @@
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
 
-						if ($user != $_SESSION["username"])
+						if ($user != $_SESSION["username"] && $count["COUNT(*)"] != 1)
                           echo $name["fname"]." is going to ".$count["COUNT(*)"]." events:";
-                        else
-                          echo "You are going to " .$count["COUNT(*)"]." events:";
+                        else if ($user != $_SESSION["username"] && $count["COUNT(*)"] == 1)
+						  echo $name["fname"]. " is going to ".$count["COUNT(*)"]." event:";
+						else if ($user == $_SESSION["username"] && $count["COUNT(*)"] != 1)
+						  echo "You are going to ".$count["COUNT(*)"]." events:";
+						else
+                          echo "You are going to " .$count["COUNT(*)"]." event:";
 					 ?>
 
 					 <a data-toggle="modal" data-target="#eventModal" href="#eventModal"><i class="pull-right fa fa-plus-square"></i></a>
