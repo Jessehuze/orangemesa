@@ -817,14 +817,20 @@
 							<a href='profile.php?user=".$friend["username"]."'>
                               <h5>".$friend["fname"]." ".$friend["lname"]." </h5>
                             </a>
-							</div>
-							<div class='col-xs-5'>
+
+							</div>";
+							
+							if($user == $_SESSION["username"])
+							{
+							echo "<div class='col-xs-5'>
 							<form action='removeFriend.php' method='POST'>
 					          <button class='btn addbtn btn-default' name='friend' value='".$friend["username"]."' type='submit'>Unfollow</button>
                             </form>
-							</div>
-                          </div>
-                        </div>";
+							</div>";
+							}
+                          echo "</div>
+                        </div><hr>";
+
                       }
                     }
                   ?>
@@ -879,20 +885,24 @@
 					{
 						while ($group = mysqli_fetch_array($group_result))
 						{
-							//Picture for group?
+							
               echo "<div class='row'>
                           <div class='col-xs-8'>
                             <a href='profile.php?user=".$group["name"]."'>
                               <h4>".$group["name"]."</h4>
                               <h5>".$group["description"]."</h5>
                             </a>
-                          </div>
-						  <div class='col-xs-4'>
+                          </div>";
+						  
+						if($user == $_SESSION["username"])
+                        {  
+						  echo "<div class='col-xs-4'>
 						    <form action='leavegroup.php' method='POST'>
                               <button class='btn addbtn btn-default' name='group' value='".$group["groupid"]."' type='submit'>Leave<br>Group</button>
                             </form>
-						  </div>
-                    </div>";
+						  </div>";
+						  }
+                    echo "</div>";
 
 						}
 					}
