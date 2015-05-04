@@ -426,9 +426,10 @@
         -moz-transition:all 1.5s ease-in-out;
         -o-transition:all 1.5s ease-in-out;
         transition:all 1.5s ease-in-out;
-
       }
-
+      .deletepost:hover{
+        color: #FA7B01;
+      }
     </style>
     <div class="container-fluid">
       <div class="row">
