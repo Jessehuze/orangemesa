@@ -574,7 +574,7 @@
             .usrtxt{
               padding: 20px 75px;
               background: #fff;
-              box-shadow: 2px 0 5px rgba(0,0,0, 0.5);
+              box-shadow: -2px 0 5px rgba(0,0,0, 0.5);
             }
             .owntxt{
               padding: 20px 75px;
