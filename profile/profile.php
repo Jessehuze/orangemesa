@@ -437,7 +437,15 @@
         <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
           <div>
             <div class="usrimg"></div>
-            <div data-toggle="modal" data-target="#propic" class="updateimg fa-spin-hover" id="updateimg"><i class="fa fa-lg fa-gear "></i></div>
+            <?php
+              require("/var/config.php");
+              if (isset($_GET["user"]))
+                $user=$_GET["user"];
+              else
+                $user=$_SESSION["username"];
+              if ($user == $_SESSION["username"])
+                echo '<div data-toggle="modal" data-target="#propic" class="updateimg fa-spin-hover" id="updateimg"><i class="fa fa-lg fa-gear "></i></div>';
+            ?>
           </div>
           <hr>
           <h2>

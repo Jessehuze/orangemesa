@@ -224,6 +224,7 @@
                     <img class='usrimg' src='../images/user.png'/>
 					<form action='joinGroup.php' method = 'POST'>
 					  <button class='btn addbtn btn-default' type='submit' name='group' value='".$group["groupid"]."'>Join</button>
+					  <input type='hidden' name='query' value='".$query."'>
 					</form>
 				  </div>
                   <div class='col-xs-8'>
@@ -252,7 +253,8 @@
                     <img class='usrimg' src='../images/user.png'/>
                     <form action='joinEvent.php' method = 'POST'>
                       <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Going</button>
-                    </form>
+                      <input type='hidden' name='query' value='".$query."'>
+					</form>
                   </div>
                   <div class='col-xs-8'>
                     <h3>" . $event["eventname"] . "</h3>

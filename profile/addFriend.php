@@ -20,14 +20,14 @@
     $insert = mysqli_query($con, $query);
 	
 	//Redirect to search page
-    header("Location: http://inceptisol.us.to:6670/profile/search.php?query='".$search."'");
+    header("Location: http://inceptisol.us.to:6670/profile/search.php?query=".$search);
     exit();
   }
   //If you are already friends, redirect to Search page
   else
   {
 
-    header("Location: http://inceptisol.us.to:6670/profile/search.php?query='".$search."'");
+    header("Location: http://inceptisol.us.to:6670/profile/search.php?query=".$search);
     exit();
   }
 	
