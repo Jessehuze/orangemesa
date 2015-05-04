@@ -557,6 +557,14 @@
               background-position: center;
               background-size: 100px;
             }
+            .statusimg:before{
+              position: relative;
+              left: -400px;
+            }
+            .statusimg:after{
+              position: relative;
+              right: -400px;
+            }
             .inforow{
               height: 50px;
             }
@@ -566,14 +574,14 @@
             .usrtxt{
               padding: 20px 75px;
               background: #fff;
-              box-shadow: 0 0 7px rgba(0,0,0, 0.5);
+              box-shadow: 2px 0 5px rgba(0,0,0, 0.5);
             }
             .owntxt{
               padding: 20px 75px;
               background: #fff;
-              box-shadow: 0 0 7px rgba(0,0,0, 0.5);
+              box-shadow: 2px 0 5px rgba(0,0,0, 0.5);
             }
-            .usrtxt:before, .usrtxt:after{
+            .owntxt:before, .owntxt:after{
               	position: absolute;
                 width: 40%;
                 height: 10px;
@@ -591,7 +599,7 @@
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
                 z-index: -1;
             }
-             .owntxt:before, .owntxt:after{
+             .usrtxt:before, .usrtxt:after{
               	position: absolute;
                 width: 40%;
                 height: 10px;
@@ -609,7 +617,7 @@
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
                 z-index: -1;
             }
-            .owntxt:after{
+            .usrtxt:after{
               	left: auto;
                 right: 12px;
                 -webkit-transform: skew(5deg) rotate(5deg);
@@ -621,7 +629,7 @@
                 -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
             }
-            .usrtxt:after{
+            .owntxt:after{
               	left: auto;
                 right: 12px;
                 -webkit-transform: skew(5deg) rotate(5deg);
