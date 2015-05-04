@@ -285,7 +285,7 @@
 				}
 				else
 				{
-					echo "<button class='btn addbtn btn-info.active'>Going</button>";
+					echo "<button class='btn addbtn btn-info.active'>Already Going</button>";
 				}     
 				 echo " </div>
                   <div class='col-xs-8'>
