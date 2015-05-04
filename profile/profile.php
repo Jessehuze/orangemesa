@@ -560,7 +560,7 @@
             }
             .usrpost{
               padding: 20px;
-              margin: 10px 0;
+              margin: 25px 0;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
             }
             .tabinfo{
