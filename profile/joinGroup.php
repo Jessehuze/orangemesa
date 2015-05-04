@@ -12,7 +12,7 @@
 	$insert = mysqli_query($con, $query);
 	
 	//Redirect to search page
-	header("Location: http://inceptisol.us.to::6670/profile/search.php");
+	header("Location: http://inceptisol.us.to:6670/profile/search.php");
     exit();
 
 ?>
