@@ -491,7 +491,7 @@
                 else
                   $imageurl = "../images/user.png";
                 echo "<div class='row usrpost'>
-                  <div class='col-md-2'>
+                  <div class='col-md-2 ownimg'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
@@ -512,7 +512,7 @@
                     </a>
                     <p>".$msg["message"]."</p>
                   </div>
-                  <div class='col-md-2'>
+                  <div class='col-md-2 usrimg'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
@@ -565,13 +565,19 @@
             }
             .usrtxt{
               padding: 20px;
-              margin-right: 75px;
+              padding-right: 75px;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
             }
             .owntxt{
               padding: 20px;
-              margin-left: 75px;
+              padding-left: 75px;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
+            }
+            .ownimg{
+              margin-right: -75px;
+            }
+            .usrimg{
+              margin-left: -75px;
             }
             .tabinfo{
               position: fixed;
