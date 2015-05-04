@@ -426,9 +426,10 @@
         -moz-transition:all 1.5s ease-in-out;
         -o-transition:all 1.5s ease-in-out;
         transition:all 1.5s ease-in-out;
-
       }
-
+      .deletepost:hover{
+        color: #FA7B01;
+      }
     </style>
     <div class="container-fluid">
       <div class="row">
@@ -581,7 +582,7 @@
                 {
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2'>";
-                  if ($user == $_SESSION["username"])
+                  if ($user == $_SESSION["username"] || $msg["sender"] == $_SESSION["username"])
                       echo "<a href='deletepost.php' class='deletepost pull-right'><i class='fa fa-times'></i></a>";
                     echo "</div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
