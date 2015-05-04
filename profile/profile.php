@@ -622,6 +622,7 @@
             -o-transition:all 1.5s ease-in-out;
             transition:all 1.5s ease-in-out;
             height: 0px;
+            margin-right: 35px;
             overflow:hidden;
           }
           .friendimg{
