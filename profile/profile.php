@@ -867,7 +867,7 @@
 						{
 						  echo "<div class='col-xs-4'>
 						          <form action='leaveevent.php' method='POST'>
-                                    <button class='btn addbtn btn-default' name='event' value='".$group["eventid"]."' type='submit'>Leave<br>Event</button>
+                                    <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Leave<br>Event</button>
                                   </form>
 					            </div>
 					          </div>";
