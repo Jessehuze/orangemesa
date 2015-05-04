@@ -767,10 +767,14 @@
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
 
-                        if ($user != $_SESSION["username"])
-                          echo $name["fname"]." follows ".$count["COUNT(*)"]." people:";
+                        if ($user != $_SESSION["username"] && $count["COUNT(*)"] == 1)
+                          echo $name["fname"]." follows ".$count["COUNT(*)"]." person:";
+                        else if($user != $_SESSION["username"] && $count["COUNT(*)"] != 1)
+						  echo $name["fname"]." follows ".$count["COUNT(*)"]." people:";
+						else if($user == $_SESSION["username"] && $count["COUNT(*)"] == 1)
+						  echo "You follow " .$count["COUNT(*)"]." person:";
                         else
-                          echo "You follow " .$count["COUNT(*)"]." people:";
+						  echo "You follow " .$count["COUNT(*)"]." people:";
                       ?>
 
 
