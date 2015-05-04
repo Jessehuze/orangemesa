@@ -482,21 +482,21 @@
                     </div>
                     <div class='col-md-8 owntxt'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
-                        <form action="addPost.php" method="POST">
+                        <form action='addPost.php' method='POST'>
 
-                          <div class="createGroupDesc__row">
-                            <textarea name="message" type="text" class="posttext" rows="2" placeholder="Write your post here!" required></textarea>
+                          <div class='createGroupDesc__row'>
+                            <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
                           </div>
 
-                          <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
-                          <button name="post" type="submit" class="edit__submit">Post</button>
-                          <input name="reciever" type="hidden" value="<?php
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php'/>
+                          <button name='post' type='submit' class='edit__submit'>Post</button>
+                          <input name='reciever' type='hidden' value=''";
                               if (isset($_GET["user"]))
                                 $user=$_GET["user"];
                               else
                                 $user=$_SESSION["username"];
                               echo $user;
-                            ?>"/>
+                            echo "/>
 
                         </form>
                     </div>
@@ -509,21 +509,21 @@
                     <div class='col-md-2'></div>
                     <div style='text-align: right;' class='col-md-8 usrtxt'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
-                        <form action="addPost.php" method="POST">
+                        <form action='addPost.php' method='POST'>
 
-                          <div class="createGroupDesc__row">
-                            <textarea name="message" type="text" class="posttext" rows="2" placeholder="Write your post here!" required></textarea>
+                          <div class='createGroupDesc__row'>
+                            <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
                           </div>
 
-                          <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
-                          <button name="post" type="submit" class="edit__submit">Post</button>
-                          <input name="reciever" type="hidden" value="<?php
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php'/>
+                          <button name='post' type='submit' class='edit__submit'>Post</button>
+                          <input name='reciever' type='hidden' value=''";
                               if (isset($_GET["user"]))
                                 $user=$_GET["user"];
                               else
                                 $user=$_SESSION["username"];
                               echo $user;
-                            ?>"/>
+                            echo "/>
 
                         </form>
                     </div>
