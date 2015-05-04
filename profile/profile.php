@@ -856,11 +856,11 @@
 										 <h5>".$event["eventdate"]."</h5>
 										 <h5>".$event["description"]."</h5>
 										</div>
-                      </div>
 					  <div class='col-xs-4'>
 						<form action='leaveevent.php' method='POST'>
                           <button class='btn addbtn btn-default' name='event' value='".$group["eventid"]."' type='submit'>Leave<br>Event</button>
                         </form>
+					  </div>
 					  </div>";
 										
 							}
