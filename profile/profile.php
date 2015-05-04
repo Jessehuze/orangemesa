@@ -496,7 +496,7 @@
                       <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
                   </div>
-                  <div class='col-md-10 owntxt'>
+                  <div class='col-md-8 owntxt'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <h3>".$name["fname"]." ".$name["lname"]." </h3>
                     </a>
