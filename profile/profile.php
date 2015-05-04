@@ -625,6 +625,8 @@
             -moz-transition:all 1.5s ease-in-out;
             -o-transition:all 1.5s ease-in-out;
             transition:all 1.5s ease-in-out;
+            padding: 20px;
+            margin:-10px;
             position: relative;
             height: 0px;
             left: -75vw;
@@ -1011,7 +1013,7 @@ jQuery('input[name="eventDate"]').bind('keyup',function(e){
 
 $("#addpost").click(function () {
   $(".hiddenrow").css('height', '250px');
-  $(".hiddenrow").css('left', '0');
+  $(".hiddenrow").css('left', '40px;');
 });
 $("#nope").click(function () {
   $(".hiddenrow").css('height', '0px');
