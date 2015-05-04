@@ -206,7 +206,7 @@
 					 {
 						echo "<button class='btn addbtn btn.info-active'>Following</button>";
 					 }
-					 if($condition
+					 
                     echo "</div>
                           <div class='col-xs-8'>
                             <a href='profile.php?user=" . $friend["username"] . "'>
