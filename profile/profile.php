@@ -553,7 +553,7 @@
               width: 100px;
               height: 100px;
               border-radius: 512px;
-              box-shadow: 0 0 10px rgba(0,0,0, .3);
+              box-shadow: 0 0 10px rgba(0,0,0, .5);
               background-repeat: no-repeat;
               background-position: center;
               background-size: 100px;
