@@ -421,6 +421,15 @@
         -o-animation: spin 2s infinite linear;
         animation: spin 2s infinite linear;
       }
+      .middlerow{
+        -webkit-transition:all 1.5s ease-in-out;
+        -moz-transition:all 1.5s ease-in-out;
+        -o-transition:all 1.5s ease-in-out;
+        transition:all 1.5s ease-in-out;
+
+        position: relative;
+        top: -200px;
+      }
 
     </style>
     <div class="container-fluid">
@@ -460,7 +469,7 @@
             ?>
           </p>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
+        <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main middlerow">
           <h2 class="page-header">Posts</h2><a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
 
           <?php
@@ -527,7 +536,7 @@
 
                         </form>
                     </div>
-                    <div class='col-md-2 userimg'>
+                    <div class='col-md-2 userimg' style='margin-left: 13%;'>
                         <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
                   </div>";
@@ -576,7 +585,7 @@
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-md-2 userimg'>
+                    <div class='col-md-2 userimg' style='margin-left: 13%;'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
@@ -608,13 +617,13 @@
             boder:none;
           }
           .hiddenrow{
-            -webkit-transition:all 1.0s ease-in-out;
-            -moz-transition:all 1.0s ease-in-out;
-            -o-transition:all 1.0s ease-in-out;
-            transition:all 1.0s ease-in-out;
+            -webkit-transition:all 1.5s ease-in-out;
+            -moz-transition:all 1.5s ease-in-out;
+            -o-transition:all 1.5s ease-in-out;
+            transition:all 1.5s ease-in-out;
 
             position: relative;
-            left: -50vh;
+            left: -90vh;
           }
           .friendimg{
               margin-left: 13%;
