@@ -601,7 +601,7 @@
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
                 z-index: -1;
             }
-            .owntxt:after{
+            .usrtxt:after{
               	left: auto;
                 right: 12px;
                 -webkit-transform: skew(5deg) rotate(5deg);
