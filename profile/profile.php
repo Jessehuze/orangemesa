@@ -415,13 +415,20 @@
         margin-bottom: -40px;
         cursor: pointer;
       }
+      .fa-spin-hover:hover {
+        -webkit-animation: spin 2s infinite linear;
+        -moz-animation: spin 2s infinite linear;
+        -o-animation: spin 2s infinite linear;
+        animation: spin 2s infinite linear;
+      }
+
     </style>
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
           <div>
-            <div class="usrimg"></div>
-            <div data-toggle="modal" data-target="#propic" class="updateimg" id="updateimg"><i class="fa fa-gear"></i></div>
+            <div class="usrimg fa-spin-hover"></div>
+            <div data-toggle="modal" data-target="#propic" class="updateimg" id="updateimg"><i class="fa fa-lg fa-gear "></i></div>
           </div>
           <hr>
           <h2>
