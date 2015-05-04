@@ -411,7 +411,7 @@
         box-shadow: 0 0 10px rgba(0,0,0, .5);
         position: relative;
         top: -40px;
-        left: 188px;
+        left: 68%;
         margin-bottom: -40px;
         cursor: pointer;
       }
