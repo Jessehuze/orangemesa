@@ -489,6 +489,9 @@
             $query = "SELECT * FROM POST_PEOPLE2PEOPLE WHERE reciever = '".$user."' ORDER BY timestamp DESC";
 
             $msgresult = mysqli_query($con, $query);
+            
+            $sender = mysqli_query($con, "SELECT fname, minit, lname FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
+            $sendername = mysqli_fetch_array($sender);
 
             if ($user == $_SESSION["username"])
                 {
@@ -497,7 +500,7 @@
                       <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
                     <div class='col-md-8 owntxt'>
-                        <h3>".$name["fname"]." ".$name["lname"]." </h3>
+                        <h3>".$sendername["fname"]." ".$sendername["lname"]." </h3>
                         <form action='addPost.php' method='POST'>
 
                           <div class='createGroupDesc__row'>
@@ -518,7 +521,7 @@
                   echo "<div class='row usrpost hiddenrow'>
                     <div class='col-md-2'></div>
                     <div style='text-align: right;' class='col-md-8 usrtxt'>
-                        <h3>".$name["fname"]." ".$name["lname"]." </h3>
+                        <h3>".$sendername["fname"]." ".$sendername["lname"]." </h3>
                         <form action='addPost.php' method='POST'>
 
                           <div class='createGroupDesc__row'>
