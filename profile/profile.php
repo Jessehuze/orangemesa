@@ -577,15 +577,10 @@
                 else
                 {
                   echo "<div class='row usrpost'>
-<<<<<<< HEAD
-                    <div class='col-md-2'>
+                    <div class='col-sm-2'>
                       <a class='deletepost'><i class='fa fa-times'></i></a>
                     </div>
-                    <div style='text-align: right;' class='col-md-8 usrtxt'>
-=======
-                    <div class='col-sm-2'></div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
->>>>>>> 34978015f67f27b0a179ddbebc8b1cabd1c6a0f2
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
                       </a>
