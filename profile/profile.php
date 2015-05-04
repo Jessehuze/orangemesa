@@ -504,7 +504,7 @@
                             <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
                           </div>
 
-                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=" . $_GET["user"] || $_SESSION["username"]. "'/>
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=" . isset($_GET["user"]) ? $_GET["user"] : $_SESSION["username"] . "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
                           <input name='reciever' type='hidden' value='";
                           if (isset($_GET["user"]))
@@ -531,7 +531,7 @@
                             <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
                           </div>
 
-                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=". $_GET["user"] || $_SESSION["username"]. "'/>
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=". isset($_GET["user"]) ? $_GET["user"] : $_SESSION["username"]. "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
                           <input name='reciever' type='hidden' value='";
                               if (isset($_GET["user"]))
@@ -631,7 +631,7 @@
 
             position: relative;
             left: -75vw;
-            margin-bottom: -250px;
+            top: -175px;
           }
           .friendimg{
               margin-left: 13%;
