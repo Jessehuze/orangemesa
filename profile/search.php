@@ -274,14 +274,10 @@
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <img class='usrimg' src='../images/user.png'/>";
-<<<<<<< HEAD
 
-				$query1 = "SELECT invitee, eventid FROM EVENT_INVITES FROM invitee = '".$_SESSION["username"]."' AND eventid = '".$event["eventid"]."'";
 
-=======
-				
 				$query1 = "SELECT invitee, eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$event["eventid"]."'";
->>>>>>> a43498ea9f39c29f16582961af209d333c470954
+
                 $cond = mysqli_query($con, $query1);
 				if(mysqli_num_rows($cond) == 0)
 				{
@@ -292,13 +288,9 @@
 				}
 				else
 				{
-<<<<<<< HEAD
-					echo "<button class='btn addbtn btn-info.active'>Going</button>";
-				}
-=======
+
 					echo "<button class='btn addbtn btn-info.active'>Already Going</button>";
-				}     
->>>>>>> a43498ea9f39c29f16582961af209d333c470954
+				}
 				 echo " </div>
                   <div class='col-xs-8'>
                     <h3>" . $event["eventname"] . "</h3>
