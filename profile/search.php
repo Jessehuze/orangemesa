@@ -143,7 +143,7 @@
     </nav>
     
     <style>
-      .userimg{
+      .usrimg{
               width: 100px;
               height: 100px;
               border-radius: 512px;
