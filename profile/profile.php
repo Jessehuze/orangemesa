@@ -548,22 +548,16 @@
               background-size: 75px;
             }
             .statusimg{
+              position: relative;
               margin-left: 13%;
               width: 100px;
               height: 100px;
               border-radius: 512px;
-              box-shadow: 0 0 10px rgba(0,0,0, .3);
+              box-shadow: 0 0 10px rgba(0,0,0, .5);
               background-repeat: no-repeat;
               background-position: center;
               background-size: 100px;
-            }
-            .statusimg:before{
-              position: relative;
-              left: -400px;
-            }
-            .statusimg:after{
-              position: relative;
-              right: -400px;
+              z-index: 20;
             }
             .inforow{
               height: 50px;
@@ -574,12 +568,12 @@
             .usrtxt{
               padding: 20px 75px;
               background: #fff;
-              box-shadow: 2px 0 5px rgba(0,0,0, 0.5);
+              box-shadow: -1px 0 5px rgba(0,0,0, 0.5);
             }
             .owntxt{
               padding: 20px 75px;
               background: #fff;
-              box-shadow: 2px 0 5px rgba(0,0,0, 0.5);
+              box-shadow: 1px 0 5px rgba(0,0,0, 0.5);
             }
             .owntxt:before, .owntxt:after{
               	position: absolute;
@@ -597,7 +591,7 @@
                 -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
                 -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
-                z-index: -1;
+                z-index: -3;
             }
              .usrtxt:before, .usrtxt:after{
               	position: absolute;
