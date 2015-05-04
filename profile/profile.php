@@ -427,7 +427,6 @@
         -o-transition:all 1.5s ease-in-out;
         transition:all 1.5s ease-in-out;
 
-        position: relative;
       }
 
     </style>
@@ -619,7 +618,7 @@
 
             position: relative;
             left: -75vw;
-            top: -175px;
+            height: 0px;
           }
           .friendimg{
               margin-left: 13%;
@@ -1000,8 +999,8 @@ jQuery('input[name="eventDate"]').bind('keyup',function(e){
 });
 
 $("#addpost").click(function () {
-  $(".middlerow, .hiddenrow").css('top', '0');
-  $(".middlerow, .hiddenrow").css('left', '0');
+  $(".hiddenrow").css('height', '250px');
+  $(".hiddenrow").css('left', '0');
 });
 </script>
 
