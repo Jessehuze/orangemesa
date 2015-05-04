@@ -192,19 +192,29 @@
                   <div class='col-xs-4'>
                     <a href='profile.php?user=" . $friend["username"] . "'>
                       <div class='usrimg' style='background-image:url(". $imageurl .")'></div>
-                     </a>
-                    <form action='addFriend.php' method='POST'>
-                      <button class='btn addbtn btn-default' name='user' value='".$friend["username"]."' type='submit'>Follow</button>
-					  <input type='hidden' name='query' value='".$query."'>
-                    </form>
-                  </div>
-                  <div class='col-xs-8'>
-                    <a href='profile.php?user=" . $friend["username"] . "'>
-                      <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
-                    </a>
-                    <p>". $friend["description"] . "</p>
-                  </div>
-                </div>";
+                     </a>";
+					 
+					 $cond = mysqli_query($con, "SELECT userid, friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."' AND friendid = '".$friend["username"]."'");
+					 if(mysqli_num_rows($cond) > 0)
+					   {
+					      echo "<form action='addFriend.php' method='POST'>
+                                  <button class='btn addbtn btn-default' name='user' value='".$friend["username"]."' type='submit'>Follow</button>
+					              <input type='hidden' name='query' value='".$query."'>
+                                </form>";
+					   }
+					 else
+					 {
+						echo "<button class='btn addbtn btn.info-active'>Following</button>";
+					 }
+					 
+                    echo "</div>
+                          <div class='col-xs-8'>
+                            <a href='profile.php?user=" . $friend["username"] . "'>
+                            <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
+                            </a>
+                            <p>". $friend["description"] . "</p>
+                          </div>
+                        </div>";
               }
             }
           ?> 
@@ -223,7 +233,7 @@
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
-                      <div class='usrimg' style='background-image:url('../images/user.png')'></div>
+                    <img class='usrimg' src='../images/user.png'/>
 					<form action='joinGroup.php' method = 'POST'>
 					  <button class='btn addbtn btn-default' type='submit' name='group' value='".$group["groupid"]."'>Join</button>
 					  <input type='hidden' name='query' value='".$query."'>
@@ -252,7 +262,7 @@
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
-                    <div class='usrimg' style='background-image:url('../images/user.png')'></div>
+                    <img class='usrimg' src='../images/user.png'/>
                     <form action='joinEvent.php' method = 'POST'>
                       <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Going</button>
                       <input type='hidden' name='query' value='".$query."'>
