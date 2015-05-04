@@ -277,7 +277,7 @@
 				$query1 = "SELECT invitee, eventid FROM EVENT_INVITES FROM invitee = '".$_SESSION["username"]."' AND eventid = '".$event["eventid"]."'";
 				
                 $cond = mysqli_query($con, $query1);
-				echo mysql_error($con);
+				echo mysqli_error($con);
 				if(mysqli_num_rows($cond) == 0)
 				{
 					echo "<form action='joinEvent.php' method = 'POST'>
