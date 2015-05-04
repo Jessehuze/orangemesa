@@ -427,8 +427,8 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
           <div>
-            <div class="usrimg fa-spin-hover"></div>
-            <div data-toggle="modal" data-target="#propic" class="updateimg" id="updateimg"><i class="fa fa-lg fa-gear "></i></div>
+            <div class="usrimg"></div>
+            <div data-toggle="modal" data-target="#propic" class="updateimg fa-spin-hover" id="updateimg"><i class="fa fa-lg fa-gear "></i></div>
           </div>
           <hr>
           <h2>
