@@ -496,7 +496,7 @@
                       <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
                   </div>
-                  <div class='col-xs-10'>
+                  <div class='col-xs-10 usrtxt'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <h3>".$name["fname"]." ".$name["lname"]." </h3>
                     </a>
@@ -504,7 +504,7 @@
                   </div>
                 </div>";
                 echo "<div class='row usrpost'>
-                  <div style='text-align: right;' class='col-xs-10'>
+                  <div style='text-align: right;' class='col-xs-10 usrtxt'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <h3>".$name["fname"]." ".$name["lname"]." </h3>
                     </a>
@@ -559,8 +559,10 @@
               height: 50px;
             }
             .usrpost{
-              padding: 20px;
               margin: 25px 0;
+            }
+            .usrtxt{
+              padding: 20px;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
             }
             .tabinfo{
