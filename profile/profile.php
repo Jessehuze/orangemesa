@@ -560,7 +560,7 @@
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2 ownimg'>
                       <a href='profile.php?user=".$msg["sender"]."'>
-                        <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                        <div href='deletepost.php' class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
                     </div>
                     <div class='col-sm-8 owntxt'>
@@ -578,7 +578,7 @@
                 {
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2'>
-                      <a class='deletepost pull-right'><i class='fa fa-times'></i></a>
+                      <a href='deletepost.php' class='deletepost pull-right'><i class='fa fa-times'></i></a>
                     </div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
