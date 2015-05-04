@@ -859,10 +859,14 @@
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
 
-						if($user != $_SESSION["username"])
+						if($user != $_SESSION["username"] && $count["COUNT(*)"] != 1)
 						  echo $name["fname"]." is in ".$count["COUNT(*)"]." groups:";
-						else
+						else if($user != $_SESSION["username"] && $count["COUNT(*)"] != 1)
+						  echo $name["fname"]." is in ".$count["COUNT(*)"]." group:";
+						else if($user != $_SESSION["username"] && $count["COUNT(*)"] != 1)
 						  echo "You are in ".$count["COUNT(*)"]." groups:";
+						else
+						  echo "You are in ".$count["COUNT(*)"]." group:";
 					?>
 
 					<a data-toggle="modal" data-target="#groupModal" href="#groupModal"><i class="pull-right fa fa-plus-square"></i></a>
