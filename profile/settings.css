@@ -73,7 +73,7 @@ input, button {
 }
 
 .profileSideBar{
-  background: -webkit-linear-gradient(left, #FA7B01 0%, #fea249 80%);
+  background: -webkit-linear-gradient(bottom, #FA7B01 0%, #fea249 80%);
 }
 
 .postsHeader{
