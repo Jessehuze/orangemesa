@@ -428,7 +428,15 @@
         <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
           <div>
             <div class="usrimg"></div>
-            <div data-toggle="modal" data-target="#propic" class="updateimg fa-spin-hover" id="updateimg"><i class="fa fa-lg fa-gear "></i></div>
+            <?php
+              require("/var/config.php");
+              if (isset($_GET["user"]))
+                $user=$_GET["user"];
+              else
+                $user=$_SESSION["username"];
+              if ($user == $_SESSION["username"])
+                echo '<div data-toggle="modal" data-target="#propic" class="updateimg fa-spin-hover" id="updateimg"><i class="fa fa-lg fa-gear "></i></div>';
+            ?>
           </div>
           <hr>
           <h2>
@@ -602,6 +610,20 @@
             color:#000;
             text-decoration:none;
           }
+          .posttext{
+            width: 100%;
+            height: 75px;
+            boder:none;
+          }
+          .hiddenrow{
+            -webkit-transition:all 1.0s ease-in-out;
+            -moz-transition:all 1.0s ease-in-out;
+            -o-transition:all 1.0s ease-in-out;
+            transition:all 1.0s ease-in-out;
+
+            position: relative;
+            left: -50vh;
+          }
           .friendimg{
               margin-left: 13%;
               width: 75px;
@@ -614,7 +636,7 @@
             }
             .statusimg{
               position: relative;
-              margin-left: 13%;
+              margin-left: -23px;
               width: 100px;
               height: 100px;
               border-radius: 512px;
