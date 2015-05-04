@@ -581,6 +581,14 @@
                 left: 12px;
                 bottom: 12px;
                 background: transparent;
+                -webkit-transform: skew(-5deg) rotate(-5deg);
+                -moz-transform: skew(-5deg) rotate(-5deg);
+                -ms-transform: skew(-5deg) rotate(-5deg);
+                -o-transform: skew(-5deg) rotate(-5deg);
+                transform: skew(-5deg) rotate(-5deg);
+                -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
+                -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
                 z-index: -1;
             }
              .owntxt:before, .owntxt:after{
@@ -601,6 +609,18 @@
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
                 z-index: -1;
             }
+            .owntxt:after{
+              	left: auto;
+                right: 12px;
+                -webkit-transform: skew(5deg) rotate(5deg);
+                -moz-transform: skew(5deg) rotate(5deg);
+                -ms-transform: skew(5deg) rotate(5deg);
+                -o-transform: skew(5deg) rotate(5deg);
+                transform: skew(5deg) rotate(5deg);
+                -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
+                -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
+            }
             .usrtxt:after{
               	left: auto;
                 right: 12px;
@@ -609,6 +629,9 @@
                 -ms-transform: skew(5deg) rotate(5deg);
                 -o-transform: skew(5deg) rotate(5deg);
                 transform: skew(5deg) rotate(5deg);
+                -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             }
             .ownimg{
               margin-right: -75px;
