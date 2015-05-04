@@ -185,6 +185,10 @@
                 </form>
                </div>
                
+               <div class="editProfile_row">               
+                <button data-toggle="modal" data-target="#areyousureModal" class="edit__submit" id="updateimg">Delete Account</button>
+               </div>
+               
                <button data-toggle="modal" data-target="#areyousureModal" class="edit__submit" id="updateimg">Delete Account</button>
 
               </div>
