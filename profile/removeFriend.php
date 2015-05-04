@@ -9,7 +9,7 @@
   $delete = mysqli_query($con, $query);
 
   //Redirect to profile page
-  header("Location: http://inceptisol.us.to:6670/profile/profile.php");
+  header("Location: http://inceptisol.us.to:6670/profile/profile.php?user=".$_SESSION["username"]);
   exit();
 
 ?>

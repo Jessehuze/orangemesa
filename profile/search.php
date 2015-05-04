@@ -223,7 +223,7 @@
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
-                      <div class='usrimg' style='background-image:url('../images/user.png')'></div>
+                    <img class='usrimg' src='../images/user.png'/>
 					<form action='joinGroup.php' method = 'POST'>
 					  <button class='btn addbtn btn-default' type='submit' name='group' value='".$group["groupid"]."'>Join</button>
 					  <input type='hidden' name='query' value='".$query."'>
@@ -252,7 +252,7 @@
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
-                    <div class='usrimg' style='background-image:url('../images/user.png')'></div>
+                    <img class='usrimg' src='../images/user.png'/>
                     <form action='joinEvent.php' method = 'POST'>
                       <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Going</button>
                       <input type='hidden' name='query' value='".$query."'>
