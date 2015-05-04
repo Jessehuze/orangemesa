@@ -4,7 +4,7 @@
   
   if ($_POST["delete"] == "true")
   {
-    $query = "DELETE FROM PEOPLE WHERE username = '".$_SESSION["username"]."'";
+    $query = "DELETE FROM PEOPLE WHERE username = '".$_SESSION["username"]."' ORDER BY username";
     $delete = mysqli_query($con, $query);
     session_destroy();
     header("Location: http://inceptisol.us.to:6670/login/login.php");
