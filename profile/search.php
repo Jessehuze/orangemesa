@@ -143,7 +143,7 @@
     </nav>
     
     <style>
-      .userimg{
+      .usrimg{
               width: 100px;
               height: 100px;
               border-radius: 512px;
@@ -191,7 +191,7 @@
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <a href='profile.php?user=" . $friend["username"] . "'>
-                      <img class='usrimg' src='".$imageurl."'/>
+                      <div class='usrimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
                     <form action='addFriend.php' method='POST'>
                       <button class='btn addbtn btn-default' name='user' value='".$friend["username"]."' type='submit'>Follow</button>
@@ -223,7 +223,6 @@
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
-                    <img class='usrimg' src='../images/user.png'/>
 					<form action='joinGroup.php' method = 'POST'>
 					  <button class='btn addbtn btn-default' type='submit' name='group' value='".$group["groupid"]."'>Join</button>
 					  <input type='hidden' name='query' value='".$query."'>
@@ -252,7 +251,6 @@
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
-                    <img class='usrimg' src='../images/user.png'/>
                     <form action='joinEvent.php' method = 'POST'>
                       <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Going</button>
                       <input type='hidden' name='query' value='".$query."'>
