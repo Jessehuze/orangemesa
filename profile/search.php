@@ -247,7 +247,7 @@
 				else
 				{
 				    echo "<button class='btn addbtn btn-info.active'>In Group</button>";	
-				)	
+				}	
 				 echo " </div>
                         <div class='col-xs-8'>
                            <h3>" . $group["name"] . " </h3>
