@@ -18,6 +18,10 @@ svg {
   overflow: visible;
 }
 
+.modaldesign {
+  opacity: 75%;
+}
+
 .svg-icon {
   cursor: pointer;
 }
