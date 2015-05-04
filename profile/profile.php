@@ -563,7 +563,7 @@
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2 ownimg'>
                       <a href='profile.php?user=".$msg["sender"]."'>
-                        <div href='deletepost.php' class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                        <div href='deletepost.php?user=".$user."?postid=".$msg["postid"]."' class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
                     </div>
                     <div class='col-sm-8 owntxt'>
@@ -583,7 +583,7 @@
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2'>";
                   if ($user == $_SESSION["username"] || $msg["sender"] == $_SESSION["username"])
-                      echo "<a href='deletepost.php' class='deletepost pull-right'><i class='fa fa-times'></i></a>";
+                      echo "<a href='deletepost.php?user=".$user."?postid=".$msg["postid"]."' class='deletepost pull-right'><i class='fa fa-times'></i></a>";
                     echo "</div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
