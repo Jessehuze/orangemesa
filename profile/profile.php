@@ -549,7 +549,7 @@
                     </div>
                   </div>";
                 }
-             echo "<div class='middlerow'>"
+             echo "<div class='middlerow'>";
              if (mysqli_num_rows($msgresult) != 0)
             {
               while ($msg = mysqli_fetch_array($msgresult))
