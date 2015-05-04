@@ -143,13 +143,15 @@
     </nav>
     
     <style>
-      .usrimg{
-        margin-left: 13%;
-        width: 70%;
-        margin-top: 15%;
-        border-radius: 512px;
-        box-shadow: 0 0 10px rgba(0,0,0, .3)
-      }
+      .userimg{
+              width: 100px;
+              height: 100px;
+              border-radius: 512px;
+              box-shadow: 0 0 10px rgba(0,0,0, .5);
+              background-repeat: no-repeat;
+              background-position: center;
+              background-size: 100px;
+            }
       a{
         color:#000;
         text-decoration:none;
