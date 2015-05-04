@@ -192,19 +192,29 @@
                   <div class='col-xs-4'>
                     <a href='profile.php?user=" . $friend["username"] . "'>
                       <div class='usrimg' style='background-image:url(". $imageurl .")'></div>
-                     </a>
-                    <form action='addFriend.php' method='POST'>
-                      <button class='btn addbtn btn-default' name='user' value='".$friend["username"]."' type='submit'>Follow</button>
-					  <input type='hidden' name='query' value='".$query."'>
-                    </form>
-                  </div>
-                  <div class='col-xs-8'>
-                    <a href='profile.php?user=" . $friend["username"] . "'>
-                      <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
-                    </a>
-                    <p>". $friend["description"] . "</p>
-                  </div>
-                </div>";
+                     </a>";
+					 
+					 $cond = mysqli_result($con, "SELECT userid, friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."' AND friendid = '".$friend["username"]."'");
+					 if(mysqli_num_rows($cond) > 0)
+					   {
+					      echo "<form action='addFriend.php' method='POST'>
+                                  <button class='btn addbtn btn-default' name='user' value='".$friend["username"]."' type='submit'>Follow</button>
+					              <input type='hidden' name='query' value='".$query."'>
+                                </form>";
+					   }
+					 else
+					 {
+						echo "<button class='btn addbtn btn.info-active'>Following</button>";
+					 }
+					 if($condition
+                    echo "</div>
+                          <div class='col-xs-8'>
+                            <a href='profile.php?user=" . $friend["username"] . "'>
+                            <h3>" . $friend["fname"] . " "  . $friend["lname"] . " </h3>
+                            </a>
+                            <p>". $friend["description"] . "</p>
+                          </div>
+                        </div>";
               }
             }
           ?> 
