@@ -477,7 +477,7 @@
             ?>
           </p>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main middlerow">
+        <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
           <h2 class="page-header">Posts</h2><a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
 
           <?php
@@ -549,7 +549,7 @@
                     </div>
                   </div>";
                 }
-
+             echo "<div class='middlerow'>"
              if (mysqli_num_rows($msgresult) != 0)
             {
               while ($msg = mysqli_fetch_array($msgresult))
@@ -606,7 +606,7 @@
 
 
         </div>
-
+      </div>
         <style>
           .infobar{
             height: calc(100vh - 70px);
