@@ -564,13 +564,11 @@
               margin: 25px 0;
             }
             .usrtxt{
-              padding: 20px;
-              padding-right: 75px;
+              padding: 20px 75px;;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
             }
             .owntxt{
-              padding: 20px;
-              padding-left: 75px;
+              padding: 20px 75px;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
             }
             .ownimg{
