@@ -8,8 +8,11 @@
   $query = "DELETE FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$_POST["event"]."'";
   $delete = mysqli_query($con, $query);
   
+  echo $query;
+  echo mysqli_error($con);
+  
   //Redirect to profile page
-  header("Location: http://inceptisol.us.to::6670/profile/profile.php");
+  //header("Location: http://inceptisol.us.to::6670/profile/profile.php");
   exit();
 
 ?>
