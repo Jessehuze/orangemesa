@@ -415,7 +415,7 @@
         margin-bottom: -40px;
         cursor: pointer;
       }
-      .updateimg:hover{
+      .fa-gear:hover{
         -webkit-animation-name: spin;
         -webkit-animation-duration: 40000ms;
         -webkit-animation-iteration-count: infinite;
