@@ -195,7 +195,7 @@
                      </a>";
 					 
 					 $cond = mysqli_query($con, "SELECT userid, friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."' AND friendid = '".$friend["username"]."'");
-					 if(mysqli_num_rows($cond) > 0)
+					 if(mysqli_num_rows($cond) == 0)
 					   {
 					      echo "<form action='addFriend.php' method='POST'>
                                   <button class='btn addbtn btn-default' name='user' value='".$friend["username"]."' type='submit'>Follow</button>
