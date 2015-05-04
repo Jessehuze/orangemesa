@@ -578,7 +578,7 @@
                 {
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2'>
-                      <a class='deletepost'><i class='fa fa-times'></i></a>
+                      <a class='deletepost pull-right'><i class='fa fa-times'></i></a>
                     </div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
