@@ -21,7 +21,7 @@
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
-    
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -29,21 +29,21 @@
     <![endif]-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
-  
+
   <?php
     require("../logincheck.php");
   ?>
-  
+
   <style>
     .infobar{
       max-height: calc(100vh - 175px);
       overflow-y: scroll;
-      overflow-x: hidden; 
+      overflow-x: hidden;
       word-wrap: break-word;
       padding-right: 15px
     }
   </style>
-  
+
   <body>
 
   <!-- firsttimelogin Modal -->
@@ -82,7 +82,7 @@
   <?php
   if (isset($_SESSION["firsttimelogin"]))
   {
-    if ($_SESSION["firsttimelogin"] == 1) 
+    if ($_SESSION["firsttimelogin"] == 1)
     {
       $_SESSION["firsttimelogin"] = 0;
       echo 'setTimeout(function() {$("#myModal2").modal("show");}, 100);';
@@ -105,18 +105,17 @@
             <div class="editProfile">
               <div class="editProfile_form">
 
-                  <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
-
                   <div class="editProfile_row">
-                    
-                    <?php 
+
+                    <?php
                       if (isset($_GET["user"]))
                       {
-                        if ($_GET["user"] == $_SESSION["username"]) 
+                        if ($_GET["user"] == $_SESSION["username"])
                           echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
                                   Select image to upload:
                                   <input type="file" name="fileToUpload" id="fileToUpload">
                                   <input type="submit" value="Upload Image" name="submit" class="edit__submit">
+                                  <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                                 </form>';
                       }
                       else
@@ -125,6 +124,7 @@
                                 Select image to upload:
                                 <input type="file" name="fileToUpload" id="fileToUpload">
                                 <input type="submit" value="Upload Image" name="submit" class="edit__submit">
+                                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                               </form>';
                       }
                     ?>
@@ -233,7 +233,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Post Modal -->
     <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -263,7 +263,7 @@
                       $user=$_SESSION["username"];
                     echo $user;
                   ?>"/>
-                
+
               </form>
 
               </div>
@@ -274,7 +274,7 @@
         </div>
       </div>
     </div>
-    
+
   <!-- Events Modal -->
     <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -301,7 +301,7 @@
                   </svg>
                   <textarea name="eventDesc" type="text" class="edit__input description" rows="6" placeholder="Description" required></textarea>
                 </div>
-				
+
 				<div class="createGroupDate__row">
 				  <svg class="signup__icon username svg-icon" viewbox="0 0 20 20"></svg>
 				  <input name="eventDate" type="text" class="edit__input dob" name="eventDate" placeholder="Event Date" required pattern="((((0[13578]|1[02])(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[01]))|((0[469]|11)(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[0]))|((02)((\/|-|.)(0[1-9]|1[0-9]|2[0-8]))))(\/|-|.)(19([6-9][0-9])|20(0[0-9]|1[0-4])))|((02)(\/|-|.)(29)(\/|-|.)(19(6[048]|7[26]|8[048]|9[26])|20(0[048]|1[26])))"/>
@@ -319,13 +319,13 @@
         </div>
       </div>
     </div>
-    
+
 
 
     <script>
     </script>
-    
-    
+
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -385,9 +385,9 @@
                 $user=$_GET["user"];
               else
                 $user=$_SESSION["username"];
-              $result = mysqli_query($con, "SELECT photourl 
-                                            FROM PHOTOS 
-                                            WHERE owner = '" .$user. "' AND photoid IN (SELECT ppid 
+              $result = mysqli_query($con, "SELECT photourl
+                                            FROM PHOTOS
+                                            WHERE owner = '" .$user. "' AND photoid IN (SELECT ppid
                                                                                         FROM PEOPLE
                                                                                         WHERE username ='" .$user. "')");
               $photo = mysqli_fetch_array($result);
@@ -411,7 +411,7 @@
         box-shadow: 0 0 10px rgba(0,0,0, .5);
         position: relative;
         top: -40px;
-        left: 188px;
+        left: 68%;
         margin-bottom: -40px;
         cursor: pointer;
       }
@@ -462,58 +462,84 @@
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
           <h2 class="page-header">Posts</h2><a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
-              
+
           <?php
             require("/var/config.php");
             if (isset($_GET["user"]))
               $user=$_GET["user"];
             else
               $user=$_SESSION["username"];
-            
+
             $query = "SELECT * FROM POST_PEOPLE2PEOPLE WHERE reciever = '".$user."' ORDER BY timestamp DESC";
-                    
-            $msgresult = mysqli_query($con, $query); 
-            
+
+            $msgresult = mysqli_query($con, $query);
+
             if ($user == $_SESSION["username"])
                 {
                   echo "<div class='row usrpost hiddenrow'>
                     <div class='col-md-2 ownimg'>
-                      <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                      <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
                     <div class='col-md-8 owntxt'>
-                      <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
-                      </a>
-                      <p>".$msg["message"]."</p>
+                        <form action='addPost.php' method='POST'>
+
+                          <div class='createGroupDesc__row'>
+                            <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
+                          </div>
+
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php'/>
+                          <button name='post' type='submit' class='edit__submit'>Post</button>
+                          <input name='reciever' type='hidden' value=''";
+                              if (isset($_GET["user"]))
+                                $user=$_GET["user"];
+                              else
+                                $user=$_SESSION["username"];
+                              echo $user;
+                            echo "/>
+
+                        </form>
                     </div>
                     <div class='col-md-2'></div>
                   </div>";
                 }
-                else 
+                else
                 {
                   echo "<div class='row usrpost hiddenrow'>
                     <div class='col-md-2'></div>
                     <div style='text-align: right;' class='col-md-8 usrtxt'>
-                      <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
-                      </a>
-                      <p>".$msg["message"]."</p>
+                        <form action='addPost.php' method='POST'>
+
+                          <div class='createGroupDesc__row'>
+                            <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
+                          </div>
+
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php'/>
+                          <button name='post' type='submit' class='edit__submit'>Post</button>
+                          <input name='reciever' type='hidden' value=''";
+                              if (isset($_GET["user"]))
+                                $user=$_GET["user"];
+                              else
+                                $user=$_SESSION["username"];
+                              echo $user;
+                            echo "/>
+
+                        </form>
                     </div>
                     <div class='col-md-2 userimg'>
-                      <a href='profile.php?user=".$msg["sender"]."'>
-                        <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
-                       </a>
+                        <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
                   </div>";
                 }
-  
+
              if (mysqli_num_rows($msgresult) != 0)
             {
-              while ($msg = mysqli_fetch_array($msgresult)) 
+              while ($msg = mysqli_fetch_array($msgresult))
               {
-                $result = mysqli_query($con, "SELECT photourl 
-                                      FROM PHOTOS 
-                                      WHERE owner = '" .$msg["sender"]. "' AND photoid IN (SELECT ppid 
+                $result = mysqli_query($con, "SELECT photourl
+                                      FROM PHOTOS
+                                      WHERE owner = '" .$msg["sender"]. "' AND photoid IN (SELECT ppid
                                                                                   FROM PEOPLE
                                                                                   WHERE username ='" .$msg["sender"]. "')");
                 $photo = mysqli_fetch_array($result);
@@ -540,7 +566,7 @@
                     <div class='col-md-2'></div>
                   </div>";
                 }
-                else 
+                else
                 {
                   echo "<div class='row usrpost'>
                     <div class='col-md-2'></div>
@@ -560,15 +586,15 @@
               }
             }
           ?>
-            
-          
+
+
         </div>
-        
+
         <style>
           .infobar{
             height: calc(100vh - 70px);
             overflow-y: scroll;
-            overflow-x: hidden; 
+            overflow-x: hidden;
             word-wrap: break-word;
             padding-right: 15px
           }
@@ -687,7 +713,7 @@
               right: -15px;
             }
         </style>
-        
+
         <div class="col-md-3 tabinfo">
           <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="panel panel-default">
@@ -699,48 +725,48 @@
                           $user=$_GET["user"];
                         else
                           $user=$_SESSION["username"];
-              
+
                         $query = "SELECT fname FROM PEOPLE WHERE username = '".$user."'";
-                        
-                        $result = mysqli_query($con, $query); 
+
+                        $result = mysqli_query($con, $query);
                         $name = mysqli_fetch_array($result);
-						
+
 						$query = "SELECT DISTINCT COUNT(*) FROM FRIENDS WHERE userid='".$user."'";
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
-						
+
                         if ($user != $_SESSION["username"])
                           echo $name["fname"]." follows ".$count["COUNT(*)"]." people:";
                         else
                           echo "You follow " .$count["COUNT(*)"]." people:";
                       ?>
-					  
-					  
+
+
                   </a>
                 </h4>
               </div>
               <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body infobar">
                   <?php
-					
+
                     if (isset($_GET["user"]))
                       $user=$_GET["user"];
                     else
                       $user=$_SESSION["username"];
-          
+
                     $query = "SELECT fname, lname, username FROM PEOPLE WHERE username IN
                         (SELECT friendid FROM FRIENDS WHERE userid = '".$user."')";
-                    
-                    $friends_result = mysqli_query($con, $query); 
-                    
-					
+
+                    $friends_result = mysqli_query($con, $query);
+
+
                      if (mysqli_num_rows($friends_result) != 0)
                     {
-                      while ($friend = mysqli_fetch_array($friends_result)) 
+                      while ($friend = mysqli_fetch_array($friends_result))
                       {
-                        $result = mysqli_query($con, "SELECT photourl 
-                                              FROM PHOTOS 
-                                              WHERE owner = '" .$friend["username"]. "' AND photoid IN (SELECT ppid 
+                        $result = mysqli_query($con, "SELECT photourl
+                                              FROM PHOTOS
+                                              WHERE owner = '" .$friend["username"]. "' AND photoid IN (SELECT ppid
                                                                                           FROM PEOPLE
                                                                                           WHERE username ='" .$friend["username"]. "')");
                         $photo = mysqli_fetch_array($result);
@@ -769,7 +795,7 @@
                         </div>";
                       }
                     }
-                  ?> 
+                  ?>
                 </div>
               </div>
             </div>
@@ -782,23 +808,23 @@
                           $user=$_GET["user"];
                         else
                           $user=$_SESSION["username"];
-						  
+
 						$query = "SELECT fname FROM PEOPLE WHERE username = '".$user."'";
-                        $result = mysqli_query($con, $query); 
+                        $result = mysqli_query($con, $query);
                         $name = mysqli_fetch_array($result);
-						
+
 						$query = "SELECT DISTINCT COUNT(*) FROM GROUP_MEMBERS WHERE memberid= '".$user."'";
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
-						
+
 						if($user != $_SESSION["username"])
 						  echo $name["fname"]." is in ".$count["COUNT(*)"]." groups:";
 						else
 						  echo "You are in ".$count["COUNT(*)"]." groups:";
 					?>
-					
+
 					<a data-toggle="modal" data-target="#groupModal" href="#groupModal"><i class="pull-right fa fa-plus-square"></i></a>
-					
+
 				  </a>
                 </h4>
               </div>
@@ -809,19 +835,19 @@
 						$user=$_GET["user"];
 					else
 						$user=$_SESSION["username"];
-            
-					
-					
+
+
+
 					$query = "SELECT groupid, gpid, name, description FROM GROUPS WHERE groupid IN
 							(SELECT gid FROM GROUP_MEMBERS WHERE memberid = '".$user."')";
-					
+
 					$group_result = mysqli_query($con, $query);
-					
+
 					if(mysqli_num_rows($group_result) != 0)
 					{
 						while ($group = mysqli_fetch_array($group_result))
 						{
-							//Picture for group? 
+							//Picture for group?
               echo "<div class='row'>
                           <div class='col-xs-8'>
                             <a href='profile.php?user=".$group["name"]."'>
@@ -835,7 +861,7 @@
                             </form>
 						  </div>
                     </div>";
-							
+
 						}
 					}
 				 ?>
@@ -851,23 +877,23 @@
                           $user=$_GET["user"];
                         else
                           $user=$_SESSION["username"];
-              
+
                         $query = "SELECT fname FROM PEOPLE WHERE username = '".$user."'";
-                        $result = mysqli_query($con, $query); 
+                        $result = mysqli_query($con, $query);
                         $name = mysqli_fetch_array($result);
-						
+
 						$query = "SELECT DISTINCT COUNT(*) FROM EVENT_INVITES WHERE invitee = '".$user."'";
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
-						
+
 						if ($user != $_SESSION["username"])
                           echo $name["fname"]." is going to ".$count["COUNT(*)"]." events:";
                         else
                           echo "You are going to " .$count["COUNT(*)"]." events:";
 					 ?>
-					 
+
 					 <a data-toggle="modal" data-target="#eventModal" href="#eventModal"><i class="pull-right fa fa-plus-square"></i></a>
-					 
+
 				   </a>
 				</h4>
               </div>
@@ -878,13 +904,13 @@
 							$user=$_GET["user"];
 						else
 							$user=$_SESSION["username"];
-            
-						
+
+
 						$query = "SELECT eventid, eventname, description, eventdate FROM EVENTS WHERE eventid IN
 								(SELECT eventid FROM EVENT_INVITES WHERE invitee = '".$user."')";
-						
+
 						$event_result = mysqli_query($con, $query);
-						
+
 						if(mysqli_num_rows($event_result) != 0)
 						{
 							while($event = mysqli_fetch_array($event_result))
@@ -895,7 +921,7 @@
 										 <h5>".$event["eventdate"]."</h5>
 										 <h5>".$event["description"]."</h5>
 										</div>";
-										
+
 					    if($user == $_SESSION["username"])
 						{
 						  echo "<div class='col-xs-4'>
@@ -905,8 +931,8 @@
 					            </div>
 					          </div>";
 						}
-					  
-										
+
+
 							}
 						}
 					?>
@@ -931,7 +957,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-  
+
 <script>
 jQuery('input[name="eventDate"]').bind('keyup',function(e){
 
@@ -954,5 +980,5 @@ jQuery('input[name="eventDate"]').bind('keyup',function(e){
     }
 });
 </script>
-  
+
 </html>
