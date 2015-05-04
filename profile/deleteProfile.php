@@ -5,6 +5,7 @@
   if ($_POST["delete"] == "true")
   {
     $query = "DELETE FROM PEOPLE WHERE username = ".$_SESSION["user"];
+    $delete = mysqli_query($con, $query);
     session_destroy();
     header("Location: http://inceptisol.us.to:6670/login/login.php");
     exit();

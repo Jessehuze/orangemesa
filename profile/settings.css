@@ -68,6 +68,11 @@ input, button {
   overflow: hidden;
 }
 
+.demo {
+  height: 25rem;
+  overflow: hidden;
+}
+
 .editProfile {
   position: relative;
   height: 100%;

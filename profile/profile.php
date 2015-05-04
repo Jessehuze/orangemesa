@@ -185,10 +185,35 @@
                 </form>
                </div>
                
+               <button data-toggle="modal" data-target="#areyousureModal" class="edit__submit" id="updateimg">Delete Account</button>
+
+              </div>
+             </div>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Are you sure modal -->    
+    <div class="modal fade" id="areyousureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Are you sure?</h4>
+          </div>
+          <div class="modal-body">
+           <div class="cont">
+           <div class = "check">
+            <div class="editProfile">
+              <div class="editProfile_form">
+               
                <div class="editProfile_row">
                 <form action="deleteProfile.php" method="POST">
                   <input name="delete" type="hidden" value="true"/>
-                  <button name="update_description" type="submit" class="edit__submit">Delete Account</button>
+                  <button name="update_description" type="submit" class="edit__submit">Yes</button>
                 </form>
                </div>
 
