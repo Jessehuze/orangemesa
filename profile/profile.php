@@ -348,7 +348,7 @@
         background-color:rgba(250,123,1,.80);
       }
       .usrimg{
-        margin-left: 13%;
+        margin: 0 auto;
         width: 200px;
         height: 200px;
         border-radius: 512px;
@@ -375,7 +375,18 @@
           background-size: 200px;
       }
       .updateimg{
-        
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        background: #101010;
+        color: #ccc;
+        padding: 9.5px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0, .5);
+        position: relative;
+        top: -40px;
+        left: 188px;
+        margin-bottom: -40px;
       }
     </style>
     <div class="container-fluid">
