@@ -272,12 +272,22 @@
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
-                    <img class='usrimg' src='../images/user.png'/>
-                    <form action='joinEvent.php' method = 'POST'>
+                    <img class='usrimg' src='../images/user.png'/>";
+				
+                $cond = mysqli_query($con, "SELECT invitee, eventid FROM EVENT_INVITES FROM invitee = '".$_SESSION["username"]."' AND eventid = '".$event["eventid"]."'");
+				
+				if(mysqli_num_rows($cond) == 0)
+				{
+					echo "<form action='joinEvent.php' method = 'POST'>
                       <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Going</button>
                       <input type='hidden' name='query' value='".$query."'>
-					</form>
-                  </div>
+					</form>";
+				}
+				else
+				{
+					echo "<button class='btn addbtn btn-info.active'>Going</button>";
+				}     
+				 echo " </div>
                   <div class='col-xs-8'>
                     <h3>" . $event["eventname"] . "</h3>
 					<h5>".$event["eventdate"]."</h5>
