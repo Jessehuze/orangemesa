@@ -572,7 +572,7 @@
                       <p>".$msg["message"]."</p>
                     </div>
                     <div class='col-md-2'>";
-                      if ($msg["sender"] = $_SESSION["username"])
+                      if ($msg["sender"] == $_SESSION["username"])
                         echo "<a class='deletepost'><i class='fa fa-times'></i></a>";
                     echo "</div>
                   </div>";
@@ -581,7 +581,7 @@
                 {
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2'>";
-                  if ($msg["sender"] = $_SESSION["username"])
+                  if ($msg["sender"] == $_SESSION["username"])
                       echo "<a href='deletepost.php' class='deletepost pull-right'><i class='fa fa-times'></i></a>";
                     echo "</div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
