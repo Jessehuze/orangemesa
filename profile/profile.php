@@ -508,6 +508,7 @@
 
                           <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=" . $user . "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
+                          <button id='nope' type='button' class='edit__submit'>Cancel</button>
                           <input name='reciever' type='hidden' value='" . $user . "'/>
 
                         </form>
@@ -529,16 +530,17 @@
 
                           <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=". $user . "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
+                          <button id='nope' type='button' class='edit__submit'>Cancel</button>
                           <input name='reciever' type='hidden' value='" . $user . "'/>
 
                         </form>
                     </div>
-                    <div class='col-sm-2 userimg' style='margin-left: 13%;'>
+                    <div class='col-sm-2 userimg' style='margin-left: -5%;'>
                         <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
                   </div>";
                 }
-             echo "<div class='middlerow'>";
+
              if (mysqli_num_rows($msgresult) != 0)
             {
               while ($msg = mysqli_fetch_array($msgresult))
@@ -560,7 +562,7 @@
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2 ownimg'>
                       <a href='profile.php?user=".$msg["sender"]."'>
-                        <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                        <div href='deletepost.php' class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
                     </div>
                     <div class='col-sm-8 owntxt'>
@@ -569,20 +571,24 @@
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-md-2'></div>
+                    <div class='col-md-2'>
+                      <a class='deletepost'><i class='fa fa-times'></i></a>
+                    </div>
                   </div>";
                 }
                 else
                 {
                   echo "<div class='row usrpost'>
-                    <div class='col-sm-2'></div>
+                    <div class='col-sm-2'>
+                      <a href='deletepost.php' class='deletepost pull-right'><i class='fa fa-times'></i></a>
+                    </div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-sm-2 userimg' style='margin-left: 13%;'>
+                    <div class='col-sm-2 userimg' style='margin-left: -5%;'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
@@ -595,7 +601,6 @@
 
 
         </div>
-      </div>
         <style>
           .infobar{
             height: calc(100vh - 70px);
@@ -618,10 +623,10 @@
             -moz-transition:all 1.5s ease-in-out;
             -o-transition:all 1.5s ease-in-out;
             transition:all 1.5s ease-in-out;
-
-            position: relative;
-            left: -75vw;
             height: 0px;
+            left: -75vh;
+            margin-right: 35px;
+            overflow:hidden;
           }
           .friendimg{
               margin-left: 13%;
@@ -1004,6 +1009,10 @@ jQuery('input[name="eventDate"]').bind('keyup',function(e){
 $("#addpost").click(function () {
   $(".hiddenrow").css('height', '250px');
   $(".hiddenrow").css('left', '0');
+});
+$("#nope").click(function () {
+  $(".hiddenrow").css('height', '0px');
+  $(".hiddenrow").css('left', '-75vh');
 });
 </script>
 
