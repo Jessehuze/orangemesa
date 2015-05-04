@@ -548,6 +548,7 @@
               background-size: 75px;
             }
             .statusimg{
+              position: relative;
               margin-left: 13%;
               width: 100px;
               height: 100px;
@@ -556,14 +557,7 @@
               background-repeat: no-repeat;
               background-position: center;
               background-size: 100px;
-            }
-            .statusimg:before{
-              position: relative;
-              left: -400px;
-            }
-            .statusimg:after{
-              position: relative;
-              right: -400px;
+              z-index: 20;
             }
             .inforow{
               height: 50px;
@@ -597,7 +591,7 @@
                 -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
                 -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.0);
-                z-index: -1;
+                z-index: -3;
             }
              .usrtxt:before, .usrtxt:after{
               	position: absolute;
