@@ -610,6 +610,20 @@
             color:#000;
             text-decoration:none;
           }
+          .posttext{
+            width: 100%;
+            height: 75px;
+            boder:none;
+          }
+          .hiddenrow{
+            -webkit-transition:all 1.0s ease-in-out;
+            -moz-transition:all 1.0s ease-in-out;
+            -o-transition:all 1.0s ease-in-out;
+            transition:all 1.0s ease-in-out;
+
+            position: relative;
+            left: -50vh;
+          }
           .friendimg{
               margin-left: 13%;
               width: 75px;
@@ -622,7 +636,7 @@
             }
             .statusimg{
               position: relative;
-              margin-left: 13%;
+              margin-left: -23px;
               width: 100px;
               height: 100px;
               border-radius: 512px;
