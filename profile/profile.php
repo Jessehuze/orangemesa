@@ -533,7 +533,7 @@
 
                         </form>
                     </div>
-                    <div class='col-sm-2 userimg' style='margin-left: 13%;'>
+                    <div class='col-sm-2 userimg' style='margin-left: -5%;'>
                         <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
                   </div>";
@@ -586,7 +586,7 @@
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-sm-2 userimg' style='margin-left: 13%;'>
+                    <div class='col-sm-2 userimg' style='margin-left: -5%;'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
@@ -626,7 +626,7 @@
             overflow:hidden;
           }
           .friendimg{
-              margin-left: -5%;
+              margin-left: 13%;
               width: 75px;
               height: 75px;
               border-radius: 512px;
