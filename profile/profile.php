@@ -568,7 +568,7 @@
             .usrtxt{
               padding: 20px 75px;
               background: #fff;
-              box-shadow: -2px 0 5px rgba(0,0,0, 0.5);
+              box-shadow: 2px 0 5px rgba(0,0,0, 0.5);
             }
             .owntxt{
               padding: 20px 75px;
@@ -784,15 +784,15 @@
 						{
 							//Picture for group? 
               echo "<div class='row'>
-                          <div class='col-xs-7'>
+                          <div class='col-xs-8'>
                             <a href='profile.php?user=".$group["name"]."'>
                               <h4>".$group["name"]."</h4>
                               <h5>".$group["description"]."</h5>
                             </a>
                           </div>
-						  <div class='col-xs-5'>
+						  <div class='col-xs-4'>
 						    <form action='leavegroup.php' method='POST'>
-                              <button class='btn addbtn btn-default' name='group' value='".$group["groupid"]."' type='submit'>Leave Group</button>
+                              <button class='btn addbtn btn-default' name='group' value='".$group["groupid"]."' type='submit'>Leave<br>Group</button>
                             </form>
 						  </div>
                     </div>";
