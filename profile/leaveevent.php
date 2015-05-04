@@ -2,7 +2,7 @@
   require("/var/config.php");
   session_start();
   
-  $event = mysqli_real_excape_string($con, $_POST["event"]);
+  $event = mysqli_real_escape_string($con, $_POST["event"]);
   $user = mysqli_real_escape_string($_SESSION["username"]);
   
   $query = "DELETE FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$_POST["event"]."'";
