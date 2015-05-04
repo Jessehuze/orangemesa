@@ -149,8 +149,8 @@
           </div>
           <div class="modal-body">
            <div class="cont">
-           <div class = "demo modaldesign">
-            <div class="editProfile">
+           <div class = "demo">
+            <div class="editProfile modaldesign">
               <div class="editProfile_form">
 
                <div class="editProfile_row">
