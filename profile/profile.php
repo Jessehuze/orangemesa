@@ -52,7 +52,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">First Time Login Setup</h4>
+            <h4 class="modal-title" id="myModalLabel">Set your description?</h4>
           </div>
           <div class="modal-body">
            <div class="cont">
@@ -60,30 +60,14 @@
             <div class="editProfile">
               <div class="editProfile_form">
 
-                <form action="processFirstTimeLogin.php" method="POST" enctype="multipart/form-data">
+                <form action="updateProfile/processEdit_description.php" method="POST">
                   <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
 
                   <div class="editProfile_row">
                   <textarea name="description" class="edit__input description" placeholder="Description" rows="6"></textarea>
+                  <button name="update_description" type="submit" class="edit__submit">Set Description</button>
                   </div>
 
-                  <div class="editProfile_row">
-                    
-                    <?php 
-                      if (isset($_GET["user"]))
-                      {
-                        if ($_GET["user"] == $_SESSION["username"]) 
-                          echo 'Select image to upload:
-                                <input type="file" name="fileToUpload" id="fileToUpload">';
-                      }
-                      else
-                      {
-                        echo 'Select image to upload:
-                              <input type="file" name="fileToUpload" id="fileToUpload">';
-                      }
-                    ?>
-                  </div>
-                  <button name="update_description" type="submit" class="edit__submit">Set Description</button>
                 </form>
 
               </div>
@@ -106,6 +90,54 @@
   }
   ?>
   </script>
+
+  <!-- Profile Pro Modal -->
+    <div class="modal fade" id="propic" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Change Picture</h4>
+          </div>
+          <div class="modal-body">
+           <div class="cont">
+           <div class = "demo">
+            <div class="editProfile">
+              <div class="editProfile_form">
+
+                  <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+
+                  <div class="editProfile_row">
+                    
+                    <?php 
+                      if (isset($_GET["user"]))
+                      {
+                        if ($_GET["user"] == $_SESSION["username"]) 
+                          echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
+                                  Select image to upload:
+                                  <input type="file" name="fileToUpload" id="fileToUpload">
+                                  <input type="submit" value="Upload Image" name="submit" class="edit__submit">
+                                </form>';
+                      }
+                      else
+                      {
+                        echo '<form action="../upload.php" method="post" enctype="multipart/form-data">
+                                Select image to upload:
+                                <input type="file" name="fileToUpload" id="fileToUpload">
+                                <input type="submit" value="Upload Image" name="submit" class="edit__submit">
+                              </form>';
+                      }
+                    ?>
+                  </div>
+
+              </div>
+             </div>
+           </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <!-- Settings Modal -->
     <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
