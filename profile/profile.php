@@ -491,26 +491,28 @@
                 else
                   $imageurl = "../images/user.png";
                 echo "<div class='row usrpost'>
-                  <div class='col-xs-2'>
+                  <div class='col-md-2'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
                   </div>
-                  <div class='col-xs-10 usrtxt'>
+                  <div class='col-md-10 owntxt'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <h3>".$name["fname"]." ".$name["lname"]." </h3>
                     </a>
                     <p>".$msg["message"]."</p>
                   </div>
+                  <div class='col-md-2'></div>
                 </div>";
                 echo "<div class='row usrpost'>
-                  <div style='text-align: right;' class='col-xs-10 usrtxt'>
+                  <div class='col-md-2'></div>
+                  <div style='text-align: right;' class='col-md-8 usrtxt'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <h3>".$name["fname"]." ".$name["lname"]." </h3>
                     </a>
                     <p>".$msg["message"]."</p>
                   </div>
-                  <div class='col-xs-2'>
+                  <div class='col-md-2'>
                     <a href='profile.php?user=".$msg["sender"]."'>
                       <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                      </a>
@@ -563,6 +565,12 @@
             }
             .usrtxt{
               padding: 20px;
+              margin-right: 75px;
+              box-shadow: 0 0 7px rgba(0,0,0, 0.5);
+            }
+            .owntxt{
+              padding: 20px;
+              margin-left: 75px;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
             }
             .tabinfo{
