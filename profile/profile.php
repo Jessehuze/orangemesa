@@ -148,7 +148,7 @@
             <h4 class="modal-title" id="myModalLabel">Settings</h4>
           </div>
           <div class="modal-body">
-           <div class="cont">
+           <div class="cont modaldesign">
            <div class = "demo">
             <div class="editProfile">
               <div class="editProfile_form">
