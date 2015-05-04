@@ -581,6 +581,16 @@
                 left: 12px;
                 bottom: 12px;
                 background: transparent;
+                z-index: -1;
+            }
+             .usrtxt:before, .usrtxt:after{
+              	position: absolute;
+                width: 40%;
+                height: 10px;
+                content: ' ';
+                left: 12px;
+                bottom: 12px;
+                background: transparent;
                 -webkit-transform: skew(-5deg) rotate(-5deg);
                 -moz-transform: skew(-5deg) rotate(-5deg);
                 -ms-transform: skew(-5deg) rotate(-5deg);
@@ -591,16 +601,7 @@
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
                 z-index: -1;
             }
-             .usrtxt:before, .usrtxt:after{
-              	position: absolute;
-                width: 40%;
-                height: 10px;
-                content: ' ';
-                left: 12px;
-                bottom: 12px;
-                z-index: -1;
-            }
-            .usrtxt:after{
+            .owntxt:after{
               	left: auto;
                 right: 12px;
                 -webkit-transform: skew(5deg) rotate(5deg);
