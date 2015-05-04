@@ -490,7 +490,7 @@
                   $imageurl = "..".$photo["photourl"];
                 else
                   $imageurl = "../images/user.png";
-                if ($user==$_SESSION["username"])
+                if ($user==$msg["sender"])
                 {
                   echo "<div class='row usrpost'>
                     <div class='col-md-2 ownimg'>
