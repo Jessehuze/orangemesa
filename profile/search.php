@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
-    
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -25,7 +25,7 @@
     <![endif]-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
-  
+
   <?php
     require("../logincheck.php");
   ?>
@@ -34,7 +34,7 @@
     .search{
       max-height: calc(100vh - 175px);
       overflow-y: scroll;
-      overflow-x: hidden; 
+      overflow-x: hidden;
       word-wrap: break-word;
       padding-right: 15px
     }
@@ -141,7 +141,7 @@
         </div>
       </div>
     </nav>
-    
+
     <style>
       .usrimg{
               width: 100px;
@@ -151,6 +151,7 @@
               background-repeat: no-repeat;
               background-position: center;
               background-size: 100px;
+              margin: 10px;
             }
       a{
         color:#000;
@@ -160,7 +161,7 @@
         margin:5% calc(50% - 27px);
       }
     </style>
-    
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
@@ -172,15 +173,15 @@
                 $query = mysqli_real_escape_string($con, $_GET["query"]);
               else
                 $query ="";
-              $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE (fname LIKE '%".$query."%' OR lname LIKE '%".$query."%') AND username != '".$_SESSION["username"]."' ORDER BY fname, lname"); 
+              $friends_result = mysqli_query($con, "SELECT username, fname, lname, description FROM PEOPLE WHERE (fname LIKE '%".$query."%' OR lname LIKE '%".$query."%') AND username != '".$_SESSION["username"]."' ORDER BY fname, lname");
               if ($friends_result)
               {
-                while ($friend = mysqli_fetch_array($friends_result)) 
+                while ($friend = mysqli_fetch_array($friends_result))
                 {
                   require("/var/config.php");
-                  $result = mysqli_query($con, "SELECT photourl 
-                                              FROM PHOTOS 
-                                              WHERE owner = '" .$friend["username"]. "' AND photoid IN (SELECT ppid 
+                  $result = mysqli_query($con, "SELECT photourl
+                                              FROM PHOTOS
+                                              WHERE owner = '" .$friend["username"]. "' AND photoid IN (SELECT ppid
                                                                                           FROM PEOPLE
                                                                                           WHERE username ='" .$friend["username"]. "')");
                   $photo = mysqli_fetch_array($result);
@@ -193,7 +194,7 @@
                     <a href='profile.php?user=" . $friend["username"] . "'>
                       <div class='usrimg' style='background-image:url(". $imageurl .")'></div>
                      </a>";
-					 
+
 					 $cond = mysqli_query($con, "SELECT userid, friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."' AND friendid = '".$friend["username"]."'");
 					 if(mysqli_num_rows($cond) == 0)
 					   {
@@ -206,7 +207,7 @@
 					 {
 						echo "<button class='btn addbtn btn.info-active'>Following</button>";
 					 }
-					 
+
                     echo "</div>
                           <div class='col-xs-8'>
                             <a href='profile.php?user=" . $friend["username"] . "'>
@@ -217,7 +218,7 @@
                         </div>";
               }
             }
-          ?> 
+          ?>
           </div>
         </div>
         <div class="col-md-4">
@@ -226,17 +227,17 @@
           <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
-            $group_result = mysqli_query($con, "SELECT groupid, name, description FROM GROUPS WHERE name LIKE '%".$query."%' ORDER BY name"); 
+            $group_result = mysqli_query($con, "SELECT groupid, name, description FROM GROUPS WHERE name LIKE '%".$query."%' ORDER BY name");
             if ($group_result)
             {
-              while ($group = mysqli_fetch_array($group_result)) 
+              while ($group = mysqli_fetch_array($group_result))
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <img class='usrimg' src='../images/user.png'/>";
-					
-                $cond = mysqli_query($con, "SELECT gid, memberid FROM GROUP_MEMBERS WHERE gid = '".$group["groupid"]."' AND memberid = '".$_SESSION["username"]."'");				
-				
+
+                $cond = mysqli_query($con, "SELECT gid, memberid FROM GROUP_MEMBERS WHERE gid = '".$group["groupid"]."' AND memberid = '".$_SESSION["username"]."'");
+
 				if(mysqli_num_rows($cond) == 0)
 				{
 				  echo "<form action='joinGroup.php' method = 'POST'>
@@ -246,8 +247,8 @@
 				}
 				else
 				{
-				    echo "<button class='btn addbtn btn-info.active'>In Group</button>";	
-				}	
+				    echo "<button class='btn addbtn btn-info.active'>In Group</button>";
+				}
 				 echo " </div>
                         <div class='col-xs-8'>
                            <h3>" . $group["name"] . " </h3>
@@ -256,7 +257,7 @@
                       </div>";
               }
             }
-          ?> 
+          ?>
           </div>
         </div>
         <div class="col-md-4">
@@ -265,16 +266,17 @@
           <div class="search">
           <?php
             $query = mysqli_real_escape_string($con, $_GET["query"]);
-            $event_result = mysqli_query($con, "SELECT eventid, eventname, description, eventdate FROM EVENTS WHERE eventname LIKE '%".$query."%' ORDER BY eventname"); 
+            $event_result = mysqli_query($con, "SELECT eventid, eventname, description, eventdate FROM EVENTS WHERE eventname LIKE '%".$query."%' ORDER BY eventname");
             if ($event_result)
             {
-              while ($event = mysqli_fetch_array($event_result)) 
+              while ($event = mysqli_fetch_array($event_result))
               {
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <img class='usrimg' src='../images/user.png'/>";
 				
                 $cond = mysqli_query($con, "SELECT invitee, eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$event["eventid"]."'");
+
 				if(mysqli_num_rows($cond) == 0)
 				{
 					echo "<form action='joinEvent.php' method = 'POST'>
@@ -284,8 +286,9 @@
 				}
 				else
 				{
+
 					echo "<button class='btn addbtn btn-info.active'>Already Going</button>";
-				}     
+				}
 				 echo " </div>
                   <div class='col-xs-8'>
                     <h3>" . $event["eventname"] . "</h3>
@@ -295,7 +298,7 @@
                 </div>";
               }
             }
-          ?> 
+          ?>
           </div>
         </div>
       </div>
