@@ -274,8 +274,7 @@
                   <div class='col-xs-4'>
                     <img class='usrimg' src='../images/user.png'/>";
 				
-				$query1 = "SELECT invitee, eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$event["eventid"]."'";
-                $cond = mysqli_query($con, $query1);
+                $cond = mysqli_query($con, "SELECT invitee, eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$event["eventid"]."'");
 				if(mysqli_num_rows($cond) == 0)
 				{
 					echo "<form action='joinEvent.php' method = 'POST'>
