@@ -508,6 +508,7 @@
 
                           <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=" . $user . "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
+                          <button id='nope' type='button' class='edit__submit'>Cancel</button>
                           <input name='reciever' type='hidden' value='" . $user . "'/>
 
                         </form>
@@ -529,11 +530,12 @@
 
                           <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=". $user . "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
+                          <button id='nope' type='button' class='edit__submit'>Cancel</button>
                           <input name='reciever' type='hidden' value='" . $user . "'/>
 
                         </form>
                     </div>
-                    <div class='col-sm-2 userimg' style='margin-left: 13%;'>
+                    <div class='col-sm-2 userimg' style='margin-left: -5%;'>
                         <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
                   </div>";
@@ -588,7 +590,7 @@
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-sm-2 userimg' style='margin-left: 13%;'>
+                    <div class='col-sm-2 userimg' style='margin-left: -5%;'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
@@ -624,6 +626,7 @@
             -o-transition:all 1.5s ease-in-out;
             transition:all 1.5s ease-in-out;
             height: 0px;
+            left: -75vh;
             margin-right: 35px;
             overflow:hidden;
           }
@@ -1008,6 +1011,10 @@ jQuery('input[name="eventDate"]').bind('keyup',function(e){
 $("#addpost").click(function () {
   $(".hiddenrow").css('height', '250px');
   $(".hiddenrow").css('left', '0');
+});
+$("#nope").click(function () {
+  $(".hiddenrow").css('height', '0px');
+  $(".hiddenrow").css('left', '-75vh');
 });
 </script>
 
