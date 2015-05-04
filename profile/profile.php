@@ -184,6 +184,13 @@
                 <button name="update_description" type="submit" class="edit__submit">Update Description</button>
                 </form>
                </div>
+               
+               <div class="editProfile_row">
+                <form action="deleteProfile.php" method="POST">
+                  <input name="delete" type="hidden" value="true"/>
+                  <button name="update_description" type="submit" class="edit__submit">Delete Account</button>
+                </form>
+               </div>
 
               </div>
              </div>
