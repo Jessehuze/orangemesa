@@ -1013,7 +1013,7 @@ jQuery('input[name="eventDate"]').bind('keyup',function(e){
 
 $("#addpost").click(function () {
   $(".hiddenrow").css('height', '250px');
-  $(".hiddenrow").css('left', '40px;');
+  $(".hiddenrow").css('left', '0px;');
 });
 $("#nope").click(function () {
   $(".hiddenrow").css('height', '0px');
