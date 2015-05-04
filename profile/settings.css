@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 a:hover{
   color: #fa7b01 !important;
 }
@@ -6,6 +7,8 @@ a.navbar-brand:hover{
   color: #fff;
 }
 
+=======
+>>>>>>> a43498ea9f39c29f16582961af209d333c470954
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
@@ -25,7 +28,6 @@ svg {
   height: 2rem;
   overflow: visible;
 }
-
 
 .svg-icon {
   cursor: pointer;
@@ -64,7 +66,7 @@ input, button {
 }
 
 .demo {
-  height: 53rem;
+  height: 38rem;
   overflow: hidden;
 }
 
