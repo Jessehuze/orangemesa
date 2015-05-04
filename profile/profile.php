@@ -569,17 +569,19 @@
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-md-2'>
-                      <a class='deletepost'><i class='fa fa-times'></i></a>
-                    </div>
+                    <div class='col-md-2'>";
+                      if ($msg["sender"] = $_SESSION["username"])
+                        echo "<a class='deletepost'><i class='fa fa-times'></i></a>";
+                    echo "</div>
                   </div>";
                 }
                 else
                 {
                   echo "<div class='row usrpost'>
-                    <div class='col-sm-2'>
-                      <a href='deletepost.php' class='deletepost pull-right'><i class='fa fa-times'></i></a>
-                    </div>
+                    <div class='col-sm-2'>";
+                  if ($msg["sender"] = $_SESSION["username"])
+                      echo "<a href='deletepost.php' class='deletepost pull-right'><i class='fa fa-times'></i></a>";
+                    echo "</div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
