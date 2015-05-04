@@ -428,7 +428,6 @@
         transition:all 1.5s ease-in-out;
 
         position: relative;
-        top: -350px;
       }
 
     </style>
@@ -622,7 +621,7 @@
           .posttext{
             width: 100%;
             height: 75px;
-            boder:none;
+            border:none;
           }
           .hiddenrow{
             -webkit-transition:all 1.5s ease-in-out;
@@ -632,7 +631,7 @@
 
             position: relative;
             left: -75vw;
-            top: 350;
+            margin-bottom: -250px;
           }
           .friendimg{
               margin-left: 13%;
