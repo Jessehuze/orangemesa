@@ -42,7 +42,7 @@
                                                                                           WHERE username ='" .$_SESSION["username"]. "')");
       $photo = mysqli_fetch_array($result);
       $_SESSION["imageurl"] = "..".$photo["photourl"];
-      header("Location: http://inceptisol.us.to:6670/profile/profile.php");
+      header("Location: http://inceptisol.us.to:6670/profile/profile.php?user=".$_SESSION["username"]);
       exit();
     }
   }

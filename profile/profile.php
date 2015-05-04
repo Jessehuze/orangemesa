@@ -428,7 +428,6 @@
         transition:all 1.5s ease-in-out;
 
         position: relative;
-        top: -350px;
       }
 
     </style>
@@ -505,15 +504,15 @@
                             <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
                           </div>
 
-                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php'/>
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=" . isset($_GET["user"]) ? $_GET["user"] : $_SESSION["username"] . "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
-                          <input name='reciever' type='hidden' value=''";
-                              if (isset($_GET["user"]))
-                                $user=$_GET["user"];
-                              else
-                                $user=$_SESSION["username"];
-                              echo $user;
-                            echo "/>
+                          <input name='reciever' type='hidden' value='";
+                          if (isset($_GET["user"]))
+                            $user=$_GET["user"];
+                          else
+                            $user=$_SESSION["username"];
+                          echo $user;
+                            echo "'/>
 
                         </form>
                     </div>
@@ -532,15 +531,15 @@
                             <textarea name='message' type='text' class='posttext' rows='2' placeholder='Write your post here!' required></textarea>
                           </div>
 
-                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php'/>
+                          <input name='refer' type='hidden' value='http://inceptisol.us.to:6670/profile/profile.php?user=". isset($_GET["user"]) ? $_GET["user"] : $_SESSION["username"]. "'/>
                           <button name='post' type='submit' class='edit__submit'>Post</button>
-                          <input name='reciever' type='hidden' value=''";
+                          <input name='reciever' type='hidden' value='";
                               if (isset($_GET["user"]))
                                 $user=$_GET["user"];
                               else
                                 $user=$_SESSION["username"];
                               echo $user;
-                            echo "/>
+                            echo "'/>
 
                         </form>
                     </div>
@@ -622,7 +621,7 @@
           .posttext{
             width: 100%;
             height: 75px;
-            boder:none;
+            border:none;
           }
           .hiddenrow{
             -webkit-transition:all 1.5s ease-in-out;
@@ -632,7 +631,7 @@
 
             position: relative;
             left: -75vw;
-            top: 350;
+            top: -175px;
           }
           .friendimg{
               margin-left: 13%;
