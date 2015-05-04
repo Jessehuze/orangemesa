@@ -490,34 +490,40 @@
                   $imageurl = "..".$photo["photourl"];
                 else
                   $imageurl = "../images/user.png";
-                echo "<div class='row usrpost'>
-                  <div class='col-md-2 ownimg'>
-                    <a href='profile.php?user=".$msg["sender"]."'>
-                      <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
-                     </a>
-                  </div>
-                  <div class='col-md-8 owntxt'>
-                    <a href='profile.php?user=".$msg["sender"]."'>
-                      <h3>".$name["fname"]." ".$name["lname"]." </h3>
-                    </a>
-                    <p>".$msg["message"]."</p>
-                  </div>
-                  <div class='col-md-2'></div>
-                </div>";
-                echo "<div class='row usrpost'>
-                  <div class='col-md-2'></div>
-                  <div style='text-align: right;' class='col-md-8 usrtxt'>
-                    <a href='profile.php?user=".$msg["sender"]."'>
-                      <h3>".$name["fname"]." ".$name["lname"]." </h3>
-                    </a>
-                    <p>".$msg["message"]."</p>
-                  </div>
-                  <div class='col-md-2 userimg'>
-                    <a href='profile.php?user=".$msg["sender"]."'>
-                      <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
-                     </a>
-                  </div>
-                </div>";
+                if ($user==$msg["sender"])
+                {
+                  echo "<div class='row usrpost'>
+                    <div class='col-md-2 ownimg'>
+                      <a href='profile.php?user=".$msg["sender"]."'>
+                        <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                       </a>
+                    </div>
+                    <div class='col-md-8 owntxt'>
+                      <a href='profile.php?user=".$msg["sender"]."'>
+                        <h3>".$name["fname"]." ".$name["lname"]." </h3>
+                      </a>
+                      <p>".$msg["message"]."</p>
+                    </div>
+                    <div class='col-md-2'></div>
+                  </div>";
+                }
+                else 
+                {
+                  echo "<div class='row usrpost'>
+                    <div class='col-md-2'></div>
+                    <div style='text-align: right;' class='col-md-8 usrtxt'>
+                      <a href='profile.php?user=".$msg["sender"]."'>
+                        <h3>".$name["fname"]." ".$name["lname"]." </h3>
+                      </a>
+                      <p>".$msg["message"]."</p>
+                    </div>
+                    <div class='col-md-2 userimg'>
+                      <a href='profile.php?user=".$msg["sender"]."'>
+                        <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                       </a>
+                    </div>
+                  </div>";
+                }
               }
             }
           ?>
