@@ -625,6 +625,8 @@
             -moz-transition:all 1.5s ease-in-out;
             -o-transition:all 1.5s ease-in-out;
             transition:all 1.5s ease-in-out;
+            padding: 20px;
+            margin:-10px;
             position: relative;
             height: 0px;
             left: -75vw;
