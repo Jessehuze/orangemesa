@@ -428,7 +428,7 @@
         transition:all 1.5s ease-in-out;
 
         position: relative;
-        top: -200px;
+        top: -350px;
       }
 
     </style>
@@ -631,7 +631,8 @@
             transition:all 1.5s ease-in-out;
 
             position: relative;
-            left: -90vh;
+            left: -75vw;
+            top: 350;
           }
           .friendimg{
               margin-left: 13%;
