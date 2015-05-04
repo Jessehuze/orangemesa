@@ -817,14 +817,18 @@
 							<a href='profile.php?user=".$friend["username"]."'>
                               <h5>".$friend["fname"]." ".$friend["lname"]." </h5>
                             </a>
-							</div>
-							<div class='col-xs-5'>
-							<form action='removeFriend.php' method='POST'>
-					          <button class='btn addbtn btn-default' name='friend' value='".$friend["username"]."' type='submit'>Unfollow</button>
-                            </form>
-							</div>
-                          </div>
-                        </div>";
+							</div>";
+							
+							if($user == $_SESSION["username"])
+							{
+							echo "<div class='col-xs-5'>
+							        <form action='removeFriend.php' method='POST'>
+					                  <button class='btn addbtn btn-default' name='friend' value='".$friend["username"]."' type='submit'>Unfollow</button>
+                                    </form>
+							      </div>";
+							}
+                          echo "</div>
+                                </div>";
                       }
                     }
                   ?>
