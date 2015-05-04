@@ -473,6 +473,39 @@
             $query = "SELECT * FROM POST_PEOPLE2PEOPLE WHERE reciever = '".$user."' ORDER BY timestamp DESC";
                     
             $msgresult = mysqli_query($con, $query); 
+            
+            if ($user == $_SESSION["username"])
+                {
+                  echo "<div class='row usrpost hiddenrow'>
+                    <div class='col-md-2 ownimg'>
+                      <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                    </div>
+                    <div class='col-md-8 owntxt'>
+                      <a href='profile.php?user=".$msg["sender"]."'>
+                        <h3>".$name["fname"]." ".$name["lname"]." </h3>
+                      </a>
+                      <p>".$msg["message"]."</p>
+                    </div>
+                    <div class='col-md-2'></div>
+                  </div>";
+                }
+                else 
+                {
+                  echo "<div class='row usrpost hiddenrow'>
+                    <div class='col-md-2'></div>
+                    <div style='text-align: right;' class='col-md-8 usrtxt'>
+                      <a href='profile.php?user=".$msg["sender"]."'>
+                        <h3>".$name["fname"]." ".$name["lname"]." </h3>
+                      </a>
+                      <p>".$msg["message"]."</p>
+                    </div>
+                    <div class='col-md-2 userimg'>
+                      <a href='profile.php?user=".$msg["sender"]."'>
+                        <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
+                       </a>
+                    </div>
+                  </div>";
+                }
   
              if (mysqli_num_rows($msgresult) != 0)
             {
@@ -490,7 +523,7 @@
                   $imageurl = "..".$photo["photourl"];
                 else
                   $imageurl = "../images/user.png";
-                if ($user==$msg["sender"])
+                if ($user == $msg["sender"])
                 {
                   echo "<div class='row usrpost'>
                     <div class='col-md-2 ownimg'>
