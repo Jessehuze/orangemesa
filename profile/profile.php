@@ -478,7 +478,7 @@
           </p>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
-          <h2 class="page-header">Posts</h2><a data-toggle="modal" data-target="#postModal" href="#postModal"><span class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
+          <h2 class="page-header">Posts</h2><a href="#"><span id="addpost" class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
 
           <?php
             require("/var/config.php");
@@ -1010,6 +1010,11 @@ jQuery('input[name="eventDate"]').bind('keyup',function(e){
        thisVal = thisVal.substr(0,10);
        $(this).val(thisVal);
     }
+});
+
+$("#addpost").click(function () {
+  $(".middlerow, .hiddenrow").css('top', '0');
+  $(".middlerow, .hiddenrow").css('left', '0');
 });
 </script>
 
