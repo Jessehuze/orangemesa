@@ -488,17 +488,17 @@
             $query = "SELECT * FROM POST_PEOPLE2PEOPLE WHERE reciever = '".$user."' ORDER BY timestamp DESC";
 
             $msgresult = mysqli_query($con, $query);
-            
+
             $sender = mysqli_query($con, "SELECT fname, minit, lname FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
             $sendername = mysqli_fetch_array($sender);
 
             if ($user == $_SESSION["username"])
                 {
                   echo "<div class='row usrpost hiddenrow'>
-                    <div class='col-md-2 ownimg'>
+                    <div class='col-sm-2 ownimg'>
                       <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
-                    <div class='col-md-8 owntxt'>
+                    <div class='col-sm-8 owntxt'>
                         <h3>".$sendername["fname"]." ".$sendername["lname"]." </h3>
                         <form action='addPost.php' method='POST'>
 
@@ -512,14 +512,14 @@
 
                         </form>
                     </div>
-                    <div class='col-md-2'></div>
+                    <div class='col-sm-2'></div>
                   </div>";
                 }
                 else
                 {
                   echo "<div class='row usrpost hiddenrow'>
-                    <div class='col-md-2'></div>
-                    <div style='text-align: right;' class='col-md-8 usrtxt'>
+                    <div class='col-sm-2'></div>
+                    <div style='text-align: right;' class='col-sm-8 usrtxt'>
                         <h3>".$sendername["fname"]." ".$sendername["lname"]." </h3>
                         <form action='addPost.php' method='POST'>
 
@@ -533,7 +533,7 @@
 
                         </form>
                     </div>
-                    <div class='col-md-2 userimg' style='margin-left: 13%;'>
+                    <div class='col-sm-2 userimg' style='margin-left: 13%;'>
                         <div class='statusimg' style='background-image:url(". $_SESSION["imageurl"] .")'></div>
                     </div>
                   </div>";
@@ -558,12 +558,12 @@
                 if ($user == $msg["sender"])
                 {
                   echo "<div class='row usrpost'>
-                    <div class='col-md-2 ownimg'>
+                    <div class='col-sm-2 ownimg'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
                     </div>
-                    <div class='col-md-8 owntxt'>
+                    <div class='col-sm-8 owntxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
                       </a>
@@ -575,14 +575,14 @@
                 else
                 {
                   echo "<div class='row usrpost'>
-                    <div class='col-md-2'></div>
-                    <div style='text-align: right;' class='col-md-8 usrtxt'>
+                    <div class='col-sm-2'></div>
+                    <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-md-2 userimg' style='margin-left: 13%;'>
+                    <div class='col-sm-2 userimg' style='margin-left: 13%;'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
