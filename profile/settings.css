@@ -22,7 +22,6 @@ svg {
   overflow: visible;
 }
 
-
 .svg-icon {
   cursor: pointer;
 }
@@ -74,6 +73,8 @@ input, button {
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
+  width: 598px;
+  height: 430px;
 }
 
 .profileSideBar{
