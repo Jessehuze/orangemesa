@@ -570,20 +570,20 @@
             }
             .owntxt{
               padding: 20px 75px;
-              background: #fff;
+              background: #fff;
               box-shadow: 0 0 7px rgba(0,0,0, 0.5);
             }
-            .usrtxt:before, .owntxt:after{
+            .usrtxt:before, .usrtxt:after{
               	position: absolute;
                 width: 40%;
                 height: 10px;
                 content: ' ';
                 left: 12px;
                 bottom: 12px;
-                background: transparent;
+                background: transparent;
                 z-index: -1;
             }
-             .owntxt:before, .usrtxt:after{
+             .owntxt:before, .owntxt:after{
               	position: absolute;
                 width: 40%;
                 height: 10px;
