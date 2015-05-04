@@ -790,13 +790,13 @@
 						{
 							//Picture for group? 
               echo "<div class='row'>
-                          <div class='col-xs-7'>
+                          <div class='col-xs-8'>
                             <a href='profile.php?user=".$group["name"]."'>
                               <h4>".$group["name"]."</h4>
                               <h5>".$group["description"]."</h5>
                             </a>
                           </div>
-						  <div class='col-xs-5'>
+						  <div class='col-xs-4'>
 						    <form action='leavegroup.php' method='POST'>
                               <button class='btn addbtn btn-default' name='group' value='".$group["groupid"]."' type='submit'>Leave Group</button>
                             </form>
