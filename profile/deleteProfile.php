@@ -1,7 +1,9 @@
 <?php
+  //Code to connect to database
   require("/var/config.php");
   session_start();
   
+  //
   if ($_POST["delete"] == "true")
   {
     $query = "DELETE FROM PEOPLE WHERE username = '".$_SESSION["username"]."' ORDER BY username";
