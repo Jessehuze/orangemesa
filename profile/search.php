@@ -197,7 +197,7 @@
                     <a href='profile.php?user=" . $friend["username"] . "'>
                       <div class='usrimg' style='background-image:url(". $imageurl .")'></div>
                      </a>";
-
+           //Are you friends?
 					 $cond = mysqli_query($con, "SELECT userid, friendid FROM FRIENDS WHERE userid = '".$_SESSION["username"]."' AND friendid = '".$friend["username"]."'");
 					 if(mysqli_num_rows($cond) == 0)
 					   {

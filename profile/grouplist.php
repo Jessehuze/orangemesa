@@ -2,7 +2,7 @@
 	require("/var/config.php");
 	
 	
-	
+	//Fill grouplist
 	$query = "SELECT G.name, G.description, G.owner FROM GROUP_MEMBERS M, GROUPS G WHERE memberid = '" .$_SESSION["username"]. "' AND M.GID = G.groupid"; 
 	$result = mysqli_query($con, $query);
 	
