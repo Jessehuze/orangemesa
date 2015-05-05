@@ -31,7 +31,7 @@
       header("Location: http://inceptisol.us.to:6670/login/login.php?error=Username Taken.&signin=true");
       exit();
     }
-    if ($insert)
+    if ($insert) //If insertion is successful, redirect to home page
     {
       $_SESSION["username"] = $username;
       $_SESSION["firsttimelogin"] = 1;
