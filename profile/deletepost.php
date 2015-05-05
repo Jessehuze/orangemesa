@@ -4,7 +4,7 @@
   
   $post = mysqli_real_escape_string($con, $_GET["postid"]);
   
-  $query = "DELETE FROM POST_PEOPLE2PEOPLE WHERE postid = '".$post."'";
+  $query = "DELETE FROM POST_PEOPLE2PEOPLE WHERE postid = '".$post."'"; //Finding calling post for deletion
   $delete = mysqli_query($con, $query);
 
   //Redirect to profile page

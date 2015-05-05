@@ -379,11 +379,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="profile.php"><i class="fa fa-user"></i>
             <?php
-                require("/var/config.php");
-                $username = mysqli_real_escape_string($con, $_SESSION["username"]);
-                $result = mysqli_query($con, "SELECT fname FROM PEOPLE WHERE username = '" .$username. "'");
-                $name = mysqli_fetch_array($result);
-                echo $name["fname"];
+                $_SESSION["fname"] //First name of current user
             ?>
             </a></li>
             <li><a data-toggle="modal" data-target="#settingsModal" href="#settingsModal">Settings</a></li>
@@ -418,7 +414,8 @@
               if (isset($_GET["user"]))
                 $user=$_GET["user"];
               else
-                $user=$_SESSION["username"];
+                $user=$_SESSION["username"]; //Who's calling?
+              //Find photo url
               $result = mysqli_query($con, "SELECT photourl
                                             FROM PHOTOS
                                             WHERE owner = '" .$user. "' AND photoid IN (SELECT ppid
@@ -426,7 +423,7 @@
                                                                                         WHERE username ='" .$user. "')");
               $photo = mysqli_fetch_array($result);
               if ($photo["photourl"] != "")
-                echo "..".$photo["photourl"];
+                echo "..".$photo["photourl"]; //Insert it
               else
                 echo "../images/user.png";
             ?>");
@@ -471,19 +468,23 @@
           <div>
             <div class="usrimg"></div>
             <?php
+              //User's Profile image
               require("/var/config.php");
+              //Checking for calling page
               if (isset($_GET["user"]))
                 $user=$_GET["user"];
               else
                 $user=$_SESSION["username"];
-              if ($user == $_SESSION["username"])
+              if ($user == $_SESSION["username"]) //Update picture button if it is user's page
                 echo '<div data-toggle="modal" data-target="#propic" class="updateimg fa-spin-hover" id="updateimg"><i class="fa fa-lg fa-gear "></i></div>';
             ?>
           </div>
           <hr>
           <h2>
             <?php
+              //User's name
               require("/var/config.php");
+              //Checking for calling page
               if (isset($_GET["user"]))
                 $user=$_GET["user"];
               else
@@ -499,6 +500,7 @@
           <h3>About</h3>
           <p>
             <?php
+              //User's description
               require("/var/config.php");
               if (isset($_GET["user"]))
                 $user=$_GET["user"];
@@ -514,6 +516,7 @@
           <h2 class="page-header">Posts</h2><a href="#"><span id="addpost" class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
 
           <?php
+            // Filling page with post's directed at user
             require("/var/config.php");
             if (isset($_GET["user"]))
               $user=$_GET["user"];
