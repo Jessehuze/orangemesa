@@ -3,8 +3,7 @@
   require("/var/config.php");
   session_start();
   
-  //
-  if ($_POST["delete"] == "true")
+  if ($_POST["delete"] == "true")//Checking for spoofing
   {
     $query = "DELETE FROM PEOPLE WHERE username = '".$_SESSION["username"]."' ORDER BY username";
     $delete = mysqli_query($con, $query);

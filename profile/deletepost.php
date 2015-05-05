@@ -6,6 +6,7 @@
   //Sanitize database input to prevent sqli injection
   $post = mysqli_real_escape_string($con, $_GET["postid"]);
   
+
   //Delete post from database
   $query = "DELETE FROM POST_PEOPLE2PEOPLE WHERE postid = '".$post."'";
   $delete = mysqli_query($con, $query);
