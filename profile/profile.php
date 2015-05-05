@@ -379,7 +379,11 @@
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="profile.php"><i class="fa fa-user"></i>
             <?php
-                $_SESSION["fname"] //First name of current user
+                require("/var/config.php");
+-                $username = mysqli_real_escape_string($con, $_SESSION["username"]);
+-                $result = mysqli_query($con, "SELECT fname FROM PEOPLE WHERE username = '" .$username. "'");
+-                $name = mysqli_fetch_array($result);
+-                echo $name["fname"];
             ?>
             </a></li>
             <li><a data-toggle="modal" data-target="#settingsModal" href="#settingsModal">Settings</a></li>
