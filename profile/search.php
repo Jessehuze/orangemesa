@@ -169,6 +169,7 @@
           <hr>
           <div class="search">
           <?php
+              //Filling the page with friends that are like the query
               if (isset($_GET["query"]))
                 $query = mysqli_real_escape_string($con, $_GET["query"]);
               else
@@ -226,6 +227,7 @@
           <hr>
           <div class="search">
           <?php
+            //Filling the table with groups that are like the query
             $query = mysqli_real_escape_string($con, $_GET["query"]);
             $group_result = mysqli_query($con, "SELECT groupid, name, description FROM GROUPS WHERE name LIKE '%".$query."%' ORDER BY name");
             if ($group_result)
