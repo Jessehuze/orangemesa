@@ -790,20 +790,24 @@
                 <h4 class="panel-title">
                   <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <?php
+					  //Check to see whose profile
                       if (isset($_GET["user"]))
                           $user=$_GET["user"];
                         else
                           $user=$_SESSION["username"];
-
+                        
+						//query database for names
                         $query = "SELECT fname FROM PEOPLE WHERE username = '".$user."'";
 
                         $result = mysqli_query($con, $query);
                         $name = mysqli_fetch_array($result);
-
+                        
+						//Count number of people followed by person
 						$query = "SELECT DISTINCT COUNT(*) FROM FRIENDS WHERE userid='".$user."'";
 						$result = mysqli_query($con, $query);
 						$count = mysqli_fetch_array($result);
-
+                        
+						//Dynamic text to check for whose page it is, and if it's plural or singular
                         if ($user != $_SESSION["username"] && $count["COUNT(*)"] == 1)
                           echo $name["fname"]." follows ".$count["COUNT(*)"]." person:";
                         else if($user != $_SESSION["username"] && $count["COUNT(*)"] != 1)
@@ -821,20 +825,22 @@
               <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body infobar">
                   <?php
-
+                    //Check to see whose profile page it is
                     if (isset($_GET["user"]))
                       $user=$_GET["user"];
                     else
                       $user=$_SESSION["username"];
-
+                    
+					//query database for names and usernames
                     $query = "SELECT fname, lname, username FROM PEOPLE WHERE username IN
                         (SELECT friendid FROM FRIENDS WHERE userid = '".$user."')";
 
                     $friends_result = mysqli_query($con, $query);
 
-
+                    //If there are results to query
                      if (mysqli_num_rows($friends_result) != 0)
                     {
+						//While there are results
                       while ($friend = mysqli_fetch_array($friends_result))
                       {
                         $result = mysqli_query($con, "SELECT photourl
