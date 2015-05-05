@@ -1,4 +1,5 @@
 <?php
+  //Code to connect to database
   require("/var/config.php");
   session_start();
   
