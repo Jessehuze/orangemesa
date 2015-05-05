@@ -57,5 +57,5 @@ if ($uploadOk == 0) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
-header("Location: ".$_POST["refer"]);
+header("Location: http://inceptisol.us.to:6670/profile/profile.php?user=".$_SESSION["username"]);
 ?>
