@@ -180,6 +180,7 @@
                 while ($friend = mysqli_fetch_array($friends_result))
                 {
                   require("/var/config.php");
+                  //Picture fetch
                   $result = mysqli_query($con, "SELECT photourl
                                               FROM PHOTOS
                                               WHERE owner = '" .$friend["username"]. "' AND photoid IN (SELECT ppid
@@ -190,6 +191,7 @@
                     $imageurl = "..".$photo["photourl"];
                   else
                     $imageurl = "../images/user.png";
+                  //Making the picture
                 echo "<div class='row'>
                   <div class='col-xs-4'>
                     <a href='profile.php?user=" . $friend["username"] . "'>
@@ -240,7 +242,7 @@
 
                 $cond = mysqli_query($con, "SELECT gid, memberid FROM GROUP_MEMBERS WHERE gid = '".$group["groupid"]."' AND memberid = '".$_SESSION["username"]."'");
 
-				if(mysqli_num_rows($cond) == 0)
+				if(mysqli_num_rows($cond) == 0) //Checking if you're a member of the group or not
 				{
 				  echo "<form action='joinGroup.php' method = 'POST'>
 					      <button class='btn addbtn btn-default' type='submit' name='group' value='".$group["groupid"]."'>Join</button>
@@ -267,6 +269,7 @@
           <hr>
           <div class="search">
           <?php
+            //Displaying the events
             $query = mysqli_real_escape_string($con, $_GET["query"]);
             $event_result = mysqli_query($con, "SELECT eventid, eventname, description, eventdate FROM EVENTS WHERE eventname LIKE '%".$query."%' ORDER BY eventname");
             if ($event_result)
@@ -279,7 +282,7 @@
 				
                 $cond = mysqli_query($con, "SELECT invitee, eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$event["eventid"]."'");
 
-				if(mysqli_num_rows($cond) == 0)
+				if(mysqli_num_rows($cond) == 0) //Going to the event or not
 				{
 					echo "<form action='joinEvent.php' method = 'POST'>
                       <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Going</button>
