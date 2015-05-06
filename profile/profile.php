@@ -628,7 +628,7 @@
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-sm-2 userimg' style='margin-left: -5%;'>
+                    <div class='col-sm-2 userimg'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
                        </a>
@@ -683,7 +683,7 @@
             }
             .statusimg{
               position: relative;
-              margin-left: -23px;
+              margin-left: 0;
               width: 100px;
               height: 100px;
               border-radius: 512px;
@@ -770,11 +770,11 @@
                 box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             }
             .ownimg{
-              margin-right: -75px;
+              margin-right: -9%;
               padding-top: 20px;
             }
             .userimg{
-              margin-left: -75px;
+              margin-left: -6%;
               padding-top: 20px;
             }
             .tabinfo{
