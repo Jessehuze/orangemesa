@@ -281,25 +281,26 @@
                     <img class='usrimg' src='../images/user.png'/>";
 				
                 $cond = mysqli_query($con, "SELECT invitee, eventid FROM EVENT_INVITES WHERE invitee = '".$_SESSION["username"]."' AND eventid = '".$event["eventid"]."'");
+                $time = strtotime($event["eventdate"]);
+                $myFormatForView = date("m/d/y g:i A", $time);
+                if(mysqli_num_rows($cond) == 0) //Going to the event or not
+                {
+                  echo "<form action='joinEvent.php' method = 'POST'>
+                              <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Going</button>
+                              <input type='hidden' name='query' value='".$query."'>
+                  </form>";
+                }
+                else
+                {
 
-				if(mysqli_num_rows($cond) == 0) //Going to the event or not
-				{
-					echo "<form action='joinEvent.php' method = 'POST'>
-                      <button class='btn addbtn btn-default' name='event' value='".$event["eventid"]."' type='submit'>Going</button>
-                      <input type='hidden' name='query' value='".$query."'>
-					</form>";
-				}
-				else
-				{
-
-					echo "<button class='btn addbtn btn-info.active'>Already Going</button>";
-				}
-				 echo " </div>
-                  <div class='col-xs-8'>
-                    <h3>" . $event["eventname"] . "</h3>
-					<h5>".$event["eventdate"]."</h5>
-					<h5>". $event["description"] . "</h5>
-				  </div>
+                  echo "<button class='btn addbtn btn-info.active'>Already Going</button>";
+                }
+                 echo " </div>
+                          <div class='col-xs-8'>
+                            <h3>" . $event["eventname"] . "</h3>
+                  <h5>".$myFormatForView."</h5>
+                  <h5>". $event["description"] . "</h5>
+                  </div>
                 </div>";
               }
             }

@@ -35,6 +35,7 @@
     {
       $_SESSION["username"] = $username;
       $_SESSION["firsttimelogin"] = 1;
+      $_SESSION["fname"] = $row["fname"];
       $result = mysqli_query($con, "SELECT photourl 
                                               FROM PHOTOS 
                                               WHERE owner = '" .$_SESSION["username"]. "' AND photoid IN (SELECT ppid 
