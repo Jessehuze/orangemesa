@@ -1012,10 +1012,12 @@
 						{
 							while($event = mysqli_fetch_array($event_result))
 							{
+                $time = strtotime($event["eventdate"]);
+                $myFormatForView = date("m/d/y g:i A", $time);
 								echo 	"<div class='row'>
                       <div class='col-xs-8'>
 										 <h3>".$event["eventname"]."</h3>
-										 <h5>".$event["eventdate"]."</h5>
+										 <h5>".$myFormatForView."</h5>
 										 <h5>".$event["description"]."</h5>
 										</div>";
 
