@@ -4,8 +4,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="login.js"></script>
     <script type="text/javascript"></script>
-    <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
     <script type="text/javascript" src="../js/moment.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="settings.css"/>
     <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css"/>
