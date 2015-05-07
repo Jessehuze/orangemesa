@@ -610,11 +610,11 @@
                       </a>
                       <p>".$msg["message"]."</p>
                     </div>
-                    <div class='col-md-2'>";
+                    <div class='col-md-2'>
+                      <p>".$sentTime."</p>";
                       if ($msg["sender"] == $_SESSION["username"])
                         echo "<a  href='deletepost.php?user=".$user."&postid=".$msg["postid"]."' class='deletepost'><i class='fa fa-times'></i></a>";
-                    echo "<p>".$sentTime."</p>
-                    </div>
+                    echo "</div>
                   </div>";
                 }
                 else
