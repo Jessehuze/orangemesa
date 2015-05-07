@@ -429,7 +429,7 @@
             ?>");
           background-repeat: no-repeat;
           background-position: center;
-          background-size: 200px;
+          background-size: cover;
       }
       .updateimg{
         width: 40px;
@@ -679,7 +679,7 @@
               box-shadow: 0 0 10px rgba(0,0,0, .3);
               background-repeat: no-repeat;
               background-position: center;
-              background-size: 75px;
+              background-size: cover;
             }
             .statusimg{
               position: relative;
@@ -690,7 +690,7 @@
               box-shadow: 0 0 10px rgba(0,0,0, .5);
               background-repeat: no-repeat;
               background-position: center;
-              background-size: 100px;
+              background-size: cover;
               z-index: 20;
             }
             .inforow{

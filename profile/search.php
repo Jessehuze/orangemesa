@@ -150,7 +150,7 @@
               box-shadow: 0 0 10px rgba(0,0,0, .5);
               background-repeat: no-repeat;
               background-position: center;
-              background-size: 100px;
+              background-size: cover;
               margin: 10px;
             }
       a{
