@@ -41,5 +41,4 @@
 	//Redirect to profile page
 	header("Location: http://inceptisol.us.to:6670/profile/profile.php");
 	//exit();
-  */
 ?>
