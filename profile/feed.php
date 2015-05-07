@@ -296,7 +296,7 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-7 col-md-offset-2 main">
+        <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
           <h2 class="page-header">Posts</h2><a href="#"><span id="addpost" class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
 
           <?php
@@ -570,7 +570,7 @@
             }
         </style>
 
-        <div class="col-md-3 tabinfo">
+        <div class="col-md-2 tabinfo">
           
         </div>
       </div>
