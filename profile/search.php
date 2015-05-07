@@ -25,7 +25,8 @@
     <![endif]-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   </head>
-
+  
+    <?php echo "wtf"; ?>
   <?php
     require("../logincheck.php");
   ?>
@@ -42,7 +43,6 @@
 
 
   <body>
-    <?php echo "wtf" ?>
     <!-- Settings Modal -->
     <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
