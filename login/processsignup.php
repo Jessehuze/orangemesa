@@ -35,7 +35,7 @@
     {
       $_SESSION["username"] = $username;
       $_SESSION["firsttimelogin"] = 1;
-      $_SESSION["fname"] = $row["fname"];
+      $_SESSION["fname"] = $fname;
       $_SESSION["imageurl"] = "../images/user.png";
       header("Location: http://inceptisol.us.to:6670/profile/profile.php?user=".$_SESSION["username"]);
       exit();
