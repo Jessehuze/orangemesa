@@ -8,9 +8,9 @@
 	$eventdesc = mysqli_real_escape_string($con, $_POST["eventDesc"]);
 	$eventdate = mysqli_real_escape_string($con, $_POST["eventDate"]);
   
-  echo $eventdate
+  echo $eventdate;
 	
-	//Query to check if the event name already exists
+	/*//Query to check if the event name already exists
 	$query = "SELECT eventname FROM EVENTS WHERE eventname = '" .$eventName. "'";
 	$result = mysqli_query($con, $query);
 	
@@ -38,5 +38,5 @@
 	//Redirect to profile page
 	//header("Location: http://inceptisol.us.to:6670/profile/profile.php");
 	//exit();
-	
+	*/
 ?>
