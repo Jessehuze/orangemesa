@@ -101,7 +101,7 @@
           </div>
           <div class="modal-body">
            <div class="cont">
-           <div class = "demo">
+           <div class = "picture">
             <div class="editProfile">
               <div class="editProfile_form">
 

@@ -68,6 +68,11 @@ input, button {
   overflow: hidden;
 }
 
+.picture{
+  height: 11rem;
+  overflow: hidden;
+}
+
 .check {
   height: 25rem;
   overflow: hidden;
