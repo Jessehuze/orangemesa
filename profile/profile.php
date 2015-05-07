@@ -338,7 +338,7 @@
 
                 <div class="createGroupDate__row">
                   <div class='col-sm-6'>
-                  <input type='text' class="form-control" id='datetimepicker4' />
+                  <input name="eventDate" type='text' class="form-control" id='datetimepicker4' />
                 </div>
                 <script type="text/javascript">
                     $('#eventModal').on('shown.bs.modal', function() {
