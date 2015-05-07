@@ -6,7 +6,8 @@
   $fname = mysqli_real_escape_string($con, $_POST["fname"]);
   $update = mysqli_query($con, "UPDATE PEOPLE 
                                 SET fname = '".$fname."' 
-                                WHERE username = '".$username ."'"); 
+                                WHERE username = '".$username ."'");
+  $_SESSION["fname"] = $fname; 
   header("Location: ".$_POST["refer"]); // Return to caller
   exit();
   

@@ -4,8 +4,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="login.js"></script>
     <script type="text/javascript"></script>
+    <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="settings.css">
+    <link rel="stylesheet" type="text/css" href="settings.css"/>
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css"/>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -325,22 +328,22 @@
 
               <form action="createEvent.php" method="POST">
                 <div class="createGroup__row">
-                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
-                  </svg>
                   <input name="eventName" type="text" class="edit__input groupName" placeholder="Event Name" required/>
                 </div>
 
                 <div class="createGroupDesc__row">
-                  <svg class="signup__icon username svg-icon" viewBox="0 0 20 20">
-                  </svg>
                   <textarea name="eventDesc" type="text" class="edit__input description" rows="6" placeholder="Description" required></textarea>
                 </div>
 
-				<div class="createGroupDate__row">
-				  <svg class="signup__icon username svg-icon" viewbox="0 0 20 20"></svg>
-				  <input name="eventDate" type="text" class="edit__input dob" name="eventDate" placeholder="Event Date" required pattern="((((0[13578]|1[02])(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[01]))|((0[469]|11)(\/|-|.)(0[1-9]|1[0-9]|2[0-9]|3[0]))|((02)((\/|-|.)(0[1-9]|1[0-9]|2[0-8]))))(\/|-|.)(19([6-9][0-9])|20(0[0-9]|1[0-4])))|((02)(\/|-|.)(29)(\/|-|.)(19(6[048]|7[26]|8[048]|9[26])|20(0[048]|1[26])))"/>
-				</div>
-
+                <div class="createGroupDate__row">
+                  <input type='text' class="form-control" id='datetimepicker4' />
+                  </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker4').datetimepicker();
+                        });
+                    </script>
+                  </div>
                 <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                 <button name="createGroup" type="submit" class="edit__submit">Create Event</button>
               </form>
