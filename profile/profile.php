@@ -623,7 +623,7 @@
                     <div class='col-sm-2'>";
                     if ($user == $_SESSION["username"] || $msg["sender"] == $_SESSION["username"])
                       echo "<a href='deletepost.php?user=".$user."&postid=".$msg["postid"]."' class='deletepost pull-right'><i class='fa fa-times'></i></a>";
-                    echo "<p>".$sentTime."</p>
+                    echo "</div><div><p>".$sentTime."</p>
                     </div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
