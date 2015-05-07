@@ -36,13 +36,7 @@
       $_SESSION["username"] = $username;
       $_SESSION["firsttimelogin"] = 1;
       $_SESSION["fname"] = $row["fname"];
-      $result = mysqli_query($con, "SELECT photourl 
-                                              FROM PHOTOS 
-                                              WHERE owner = '" .$_SESSION["username"]. "' AND photoid IN (SELECT ppid 
-                                                                                          FROM PEOPLE
-                                                                                          WHERE username ='" .$_SESSION["username"]. "')");
-      $photo = mysqli_fetch_array($result);
-      $_SESSION["imageurl"] = "..".$photo["photourl"];
+      $_SESSION["imageurl"] = "../images/user.png";
       header("Location: http://inceptisol.us.to:6670/profile/profile.php?user=".$_SESSION["username"]);
       exit();
     }

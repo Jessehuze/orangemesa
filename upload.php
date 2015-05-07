@@ -53,6 +53,7 @@ require("/var/config.php");
           mysqli_query($con, "INSERT INTO PHOTOS (photoid, owner, uploaddate, photourl)
                               VALUES ('".$max."','".$_SESSION["username"]."', '".date("Y-m-d")."', '".$mysqlpath."')");
           mysqli_query($con, "UPDATE PEOPLE SET ppid='".$max."' WHERE username='".$_SESSION["username"]."'");
+          $_SESSION["imageurl"] = $mysqlpath;
       } else {
           echo "Sorry, there was an error uploading your file.";
       }
