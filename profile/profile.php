@@ -1017,8 +1017,8 @@
 						{
 							while($event = mysqli_fetch_array($event_result))
 							{
-                $time = date_create($event["eventdate"]);
-                $myFormatForView = date_format($time, "F j, Y \at g:i A");
+                $time = strtotime($event["eventdate"]);
+                $myFormatForView = date("m/d/y g:i A", $time);
 								echo 	"<div class='row'>
                       <div class='col-xs-8'>
 										 <h3>".$event["eventname"]."</h3>
