@@ -371,7 +371,8 @@
             {
               while ($msg = mysqli_fetch_array($msgresult))
               {
-                $result = mysqli_query($con, "SELECT photourl
+                
+                $senderphoto = mysqli_query($con, "SELECT photourl
                                       FROM PHOTOS
                                       WHERE owner = '" .$msg["sender"]. "' AND photoid IN (SELECT ppid
                                                                                   FROM PEOPLE
@@ -385,8 +386,6 @@
                   $imageurl = "..".$photo["photourl"];
                 else
                   $imageurl = "../images/user.png";
-                if ($user == $msg["sender"])
-                {
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2 ownimg'>
                       <a href='profile.php?user=".$msg["sender"]."'>
@@ -405,28 +404,7 @@
                     echo "<p>".$sentTime."</p>
                     </div>
                   </div>";
-                }
-                else
-                {
-                  echo "<div class='row usrpost'>
-                    <div class='col-sm-2'>";
-                    if ($user == $_SESSION["username"] || $msg["sender"] == $_SESSION["username"])
-                      echo "<a href='deletepost.php?user=".$user."&postid=".$msg["postid"]."' class='deletepost pull-right'><i class='fa fa-times'></i></a>";
-                    echo "<p>".$sentTime."</p>
-                    </div>
-                    <div style='text-align: right;' class='col-sm-8 usrtxt'>
-                      <a href='profile.php?user=".$msg["sender"]."'>
-                        <h3>".$name["fname"]." ".$name["lname"]." </h3>
-                      </a>
-                      <p>".$msg["message"]."</p>
-                    </div>
-                    <div class='col-sm-2 userimg'>
-                      <a href='profile.php?user=".$msg["sender"]."'>
-                        <div class='statusimg' style='background-image:url(". $imageurl .")'></div>
-                       </a>
-                    </div>
-                  </div>";
-                }
+               
               }
             }
           ?>
