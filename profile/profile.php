@@ -620,11 +620,11 @@
                 else
                 {
                   echo "<div class='row usrpost'>
-                    <div class='col-sm-2'>
-                      <p>".$sentTime."</p>";
+                    <div class='col-sm-2'>";
                     if ($user == $_SESSION["username"] || $msg["sender"] == $_SESSION["username"])
                       echo "<a href='deletepost.php?user=".$user."&postid=".$msg["postid"]."' class='deletepost pull-right'><i class='fa fa-times'></i></a>";
-                    echo "</div>
+                    echo "<p>".$sentTime."</p>
+                    </div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
