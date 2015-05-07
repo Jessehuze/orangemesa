@@ -11,8 +11,8 @@
 	$eventdate = mysqli_real_escape_string($con, $_POST["eventDate"]);
   
   $dateTime = date_create($eventdate);
-  echo date_format($dateTime, 'Y-m-d H:i:s');
-	/*
+  $dateTime = date_format($dateTime, 'Y-m-d H:i:s');
+  
 	//Query to check if the event name already exists
 	$query = "SELECT eventname FROM EVENTS WHERE eventname = '" .$eventName. "'";
 	$result = mysqli_query($con, $query);
@@ -21,7 +21,7 @@
 	if(mysqli_num_rows($result) == 0)
 	{
 		//Create Event in database
-		$query = "INSERT INTO EVENTS (eventname, description, creatorid, eventdate) VALUES ('".$eventname."', '".$eventdesc."', '".$_SESSION["username"]."', '".$eventdate."')";
+		$query = "INSERT INTO EVENTS (eventname, description, creatorid, eventdate) VALUES ('".$eventname."', '".$eventdesc."', '".$_SESSION["username"]."', '".$dateTime."')";
 		mysqli_query($con, $query);
 		
 		//Retrieve event id
@@ -35,11 +35,11 @@
 	else
 	{
 		//event name taken redirect
-		//header("Location: http://inceptisol.us.to:6670/profile/profile.php?error=eventnametaken");
+		header("Location: http://inceptisol.us.to:6670/profile/profile.php?error=eventnametaken");
 		//exit();
 	}
 	//Redirect to profile page
-	//header("Location: http://inceptisol.us.to:6670/profile/profile.php");
+	header("Location: http://inceptisol.us.to:6670/profile/profile.php");
 	//exit();
   */
 ?>
