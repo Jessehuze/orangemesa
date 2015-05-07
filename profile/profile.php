@@ -337,23 +337,9 @@
                 </div>
 
                 <div class="createGroupDate__row">
+                  <div class='col-sm-6'>
                   <input type='text' class="form-control" id='datetimepicker4' />
-                    <div id="datetimepicker2" class="input-append">
-                      <input data-format="MM/dd/yyyy HH:mm:ss PP" type="text"></input>
-                      <span class="add-on">
-                        <i data-time-icon="icon-time" data-date-icon="icon-calendar">
-                        </i>
-                      </span>
-                    </div>
-                    <script type="text/javascript">
-                      $(function() {
-                        $('#datetimepicker2').datetimepicker({
-                          language: 'en',
-                          pick12HourFormat: true
-                        });
-                      });
-                    </script>
-                <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
+                  <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                 <button name="createGroup" type="submit" class="edit__submit">Create Event</button>
               </form>
 
