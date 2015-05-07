@@ -24,7 +24,10 @@
                                                                                           FROM PEOPLE
                                                                                           WHERE username ='" .$_SESSION["username"]. "')");
       $photo = mysqli_fetch_array($result);
-      $_SESSION["imageurl"] = "..".$photo["photourl"];
+      if ($photo["photourl"] != "")
+        $_SESSION["imageurl"] = "..".$photo["photourl"];
+      else 
+        $_SESSION["imageurl"] = "../images/user.png";
       
 	  //Redirect to profile page
 	  header("Location: http://inceptisol.us.to:6670/profile/profile.php?user=".$_SESSION["username"]);
