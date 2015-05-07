@@ -355,7 +355,7 @@
             <span class="icon-bar"></span>
           </button>
           <img href="../images/logo.png"></img>
-          <a class="navbar-brand" href="profile.php">
+          <a class="navbar-brand" href="feed.php">
             <object id="logoO" type="image/svg+xml" data="../images/logo.svg" width="25" height="25"></object>
             <object id="logoW" type="image/svg+xml" data="../images/logow.svg" width="25" height="25" style="position: relative; left: -30.25px; opacity: 0;"></object>
             <span style="position: relative; top: -5.5px; left: -37.25px;">rangeMesa</span></a>
