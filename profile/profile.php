@@ -526,7 +526,6 @@
             $query = "SELECT * FROM POST_PEOPLE2PEOPLE WHERE reciever = '".$user."' ORDER BY timestamp DESC";
 
             $msgresult = mysqli_query($con, $query);
-
             $sender = mysqli_query($con, "SELECT fname, minit, lname FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
             $sendername = mysqli_fetch_array($sender);
 
@@ -589,6 +588,8 @@
                                                                                   FROM PEOPLE
                                                                                   WHERE username ='" .$msg["sender"]. "')");
                 $photo = mysqli_fetch_array($result);
+                $time = strtotime($msg["timestamp"]);
+                $sentTime = date("F j, Y, g:i a", $time);
                 $nameresult = mysqli_query($con, "SELECT fname, lname FROM PEOPLE WHERE username = '".$msg["sender"]."'");
                 $name = mysqli_fetch_array($nameresult);
                 if ($photo["photourl"] != "")
@@ -612,16 +613,18 @@
                     <div class='col-md-2'>";
                       if ($msg["sender"] == $_SESSION["username"])
                         echo "<a  href='deletepost.php?user=".$user."&postid=".$msg["postid"]."' class='deletepost'><i class='fa fa-times'></i></a>";
-                    echo "</div>
+                    echo "<p>"$sentTime."</p>
+                    </div>
                   </div>";
                 }
                 else
                 {
                   echo "<div class='row usrpost'>
                     <div class='col-sm-2'>";
-                  if ($user == $_SESSION["username"] || $msg["sender"] == $_SESSION["username"])
+                    if ($user == $_SESSION["username"] || $msg["sender"] == $_SESSION["username"])
                       echo "<a href='deletepost.php?user=".$user."&postid=".$msg["postid"]."' class='deletepost pull-right'><i class='fa fa-times'></i></a>";
-                    echo "</div>
+                    echo "<p>"$sentTime."</p>
+                    </div>
                     <div style='text-align: right;' class='col-sm-8 usrtxt'>
                       <a href='profile.php?user=".$msg["sender"]."'>
                         <h3>".$name["fname"]." ".$name["lname"]." </h3>
