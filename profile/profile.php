@@ -338,13 +338,13 @@
 
                 <div class="createGroupDate__row">
                   <div class='col-sm-6'>
-            <input type='text' class="form-control" id='datetimepicker4' />
-        </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker4').datetimepicker();
-            });
-        </script>
+                  <input type='text' class="form-control" id='datetimepicker4' />
+                </div>
+                <script type="text/javascript">
+                    $('#eventModal').on('shown.bs.modal', function() {
+                        $('#datetimepicker4').datetimepicker();
+                    });
+                </script>
                 <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                 <button name="createGroup" type="submit" class="edit__submit">Create Event</button>
               </form>
