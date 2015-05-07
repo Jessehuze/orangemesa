@@ -1,3 +1,5 @@
+<script type="text/javascript" src="../js/moment.js"></script>
+
 <?php
 	//Database connection code
 	require("/var/config.php");
