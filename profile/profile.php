@@ -4,7 +4,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="login.js"></script>
     <script type="text/javascript"></script>
-    <script type="text/javascript" src="../js/moment.js"></script>
     <script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="settings.css"/>
@@ -338,13 +337,21 @@
 
                 <div class="createGroupDate__row">
                   <input type='text' class="form-control" id='datetimepicker4' />
-                  </div>
+                    <div id="datetimepicker2" class="input-append">
+                      <input data-format="MM/dd/yyyy HH:mm:ss PP" type="text"></input>
+                      <span class="add-on">
+                        <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                        </i>
+                      </span>
+                    </div>
                     <script type="text/javascript">
-                        $(function () {
-                            $('#datetimepicker4').datetimepicker();
+                      $(function() {
+                        $('#datetimepicker2').datetimepicker({
+                          language: 'en',
+                          pick12HourFormat: true
                         });
+                      });
                     </script>
-                  </div>
                 <input name="refer" type="hidden" value="http://inceptisol.us.to:6670/profile/profile.php"/>
                 <button name="createGroup" type="submit" class="edit__submit">Create Event</button>
               </form>
