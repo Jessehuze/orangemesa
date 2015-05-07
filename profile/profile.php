@@ -323,7 +323,7 @@
           </div>
           <div class="modal-body">
            <div class="cont">
-           <div class = "demo">
+           <div class = "demo" style="height: 59rem">
             <div class="editProfile">
               <div class="editProfile_form">
 
