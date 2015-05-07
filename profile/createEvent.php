@@ -7,6 +7,8 @@
 	$eventname = mysqli_real_escape_string($con, $_POST["eventName"]);
 	$eventdesc = mysqli_real_escape_string($con, $_POST["eventDesc"]);
 	$eventdate = mysqli_real_escape_string($con, $_POST["eventDate"]);
+  
+  echo $eventdate
 	
 	//Query to check if the event name already exists
 	$query = "SELECT eventname FROM EVENTS WHERE eventname = '" .$eventName. "'";
@@ -30,11 +32,11 @@
 	else
 	{
 		//event name taken redirect
-		header("Location: http://inceptisol.us.to:6670/profile/profile.php?error=eventnametaken");
-		exit();
+		//header("Location: http://inceptisol.us.to:6670/profile/profile.php?error=eventnametaken");
+		//exit();
 	}
 	//Redirect to profile page
-	header("Location: http://inceptisol.us.to:6670/profile/profile.php");
-	exit();
+	//header("Location: http://inceptisol.us.to:6670/profile/profile.php");
+	//exit();
 	
 ?>
