@@ -297,7 +297,7 @@
         <div class="col-sm-3 col-md-2 sidebar userinfo profileSideBar">
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-8 col-md-offset-2 main">
-          <h2 class="page-header">Posts</h2><a href="#"><span id="addpost" class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
+          <h2 class="page-header">Feed</h2><a href="#"><span id="addpost" class="pull-right">Add Post <i class="fa fa-plus-square"></i></span></a>
 
           <?php
             // Filling page with post's directed at user
@@ -306,8 +306,13 @@
               $user=$_GET["user"];
             else
               $user=$_SESSION["username"];
-
-            $query = "SELECT * FROM POST_PEOPLE2PEOPLE WHERE reciever = '".$user."' ORDER BY timestamp DESC";
+            
+            $query = "SELECT * 
+                          FROM POST_PEOPLE2PEOPLE 
+                          WHERE sender in (SELECT friendid 
+                                                   FROM FRIENDS
+                                                   WHERE userid = '".$_SESSION["username"]."')
+                          ORDER BY timestamp DESC";
 
             $msgresult = mysqli_query($con, $query);
             $sender = mysqli_query($con, "SELECT fname, minit, lname FROM PEOPLE WHERE username = '" .$_SESSION["username"]. "'");
