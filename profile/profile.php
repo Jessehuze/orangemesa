@@ -348,7 +348,6 @@
                     <script type="text/javascript">
                       $(function() {
                         $('#datetimepicker2').datetimepicker({
-                          pick12HourFormat: true
                         });
                       });
                     </script>
